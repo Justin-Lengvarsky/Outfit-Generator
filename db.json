@@ -1,0 +1,108 @@
+{
+    "articles": {
+        "shirts": [{
+            "colors": [
+                "red"
+            ],
+            "red": [{
+                    "jackets": [
+                        "navy",
+                        "khaki"
+                    ],
+                    "pants": [
+                        "navy",
+                        "grey"
+                    ],
+                    "shoes": [
+                        "all"
+                    ]
+                },
+                [
+                    "Red Flannel",
+                    "That Other Red Flannel"
+                ]
+            ]
+        }],
+        "pants": [{
+            "colors": [
+                "khaki",
+                "navy"
+            ],
+            "khaki": [{
+                    "jackets": [
+                        "navy",
+                        "grey"
+                    ],
+                    "pants": [
+                        "brown"
+                    ],
+                    "shoes": [
+                        "all"
+                    ]
+                },
+                [
+                    "Light Khaki",
+                    "Dark Khaki"
+                ]
+            ],
+            "navy": [{
+                    "jackets": [
+                        "grey"
+                    ],
+                    "pants": [
+                        "tan"
+                    ],
+                    "shoes": [
+                        "all"
+                    ]
+                },
+                [
+                    "Navy Khaki"
+                ]
+            ]
+        }],
+        "jackets": [{
+            "colors": [
+                "navy",
+                "grey"
+            ],
+            "navy": [{
+                    "pants": [
+                        "all"
+                    ]
+                },
+                [
+                    "Navy Wool Crewneck"
+                ]
+            ],
+            "grey": [{
+                    "shoes": [
+                        "all"
+                    ]
+                },
+                [
+                    "Grey V-Neck",
+                    "Grey Wool Fair Isle"
+                ]
+            ]
+        }],
+        "shoes": [{
+            "colors": [
+                "brown",
+                "tan"
+            ],
+            "tan": [
+                [
+                    "Tan Desert Boots",
+                    "Tan Sperry Topsiders"
+                ]
+            ],
+            "brown": [
+                [
+                    "Brown Desert Boots",
+                    "Brown Suede Desert Boots"
+                ]
+            ]
+        }]
+    }
+}
