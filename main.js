@@ -17,8 +17,5 @@
 
             // redShirtMatch.innerHTML = response.shirts[0].red[0].pants.grey
         }
-
-    
-    
     
     });
