@@ -33,7 +33,7 @@
                         "navy",
                         "grey"
                     ],
-                    "pants": [
+                    "shirts": [
                         "brown"
                     ],
                     "shoes": [
@@ -49,16 +49,13 @@
                     "jackets": [
                         "grey"
                     ],
-                    "pants": [
+                    "shirts": [
                         "tan"
                     ],
                     "shoes": [
                         "all"
                     ]
-                },
-                [
-                    "Navy Khaki"
-                ]
+                }
             ]
         }],
         "jackets": [{
@@ -67,23 +64,28 @@
                 "grey"
             ],
             "navy": [{
-                    "pants": [
-                        "all"
-                    ]
-                },
-                [
-                    "Navy Wool Crewneck"
+                "pants": [
+                    "grey"
+                ],
+                "shirts": [
+                    "tan"
+                ],
+                "shoes": [
+                    "all"
                 ]
+            }
             ],
             "grey": [{
-                    "shoes": [
-                        "all"
-                    ]
-                },
-                [
-                    "Grey V-Neck",
-                    "Grey Wool Fair Isle"
+                "pants": [
+                    "grey"
+                ],
+                "shirts": [
+                    "tan"
+                ],
+                "shoes": [
+                    "all"
                 ]
+            }
             ]
         }],
         "shoes": [{
@@ -91,17 +93,31 @@
                 "brown",
                 "tan"
             ],
-            "tan": [
-                [
-                    "Tan Desert Boots",
-                    "Tan Sperry Topsiders"
+            "tan": [{
+                "pants": [
+                    "grey"
+                ],
+                "shirts": [
+                    "tan"
+                ],
+                "jackets": [
+                    "navy",
+                    "grey"
                 ]
+            }
             ],
-            "brown": [
-                [
-                    "Brown Desert Boots",
-                    "Brown Suede Desert Boots"
+            "brown": [{
+                "pants": [
+                    "grey"
+                ],
+                "shirts": [
+                    "tan"
+                ],
+                "jackets": [
+                    "navy",
+                    "grey"
                 ]
+            }
             ]
         }]
     }
