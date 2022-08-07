@@ -17,7 +17,6 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
         db = client.db(dbName)
     })
 
-
     app.use(bodyParser.urlencoded({ extended: true }))
     app.use(express.static('public'))
     app.use(bodyParser.json())
@@ -47,7 +46,6 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
         })
         .catch(error => console.error(error))
     })
-
 
 app.listen(process.env.PORT || PORT, ()=>{
     console.log(`Server running on port ${PORT}`)
