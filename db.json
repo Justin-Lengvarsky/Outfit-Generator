@@ -2,120 +2,68 @@
     "articles": {
         "shirts": [{
             "colors": [
-                "red"
+                "white"
             ],
-            "red": [{
+            "white": [{
                     "jackets": [
-                        "navy",
-                        "khaki"
+                        "j black"
                     ],
                     "pants": [
-                        "navy",
-                        "grey"
+                        "j black"
                     ],
                     "shoes": [
-                        "all"
+                        "j black"
                     ]
-                },
-                [
-                    "Red Flannel",
-                    "That Other Red Flannel"
-                ]
+                }
             ]
         }],
         "pants": [{
             "colors": [
-                "khaki",
-                "navy"
+                "black"
             ],
-            "khaki": [{
+            "black": [{
                     "jackets": [
-                        "navy",
-                        "grey"
+                        "black"
                     ],
                     "shirts": [
-                        "brown"
+                        "white"
                     ],
                     "shoes": [
-                        "all"
-                    ]
-                },
-                [
-                    "Light Khaki",
-                    "Dark Khaki"
-                ]
-            ],
-            "navy": [{
-                    "jackets": [
-                        "grey"
-                    ],
-                    "shirts": [
-                        "tan"
-                    ],
-                    "shoes": [
-                        "all"
+                        "black"
                     ]
                 }
             ]
         }],
         "jackets": [{
             "colors": [
-                "navy",
-                "grey"
+                "black"
             ],
-            "navy": [{
+            "black": [{
                 "pants": [
-                    "grey"
+                    "black"
                 ],
                 "shirts": [
-                    "tan"
+                    "white"
                 ],
                 "shoes": [
-                    "all"
-                ]
-            }
-            ],
-            "grey": [{
-                "pants": [
-                    "grey"
-                ],
-                "shirts": [
-                    "tan"
-                ],
-                "shoes": [
-                    "all"
+                    "black"
                 ]
             }
             ]
         }],
         "shoes": [{
             "colors": [
-                "brown",
-                "tan"
+                "black"
             ],
-            "tan": [{
+            "black": [{
                 "pants": [
-                    "grey"
+                    "black"
                 ],
                 "shirts": [
-                    "tan"
+                    "white"
                 ],
                 "jackets": [
-                    "navy",
-                    "grey"
-                ]
-            }
-            ],
-            "brown": [{
-                "pants": [
-                    "grey"
-                ],
-                "shirts": [
-                    "tan"
-                ],
-                "jackets": [
-                    "navy",
-                    "grey"
+                    "black"
                 ]
             }
             ]

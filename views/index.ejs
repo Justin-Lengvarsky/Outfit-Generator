@@ -20,23 +20,24 @@
 
 
 
-            <p id="redShirt">Red Shirt</p>
-            <p id="redShirtMatch"></p>
+            <button id="whiteShirt">White Shirt</button>
+            <p id="jacket">Jacket: </p>
+            <p id="pants">Pants: </p>
+            <p id="shoes">Shoes: </p>
 
-            <div >
+
+
+            <!-- <div >
                 <ul>
-                <% for (let i=0; i<savedOutfits.length; i++) {%>
+                <% for (let i=0; i<clothingArticles[0].articles.shirts[0].colors.length; i++) {%>
                     <li>
-                    <p class="title"><%= savedOutfits[i].title %></p>
+                    <p class="title"><%= clothingArticles[0].articles.shirts[0].colors[i] %></p>
                     </li>
                 <% } %>
                  </ul>
-            </div> 
+            </div>  -->
 
-             <form action="/addOutfit" method="POST">
-                <button type="submit">Submit</button>
-            </form>
-
+          
 
 
         <!-- <ul id="generatorBox" class="books">

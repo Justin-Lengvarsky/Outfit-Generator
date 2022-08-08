@@ -24,11 +24,11 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
 
 
     app.get('/', (req, res) => {
-        db.collection('savedOutfits').find().toArray()
+        db.collection('clothingArticles').find().toArray()
           .then(results => {
-            res.render('index.ejs', {savedOutfits: results})
-            console.log(results)
-            console.log("yooo")
+            res.render('index.ejs', {clothingArticles: results})
+            // console.log(results)
+            // console.log("yooo")
 
           })
           .catch(err => {
@@ -37,7 +37,7 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
       })   
 
       app.post('/addOutfit', (request, response) => {
-        db.collection('savedOutfits').insertOne({
+        db.collection('clothingArticles').insertOne({
             title: "blah"
         })
         .then(result => {

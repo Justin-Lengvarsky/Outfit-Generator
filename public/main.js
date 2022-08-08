@@ -1,21 +1,27 @@
 
-    // fetch("http://localhost:8000/articles")
-    // .then(response => response.json())
-    // .catch(error => console.error('Error:', error))
-    // .then(response => {
-    //     console.log('Success:', JSON.stringify(response));
+    fetch("http://localhost:7000/articles")
+    .then(response => response.json())
+    .catch(error => console.error('Error:', error))
+    .then(response => {
+        console.log('Success:', JSON.stringify(response));
 
-    //     const data = response;
+        const data = response;
 
+        console.log(data)
+        console.log('data')
 
-    //     const redShirt = document.querySelector("#redShirt")
-    //     redShirt.addEventListener("click", summonPants)
+        // const whiteShirt = document.querySelector("#whiteShirt")
+        // whiteShirt.addEventListener("click", showChoices)
 
-    //     function summonPants () {
-    //         const redShirtMatch = document.querySelector("#redShirtMatch")
-    //         redShirtMatch.innerHTML = data.shirts[0].red[0].pants[0]
+        // function showChoices () {
+            // const jacket = document.querySelector("#jacket")
+            // const pants = document.querySelector("#pants")
+            // const shoes = document.querySelector("#shoes")
 
-    //         redShirtMatch.innerHTML = response.shirts[0].red[0].pants.grey
-    //     }
-    
-    // });
+            // jacket.innerHTML = data.articles.shirts[0].white[0].jackets[0]
+            // pants.innerHTML = data.shirts[0].white[0].pants[0]
+            // shoes.innerHTML = data.shirts[0].white[0].shoes[0]
+
+        // }
+    });
+
