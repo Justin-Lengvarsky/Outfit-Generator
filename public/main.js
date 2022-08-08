@@ -27,4 +27,4 @@
 // Three of each type of clothes, when press shirt, show an list of different shirts. Click one and that assigns your box as that color.
 // When you press pants, that shows what options are available
 
-//************************************************************************************************************************
+//***********************************************************************************************************************
