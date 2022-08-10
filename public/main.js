@@ -7,7 +7,7 @@
 
         const data = response;
 
-        console.log(data)
+        // console.log(data)
 
 
         const pickJacket = document.querySelector("#pickJacket")
@@ -20,15 +20,17 @@
         pickJacket.addEventListener("click", showJacketChoices)
 
         function showJacketChoices () {
-
+ 
             function removeAllChildNodes(parent) {
                 while (parent.firstChild) {
                     parent.removeChild(parent.firstChild);
                 }
-            }
+              }
             removeAllChildNodes(clothingOptions)
 
-            for (let i=0; i<data.jackets[0].colors.length; i++) {
+            let test = 'jackets'
+
+            for (let i=0; i<data[test][0].colors.length; i++) {
                 var li = document.createElement("li")
                 li.appendChild(document.createTextNode(data.jackets[0].colors[i]))     
                 clothingOptions.appendChild(li)
