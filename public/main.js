@@ -1,4 +1,8 @@
 
+    // json-server --watch db.json --port 8000
+    
+    
+    
     fetch("http://localhost:8000/articles")
     .then(response => response.json())
     .catch(error => console.error('Error:', error))
@@ -7,17 +11,20 @@
 
         const data = response;
 
-        // console.log(data)
-
-
         const pickJacket = document.querySelector("#pickJacket")
+        pickJacket.value = 'jackets'
         const pickShirt = document.querySelector("#pickShirt")
+        pickShirt.value = 'shirts'
         const pickPants = document.querySelector("#pickPants")
+        pickPants.value = 'pants'
         const pickShoes = document.querySelector("#pickShoes")
+        pickShoes.value = 'shoes'
         const clothingOptions = document.querySelector("#clothingOptions")
 
-
         pickJacket.addEventListener("click", showJacketChoices)
+        pickShirt.addEventListener("click", showJacketChoices)
+        pickPants.addEventListener("click", showJacketChoices)
+        pickShoes.addEventListener("click", showJacketChoices)
 
         function showJacketChoices () {
  
@@ -28,16 +35,15 @@
               }
             removeAllChildNodes(clothingOptions)
 
-            let test = 'jackets'
+            let test = this.value
+            console.log(this)
 
             for (let i=0; i<data[test][0].colors.length; i++) {
                 var li = document.createElement("li")
-                li.appendChild(document.createTextNode(data.jackets[0].colors[i]))     
+                li.appendChild(document.createTextNode(data[test][0].colors[i]))     
                 clothingOptions.appendChild(li)
             }
         }
-
-
 
         // const white = document.querySelector("#whiteShirt")
         // const lightBlue = document.querySelector("#lightBlueShirt")
@@ -73,7 +79,6 @@
             // shoes.innerHTML = data.shirts[0].white[0].shoes[0]
 
         // }
-
 
     });
 
