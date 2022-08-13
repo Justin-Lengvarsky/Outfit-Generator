@@ -19,12 +19,12 @@
         const pickShoes = document.querySelector("#pickShoes")
         const clothingOptions = document.querySelector("#clothingOptions")
 
-        pickJacket.addEventListener("click", showJacketChoices)
-        pickShirt.addEventListener("click", showJacketChoices)
-        pickPants.addEventListener("click", showJacketChoices)
-        pickShoes.addEventListener("click", showJacketChoices)
+        pickJacket.addEventListener("click", showChoices)
+        pickShirt.addEventListener("click", showChoices)
+        pickPants.addEventListener("click", showChoices)
+        pickShoes.addEventListener("click", showChoices)
 
-        function showJacketChoices () {
+        function showChoices () {
  
             function removeAllChildNodes(parent) {
                 while (parent.firstChild) {
@@ -33,16 +33,26 @@
               }
             removeAllChildNodes(clothingOptions)
 
-            
-
             let articleValue = this.name
             console.log(this)
+            console.log(articleValue)
+
+
+            
+
 
             for (let i=0; i<data[articleValue][0].colors.length; i++) {
                 var li = document.createElement("li")
                 li.appendChild(document.createTextNode(data[articleValue][0].colors[i]))
                 clothingOptions.appendChild(li)
                 li.addEventListener("click", selectArticle)
+
+                if (pickJacket.innerText != "Jacket" && !data[pickJacket.name][0][pickJacket.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
+                    li.style.color = "red"
+                } else {
+                    li.style.color = "green"
+                }
+
             }
 
             function selectArticle() {
