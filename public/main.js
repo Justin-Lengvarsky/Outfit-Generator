@@ -33,8 +33,6 @@
               }
             removeAllChildNodes(clothingOptions)
 
-            
-
             let articleValue = this.name
             console.log(this)
 
