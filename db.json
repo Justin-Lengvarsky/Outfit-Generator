@@ -13,7 +13,8 @@
                     "pants": [
                         "black",
                         "khaki",
-                        "grey"
+                        "grey",
+                        "navy"
                     ],
                     "shoes": [
                         "black",
@@ -29,7 +30,8 @@
                 "pants": [
                     "black",
                     "khaki",
-                    "grey"
+                    "grey",
+                    "navy"
                 ],
                 "shoes": [
                     "black",
@@ -55,7 +57,8 @@
             "colors": [
                 "black",
                 "grey",
-                "khaki"
+                "khaki",
+                "navy"
             ],
             "black": [{
                     "jackets": [
@@ -97,12 +100,27 @@
                     "brown"
                 ]
             }
-        ]
+        ],
+        "navy": [{
+            "jackets": [
+                "navy"
+            ],
+            "shirts": [
+                "white",
+                "lightBlue"
+            ],
+            "shoes": [
+                "black",
+                "brown"
+            ]
+        }
+    ]
         }],
         "jackets": [{
             "colors": [
                 "black",
-                "navy"
+                "navy",
+                "grey"
             ],
             "black": [{
                 "pants": [
@@ -120,13 +138,29 @@
             "navy": [{   
                 "pants": [
                     "khaki",
-                    "grey"
+                    "grey",
+                    "navy"
                 ],
                 "shirts": [
                     "lightBlue"
                 ],
                 "shoes": [
                     "brown"
+                ]
+            }
+            ],
+            "grey": [{
+                "pants": [
+                    "navy",
+                    "grey"
+                ],
+                "shirts": [
+                    "white",
+                    "lightBlue"
+                ],
+                "shoes": [
+                    "brown",
+                    "black"
                 ]
             }
             ]
@@ -140,7 +174,8 @@
                 "pants": [
                     "black",
                     "khaki",
-                    "grey"
+                    "grey",
+                    "navy"
                 ],
                 "shirts": [
                     "white",
@@ -154,7 +189,8 @@
             "brown": [{
                 "pants": [
                     "khaki",
-                    "grey"
+                    "grey",
+                    "navy"
                 ],
                 "shirts": [
                     "white",

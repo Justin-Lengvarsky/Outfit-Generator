@@ -11,14 +11,12 @@
 
         const data = response;
 
+        const buttonChoices = document.querySelector("#buttonChoices")
+
         const pickJacket = document.querySelector("#pickJacket")
-        pickJacket.value = 'jackets'
         const pickShirt = document.querySelector("#pickShirt")
-        pickShirt.value = 'shirts'
         const pickPants = document.querySelector("#pickPants")
-        pickPants.value = 'pants'
         const pickShoes = document.querySelector("#pickShoes")
-        pickShoes.value = 'shoes'
         const clothingOptions = document.querySelector("#clothingOptions")
 
         pickJacket.addEventListener("click", showJacketChoices)
@@ -35,50 +33,28 @@
               }
             removeAllChildNodes(clothingOptions)
 
-            let test = this.value
+            
+
+            let articleValue = this.name
             console.log(this)
 
-            for (let i=0; i<data[test][0].colors.length; i++) {
+            for (let i=0; i<data[articleValue][0].colors.length; i++) {
                 var li = document.createElement("li")
-                li.appendChild(document.createTextNode(data[test][0].colors[i]))     
+                li.appendChild(document.createTextNode(data[articleValue][0].colors[i]))
                 clothingOptions.appendChild(li)
+                li.addEventListener("click", selectArticle)
+            }
+
+            function selectArticle() {
+                for (let i=1; i<=7; i+=2) {
+                    if (articleValue === buttonChoices.childNodes[i].name) {
+                        buttonChoices.childNodes[i].innerText = this.innerText
+                        break;
+                    }
+                }
             }
         }
 
-        // const white = document.querySelector("#whiteShirt")
-        // const lightBlue = document.querySelector("#lightBlueShirt")
-        // const grey = document.querySelector("#greyShirt")
-
-        // white.addEventListener("click", showChoices)
-
-        // function showChoices () {
-        //     const jacket = document.querySelector("#jacket")
-        //     const pants = document.querySelector("#pants")
-        //     const shoes = document.querySelector("#shoes")
-
-        //     for (let i=0; i<data.shirts[0].white[0].jackets.length; i++) {
-        //         var li = document.createElement("li")
-        //         li.appendChild(document.createTextNode(data.shirts[0].white[0].jackets[i]))     
-        //         jacket.appendChild(li)
-        //     }
-
-        //     for (let i=0; i<data.shirts[0].white[0].pants.length; i++) {
-        //         var li = document.createElement("li")
-        //         li.appendChild(document.createTextNode(data.shirts[0].white[0].pants[i]))     
-        //         pants.appendChild(li)
-        //     }
-
-        //     for (let i=0; i<data.shirts[0].white[0].shoes.length; i++) {
-        //         var li = document.createElement("li")
-        //         li.appendChild(document.createTextNode(data.shirts[0].white[0].shoes[i]))     
-        //         shoes.appendChild(li)
-        //     }
-
-            // jacket.innerHTML = data.shirts[0].white[0].jackets[0]
-            // pants.innerHTML = data.shirts[0].white[0].pants[0]
-            // shoes.innerHTML = data.shirts[0].white[0].shoes[0]
-
-        // }
 
     });
 
