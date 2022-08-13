@@ -17,29 +17,28 @@
         const pickShirt = document.querySelector("#pickShirt")
         const pickPants = document.querySelector("#pickPants")
         const pickShoes = document.querySelector("#pickShoes")
+        const clearOptionsButton = document.querySelector("#clearOptionsButton")
         const clothingOptions = document.querySelector("#clothingOptions")
 
         pickJacket.addEventListener("click", showChoices)
         pickShirt.addEventListener("click", showChoices)
         pickPants.addEventListener("click", showChoices)
         pickShoes.addEventListener("click", showChoices)
+        clearOptionsButton.addEventListener("click", clearOptions)
+
 
         function showChoices () {
- 
-            function removeAllChildNodes(parent) {
+
+            function clearAllChildNodes(parent) {
                 while (parent.firstChild) {
                     parent.removeChild(parent.firstChild);
                 }
-              }
-            removeAllChildNodes(clothingOptions)
+            }
+            clearAllChildNodes(clothingOptions)
 
             let articleValue = this.name
             console.log(this)
             console.log(articleValue)
-
-
-            
-
 
             for (let i=0; i<data[articleValue][0].colors.length; i++) {
                 var li = document.createElement("li")
@@ -47,9 +46,25 @@
                 clothingOptions.appendChild(li)
                 li.addEventListener("click", selectArticle)
 
-                if (pickJacket.innerText != "Jacket" && !data[pickJacket.name][0][pickJacket.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
+                // if (this.innerText !== "Jacket" && this.innerText !== "Shirt" && this.innerText !== "Pants" && this.innerText !== "Shoes") {
+
+                // }
+
+                else if (pickJacket.innerText != "Jacket" && !data[pickJacket.name][0][pickJacket.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
                     li.style.color = "red"
-                } else {
+                }
+                else if (pickJacket.innerText != "Jacket" && !data[pickJacket.name][0][pickJacket.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
+                    li.style.color = "red"
+                } else if (pickShirt.innerText != "Shirt" && !data[pickShirt.name][0][pickShirt.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
+                    li.style.color = "red"
+                }
+                else if (pickPants.innerText != "Pants" && !data[pickPants.name][0][pickPants.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
+                    li.style.color = "red"
+                }
+                else if (pickShoes.innerText != "Shoes" && !data[pickShoes.name][0][pickShoes.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
+                    li.style.color = "red"
+                }
+                else {
                     li.style.color = "green"
                 }
 
@@ -59,10 +74,32 @@
                 for (let i=1; i<=7; i+=2) {
                     if (articleValue === buttonChoices.childNodes[i].name) {
                         buttonChoices.childNodes[i].innerText = this.innerText
+                        function clearAllChildNodes(parent) {
+                            while (parent.firstChild) {
+                                parent.removeChild(parent.firstChild);
+                            }
+                        }
+                        clearAllChildNodes(clothingOptions)
                         break;
                     }
                 }
             }
+        }
+
+        function clearOptions () {
+
+            pickJacket.innerText = "Jacket"
+            pickShirt.innerText = "Shirt"
+            pickPants.innerText = "Pants"
+            pickShoes.innerText = "Shoes"
+
+ 
+            function clearAllChildNodes(parent) {
+                while (parent.firstChild) {
+                    parent.removeChild(parent.firstChild);
+                }
+            }
+            clearAllChildNodes(clothingOptions)
         }
 
 
