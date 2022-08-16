@@ -1,7 +1,14 @@
 
     // json-server --watch db.json --port 8000
     
-    
+    function run(){
+
+        var URL = "file:///C:\002.jpg";
+     
+        window.open(URL, null);
+     
+     }
+     run();
     
     fetch("http://localhost:8000/articles")
     .then(response => response.json())
@@ -44,13 +51,8 @@
                 var li = document.createElement("li")
                 li.appendChild(document.createTextNode(data[articleValue][0].colors[i]))
                 clothingOptions.appendChild(li)
-                li.addEventListener("click", selectArticle)
 
-                // if (this.innerText !== "Jacket" && this.innerText !== "Shirt" && this.innerText !== "Pants" && this.innerText !== "Shoes") {
-
-                // }
-
-                else if (pickJacket.innerText != "Jacket" && !data[pickJacket.name][0][pickJacket.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
+                if (pickJacket.innerText != "Jacket" && !data[pickJacket.name][0][pickJacket.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
                     li.style.color = "red"
                 }
                 else if (pickJacket.innerText != "Jacket" && !data[pickJacket.name][0][pickJacket.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
@@ -66,6 +68,7 @@
                 }
                 else {
                     li.style.color = "green"
+                    li.addEventListener("click", selectArticle)
                 }
 
             }
