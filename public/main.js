@@ -31,7 +31,7 @@
         pickShirt.addEventListener("click", showChoices)
         pickPants.addEventListener("click", showChoices)
         pickShoes.addEventListener("click", showChoices)
-        clearOptionsButton.addEventListener("click", clearOptions)
+        // clearOptionsButton.addEventListener("click", clearOptions)
 
 
         function showChoices () {
@@ -43,40 +43,51 @@
             }
             clearAllChildNodes(clothingOptions)
 
-            let articleValue = this.name
-            console.log(this)
-            console.log(articleValue)
+            let articleType = this.dataset.articleType
+            let articleColor = this.dataset.articleColor
+            // console.log(this)
+            console.log(articleColor)
 
-            for (let i=0; i<data[articleValue][0].colors.length; i++) {
-                var li = document.createElement("li")
-                li.appendChild(document.createTextNode(data[articleValue][0].colors[i]))
-                clothingOptions.appendChild(li)
+            console.log(data[articleType][0].colors)
 
-                if (pickJacket.innerText != "Jacket" && !data[pickJacket.name][0][pickJacket.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
-                    li.style.color = "red"
+            for (let i=0; i<data[articleType][0].colors.length; i++) {
+                var image = document.createElement("img")
+                image.src = `/Users/justinlengvarsky/Desktop/outfit-generator/images/${articleType}/${data[articleType][0].colors[i]}.png`
+                clothingOptions.appendChild(image)
+                image.dataset.ArticleColor = data[articleType][0].colors[i]
+
+    //     if (pickJacket.innerText != "Jacket" && !data[pickJacket.name][0][pickJacket.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
+    //         li.style.color = "red"
+    //     }
+
+    console.log(articleColor)
+
+
+                if (pickJacket.dataset.articleColor != "Jacket" && !data[articleType][0][articleColor][0][articleType].includes(data[articleType][0].colors[i])) {
+                    image.style.opacity = "0.5"
+                } 
+                else if (pickShirt.dataset.articleColor != "Shirt" && !data[articleType][0][articleColor][0][articleType].includes(data[articleType][0].colors[i])) {
+                    image.style.opacity = "0.5"
                 }
-                else if (pickJacket.innerText != "Jacket" && !data[pickJacket.name][0][pickJacket.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
-                    li.style.color = "red"
-                } else if (pickShirt.innerText != "Shirt" && !data[pickShirt.name][0][pickShirt.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
-                    li.style.color = "red"
+                else if (pickPants.dataset.articleColor != "Pants" && !data[articleType][0][pickPants.articleColor][0][articleType].includes(data[articleType][0].colors[i])) {
+                    image.style.opacity = "0.5"
                 }
-                else if (pickPants.innerText != "Pants" && !data[pickPants.name][0][pickPants.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
-                    li.style.color = "red"
-                }
-                else if (pickShoes.innerText != "Shoes" && !data[pickShoes.name][0][pickShoes.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
-                    li.style.color = "red"
+                else if (pickShoes.dataset.articleColor != "Shoes" && !data[articleType][0][pickShoes.articleColor][0][articleType].includes(data[articleType][0].colors[i])) {
+                    image.style.opacity = "0.5"
                 }
                 else {
-                    li.style.color = "green"
-                    li.addEventListener("click", selectArticle)
+                    image.addEventListener("click", selectArticle)
                 }
 
             }
 
+
             function selectArticle() {
+
+
                 for (let i=1; i<=7; i+=2) {
-                    if (articleValue === buttonChoices.childNodes[i].name) {
-                        buttonChoices.childNodes[i].innerText = this.innerText
+                    if (articleType === buttonChoices.childNodes[i].articleType) {
+                        buttonChoices.childNodes[i].articleColor = this.articleColor
                         function clearAllChildNodes(parent) {
                             while (parent.firstChild) {
                                 parent.removeChild(parent.firstChild);
@@ -89,21 +100,65 @@
             }
         }
 
-        function clearOptions () {
+            // OG COPY
 
-            pickJacket.innerText = "Jacket"
-            pickShirt.innerText = "Shirt"
-            pickPants.innerText = "Pants"
-            pickShoes.innerText = "Shoes"
+            // for (let i=0; i<data[articleValue][0].colors.length; i++) {
+            //     var li = document.createElement("li")
+            //     li.appendChild(document.createTextNode(data[articleValue][0].colors[i]))
+            //     clothingOptions.appendChild(li)
+
+            //     if (pickJacket.innerText != "Jacket" && !data[pickJacket.name][0][pickJacket.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
+            //         li.style.color = "red"
+            //     }
+            //     else if (pickJacket.innerText != "Jacket" && !data[pickJacket.name][0][pickJacket.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
+            //         li.style.color = "red"
+            //     } else if (pickShirt.innerText != "Shirt" && !data[pickShirt.name][0][pickShirt.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
+            //         li.style.color = "red"
+            //     }
+            //     else if (pickPants.innerText != "Pants" && !data[pickPants.name][0][pickPants.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
+            //         li.style.color = "red"
+            //     }
+            //     else if (pickShoes.innerText != "Shoes" && !data[pickShoes.name][0][pickShoes.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
+            //         li.style.color = "red"
+            //     }
+            //     else {
+            //         li.style.color = "green"
+            //         li.addEventListener("click", selectArticle)
+            //     }
+
+            // }
+
+        //     function selectArticle() {
+        //         for (let i=1; i<=7; i+=2) {
+        //             if (articleValue === buttonChoices.childNodes[i].name) {
+        //                 buttonChoices.childNodes[i].innerText = this.innerText
+        //                 function clearAllChildNodes(parent) {
+        //                     while (parent.firstChild) {
+        //                         parent.removeChild(parent.firstChild);
+        //                     }
+        //                 }
+        //                 clearAllChildNodes(clothingOptions)
+        //                 break;
+        //             }
+        //         }
+        //     }
+        // }
+
+    //     function clearOptions () {
+
+    //         pickJacket.innerText = "Jacket"
+    //         pickShirt.innerText = "Shirt"
+    //         pickPants.innerText = "Pants"
+    //         pickShoes.innerText = "Shoes"
 
  
-            function clearAllChildNodes(parent) {
-                while (parent.firstChild) {
-                    parent.removeChild(parent.firstChild);
-                }
-            }
-            clearAllChildNodes(clothingOptions)
-        }
+    //         function clearAllChildNodes(parent) {
+    //             while (parent.firstChild) {
+    //                 parent.removeChild(parent.firstChild);
+    //             }
+    //         }
+    //         clearAllChildNodes(clothingOptions)
+    //     }
 
 
     });
