@@ -21,13 +21,17 @@
         const buttonChoices = document.querySelector("#imagesContainer")
 
         const pickJacket = document.querySelector("#pickJacket")
+        pickJacket.addEventListener("click", showChoices)
+
+
+
+
         const pickShirt = document.querySelector("#pickShirt")
         const pickPants = document.querySelector("#pickPants")
         const pickShoes = document.querySelector("#pickShoes")
         const clearOptionsButton = document.querySelector("#clearOptionsButton")
         const clothingOptions = document.querySelector("#clothingOptions")
 
-        pickJacket.addEventListener("click", showChoices)
         pickShirt.addEventListener("click", showChoices)
         pickPants.addEventListener("click", showChoices)
         pickShoes.addEventListener("click", showChoices)
