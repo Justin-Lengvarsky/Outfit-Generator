@@ -43,51 +43,63 @@
             }
             clearAllChildNodes(clothingOptions)
 
-            let articleType = this.dataset.articleType
-            let articleColor = this.dataset.articleColor
+            let thisArticleType = this.dataset.articleType
+            let thisArticleColor = this.dataset.articleColor
             // console.log(this)
-            console.log(articleColor)
+            console.log(thisArticleColor)
 
-            console.log(data[articleType][0].colors)
+            console.log(data[thisArticleType][0].colors)
 
-            for (let i=0; i<data[articleType][0].colors.length; i++) {
+            for (let i=0; i<data[thisArticleType][0].colors.length; i++) {
                 var image = document.createElement("img")
-                image.src = `/Users/justinlengvarsky/Desktop/outfit-generator/images/${articleType}/${data[articleType][0].colors[i]}.png`
+                image.src = `/Users/justinlengvarsky/Desktop/outfit-generator/images/${thisArticleType}/${data[thisArticleType][0].colors[i]}.png`
                 clothingOptions.appendChild(image)
-                image.dataset.ArticleColor = data[articleType][0].colors[i]
+                image.dataset.articleColor = data[thisArticleType][0].colors[i]
 
-    //     if (pickJacket.innerText != "Jacket" && !data[pickJacket.name][0][pickJacket.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
-    //         li.style.color = "red"
-    //     }
+                image.addEventListener("click", selectArticle)
 
-    console.log(articleColor)
-
-
-                if (pickJacket.dataset.articleColor != "Jacket" && !data[articleType][0][articleColor][0][articleType].includes(data[articleType][0].colors[i])) {
-                    image.style.opacity = "0.5"
-                } 
-                else if (pickShirt.dataset.articleColor != "Shirt" && !data[articleType][0][articleColor][0][articleType].includes(data[articleType][0].colors[i])) {
-                    image.style.opacity = "0.5"
-                }
-                else if (pickPants.dataset.articleColor != "Pants" && !data[articleType][0][pickPants.articleColor][0][articleType].includes(data[articleType][0].colors[i])) {
-                    image.style.opacity = "0.5"
-                }
-                else if (pickShoes.dataset.articleColor != "Shoes" && !data[articleType][0][pickShoes.articleColor][0][articleType].includes(data[articleType][0].colors[i])) {
-                    image.style.opacity = "0.5"
-                }
-                else {
-                    image.addEventListener("click", selectArticle)
-                }
+                //     if (pickJacket.innerText != "Jacket" && !data[pickJacket.name][0][pickJacket.innerText][0][articleValue].includes(data[articleValue][0].colors[i])) {
+                //         li.style.color = "red"
+                //     }
+                // if (pickJacket.dataset.articleColor != "Jacket" && !data[thisArticleType][0][thisArticleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
+                //     image.style.opacity = "0.5"
+                // } 
+                // else if (pickShirt.dataset.articleColor != "Shirt" && !data[thisArticleType][0][thisArticleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
+                //     image.style.opacity = "0.5"
+                // }
+                // else if (pickPants.dataset.articleColor != "Pants" && !data[thisArticleType][0][pickPants.thisArticleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
+                //     image.style.opacity = "0.5"
+                // }
+                // else if (pickShoes.dataset.articleColor != "Shoes" && !data[thisArticleType][0][pickShoes.thisArticleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
+                //     image.style.opacity = "0.5"
+                // }
+                // else {
+                //     image.addEventListener("click", selectArticle)
+                // }
 
             }
 
+        //     function selectArticle() {
+        //         for (let i=1; i<=7; i+=2) {
+        //             if (articleValue === buttonChoices.childNodes[i].name) {
+        //                 buttonChoices.childNodes[i].innerText = this.innerText
+        //                 function clearAllChildNodes(parent) {
+        //                     while (parent.firstChild) {
+        //                         parent.removeChild(parent.firstChild);
+        //                     }
+        //                 }
+        //                 clearAllChildNodes(clothingOptions)
+        //                 break;
+        //             }
+        //         }
+        //     }
+        // }
+
 
             function selectArticle() {
-
-
                 for (let i=1; i<=7; i+=2) {
-                    if (articleType === buttonChoices.childNodes[i].articleType) {
-                        buttonChoices.childNodes[i].articleColor = this.articleColor
+                    if (thisArticleType === buttonChoices.childNodes[i].thisArticleType) {
+                        buttonChoices.childNodes[i].thisArticleColor = this.dataset.rticleColor
                         function clearAllChildNodes(parent) {
                             while (parent.firstChild) {
                                 parent.removeChild(parent.firstChild);
@@ -99,6 +111,7 @@
                 }
             }
         }
+
 
             // OG COPY
 
