@@ -33,9 +33,8 @@
                     parent.removeChild(parent.firstChild);
                 }
               }
-            removeAllChildNodes(clothingOptions)
-            }
             clearAllChildNodes(clothingOptions)
+            
 
             let thisImage = this
             let thisArticleType = this.dataset.articleType
@@ -68,6 +67,7 @@
                 }
 
             }
+    }
             
 
         //     function selectArticle() {
