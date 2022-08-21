@@ -1,6 +1,14 @@
 
     // json-server --watch db.json --port 8000
     
+    function run(){
+
+        var URL = "file:///C:\002.jpg";
+     
+        window.open(URL, null);
+     
+     }
+     run();
     
     fetch("http://localhost:8000/articles")
     .then(response => response.json())
@@ -36,9 +44,8 @@
                 while (parent.firstChild) {
                     parent.removeChild(parent.firstChild);
                 }
-              }
+            }
             clearAllChildNodes(clothingOptions)
-            
 
             let thisImage = this
             let thisArticleType = this.dataset.articleType
@@ -71,8 +78,6 @@
                 }
 
             }
-    }
-            
 
         //     function selectArticle() {
         //         for (let i=1; i<=7; i+=2) {
@@ -114,7 +119,7 @@
                     }
                 }
             }
-        
+        }
 
 
             // OG COPY
