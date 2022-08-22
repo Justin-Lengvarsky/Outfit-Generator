@@ -18,24 +18,23 @@
 
         const data = response;
 
-        const buttonChoices = document.querySelector("#imagesContainer")
+        const buttonChoices = document.querySelector("#generatorBox")
 
         const pickJacket = document.querySelector("#pickJacket")
-        pickJacket.addEventListener("click", showChoices)
-
 
 
 
         const pickShirt = document.querySelector("#pickShirt")
         const pickPants = document.querySelector("#pickPants")
         const pickShoes = document.querySelector("#pickShoes")
-        const clearOptionsButton = document.querySelector("#clearOptionsButton")
+        const clearButton = document.querySelector("#clearButton")
         const clothingOptions = document.querySelector("#clothingOptions")
 
         pickShirt.addEventListener("click", showChoices)
         pickPants.addEventListener("click", showChoices)
         pickShoes.addEventListener("click", showChoices)
-        // clearOptionsButton.addEventListener("click", clearOptions)
+        pickJacket.addEventListener("click", showChoices)
+        clearButton.addEventListener("click", clearOptions)
 
 
         function showChoices () {
@@ -60,6 +59,7 @@
                 image.src = `/Users/justinlengvarsky/Desktop/outfit-generator/images/${thisArticleType}/${data[thisArticleType][0].colors[i]}.png`
                 clothingOptions.appendChild(image)
                 image.dataset.articleColor = data[thisArticleType][0].colors[i]
+                image.classList.add("articleListBoxClass");
 
                 if (pickJacket.dataset.articleColor != "baseJacket" && !data[pickJacket.dataset.articleType][0][pickJacket.dataset.articleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
                     image.style.opacity = "0.1"
@@ -163,23 +163,25 @@
         //     }
         // }
 
-    //     function clearOptions () {
+        function clearOptions () {
 
-    //         pickJacket.innerText = "Jacket"
-    //         pickShirt.innerText = "Shirt"
-    //         pickPants.innerText = "Pants"
-    //         pickShoes.innerText = "Shoes"
+            pickJacket.dataset.articleColor = "baseJacket"
+            pickShirt.dataset.articleColor = "baseShirt"
+            pickPants.dataset.articleColor = "basePants"
+            pickShoes.dataset.articleColor = "baseShoes"
 
+            pickJacket.src = "/Users/justinlengvarsky/Desktop/outfit-generator/images/jackets/baseJacket.png"
+            pickShirt.src = "/Users/justinlengvarsky/Desktop/outfit-generator/images/shirts/baseShirt.png"
+            pickPants.src = "/Users/justinlengvarsky/Desktop/outfit-generator/images/pants/basePants.png"
+            pickShoes.src = "/Users/justinlengvarsky/Desktop/outfit-generator/images/Shoes/baseShoe.png"
  
-    //         function clearAllChildNodes(parent) {
-    //             while (parent.firstChild) {
-    //                 parent.removeChild(parent.firstChild);
-    //             }
-    //         }
-    //         clearAllChildNodes(clothingOptions)
-    //     }
-
-
+            function clearAllChildNodes(parent) {
+                while (parent.firstChild) {
+                    parent.removeChild(parent.firstChild);
+                }
+            }
+            clearAllChildNodes(clothingOptions)
+        }
     });
 
 // Three of each type of clothes, when press shirt, show an list of different shirts. Click one and that assigns your box as that color.
