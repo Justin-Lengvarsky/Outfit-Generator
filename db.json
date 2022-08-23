@@ -9,6 +9,7 @@
             "white": [{
                     "jackets": [
                         "black",
+                        "navy",
                         "grey"
                     ],
                     "shirts": [
@@ -24,13 +25,13 @@
                     ],
                     "shoes": [
                         "black",
-                        "brown"
+                        "brown",
+                        "burgundy"
                     ]
                 }
             ],
             "lightBlue": [{
                 "jackets": [
-                    "black",
                     "navy"
                 ],
                 "shirts": [
@@ -46,13 +47,14 @@
                 ],
                 "shoes": [
                     "black",
-                    "brown"
+                    "brown",
+                    "burgundy"
                 ]
             }
         ],
             "grey": [{
                 "jackets": [
-                    ""
+                    "black"
                 ],
                 "shirts": [
                     "white",
@@ -63,8 +65,7 @@
                     "black"           
                 ],
                 "shoes": [
-                    "black",
-                    "brown"
+                    "black"
                 ]
             }
         ]
@@ -112,7 +113,8 @@
                 ],
                 "shoes": [
                     "black",
-                    "brown"
+                    "brown",
+                    "burgundy"
                 ]
             }
         ],
@@ -131,7 +133,6 @@
                     "navy"
                 ],
                 "shoes": [
-                    "black",
                     "brown"
                 ]
             }
@@ -152,7 +153,8 @@
             ],
             "shoes": [
                 "black",
-                "brown"
+                "brown",
+                "burgundy"            
             ]
         }
     ]
@@ -174,7 +176,8 @@
                 ],
                 "shirts": [
                     "white",
-                    "lightBlue"
+                    "lightBlue",
+                    "grey"
                 ],
                 "shoes": [
                     "black"
@@ -193,10 +196,14 @@
                     "navy"
                 ],
                 "shirts": [
+                    "white",
                     "lightBlue"
                 ],
                 "shoes": [
-                    "brown"
+                    "black",
+                    "brown",
+                    "burgundy",
+                    "burgundy"
                 ]
             }
             ],
@@ -216,7 +223,8 @@
                 ],
                 "shoes": [
                     "brown",
-                    "black"
+                    "black",
+                    "burgundy"
                 ]
             }
             ]
@@ -224,12 +232,12 @@
         "shoes": [{
             "colors": [
                 "black",
-                "brown"
+                "brown",
+                "burgundy"
             ],
             "black": [{
                 "pants": [
                     "black",
-                    "khaki",
                     "grey",
                     "navy"
                 ],
@@ -238,11 +246,13 @@
                     "lightBlue"
                 ],
                 "jackets": [
-                    "black"
+                    "black",
+                    "navy"
                 ],
                 "shoes": [
                     "black",
-                    "brown"
+                    "brown",
+                    "burgundy"
                 ]
             }
             ],
@@ -261,7 +271,28 @@
                 ],
                 "shoes": [
                     "black",
-                    "brown"
+                    "brown",
+                    "burgundy"
+                ]
+            }
+            ],
+            "burgundy": [{
+                "jackets": [
+                    "navy",
+                    "grey"
+                ],
+                "pants": [
+                    "grey",
+                    "navy"
+                ],
+                "shirts": [
+                    "white"
+                ],
+                "shoes": [
+                    "black",
+                    "brown",
+
+                    "burgundy"
                 ]
             }
             ]

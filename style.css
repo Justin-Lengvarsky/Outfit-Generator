@@ -5,7 +5,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;  
+    box-sizing: border-box; 
 }
 
 main {
@@ -17,6 +17,35 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+
+h1 {
+    text-align: center;
+}
+
+#one {
+    color: rgb(46, 31, 91)
+}
+
+#two {
+    color: rgb(223, 208, 249)
+}
+
+#three {
+    color: rgb(105, 70, 221)
+}
+
+#four {
+    color: rgb(117, 201, 200)
+}
+
+#five {
+    color: rgb(37, 41, 28)
+}
+
+#six {
+    color: rgb(164, 139, 235)
+}
+
 
 
 /* NAVIGATION
@@ -78,7 +107,7 @@ footer {
 
 /* BOOK LIST PAGE
 ================================================== */
-#bookList {
+/* #bookList {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -113,7 +142,7 @@ footer {
     margin-top: 10rem;
     flex-wrap: wrap;
     line-height: 2rem;
-}
+} */
 
 /* TIPS PAGE
 ================================================== */
@@ -146,7 +175,7 @@ footer {
     /* margin: 3rem 1rem; */
     width: 40%;
     height: 15rem;
-    order: 1;
+    /* order: 1; */
     background-color: white;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -155,6 +184,7 @@ footer {
     padding: 2%;
     word-wrap: break-word;
     text-align: center;
+    opacity: 0.5
 }
 
 #optionButtons {
