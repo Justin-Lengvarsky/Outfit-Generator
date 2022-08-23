@@ -75,6 +75,10 @@ fetch("http://localhost:8000/articles")
                     buttonChoices.childNodes[i].dataset.articleColor = this.dataset.articleColor
                     thisImage.src = this.src
                     thisImage.style.opacity = "1"
+                    thisImage.style.backgroundColor = "white"
+                    // thisImage.style.borderColor = "#6946DE"
+
+                    
                     function clearAllChildNodes(parent) {
                         while (parent.firstChild) {
                             parent.removeChild(parent.firstChild);
@@ -99,10 +103,10 @@ fetch("http://localhost:8000/articles")
         pickPants.src = "/Users/justinlengvarsky/Desktop/outfit-generator/images/pants/basePants.png"
         pickShoes.src = "/Users/justinlengvarsky/Desktop/outfit-generator/images/Shoes/baseShoe.png"
 
-        pickJacket.style.opacity = "0.5"
-        pickShirt.style.opacity = "0.5"
-        pickPants.style.opacity = "0.5"
-        pickShoes.style.opacity = "0.5"
+        pickJacket.style.opacity = "0.7"
+        pickShirt.style.opacity = "0.7"
+        pickPants.style.opacity = "0.7"
+        pickShoes.style.opacity = "0.7"
 
         function clearAllChildNodes(parent) {
             while (parent.firstChild) {
