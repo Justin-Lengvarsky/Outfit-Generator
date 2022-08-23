@@ -157,7 +157,8 @@ footer {
 
 .tipsListClass {
     margin: 2rem 0;
-    color: rgb(223, 208, 249);
+    /* color: rgb(223, 208, 249); */
+    color: #EDF0DA;
 }
 
 /* GENERATOR PAGE
@@ -215,7 +216,7 @@ footer {
     flex-wrap: wrap;
     line-height: 2rem;
     margin: 3rem auto;
-    height: 10rem
+    min-height: 10rem
 }
 
 
