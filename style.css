@@ -16,11 +16,10 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* background-color: rgb(223, 208, 249); */
     background: #2E1F5B;
-background: -moz-linear-gradient(-45deg, #2E1F5B 0%, #6946DE 45%, #6946DE 100%);
-background: -webkit-linear-gradient(-45deg, #2E1F5B 0%, #6946DE 45%, #6946DE 100%);
-background: linear-gradient(135deg, #2E1F5B 0%, #6946DE 45%, #6946DE 100%);
+    background: -moz-linear-gradient(-45deg, #2E1F5B 0%, #6946DE 45%, #6946DE 100%);
+    background: -webkit-linear-gradient(-45deg, #2E1F5B 0%, #6946DE 45%, #6946DE 100%);
+    background: linear-gradient(135deg, #2E1F5B 0%, #6946DE 45%, #6946DE 100%);
 }
 
 h1 {

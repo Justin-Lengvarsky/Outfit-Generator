@@ -17,6 +17,7 @@ fetch("http://localhost:8000/articles")
     const clearButton = document.querySelector("#clearButton")
     const clothingOptions = document.querySelector("#clothingOptions")
 
+
     pickShirt.addEventListener("click", showChoices)
     pickPants.addEventListener("click", showChoices)
     pickShoes.addEventListener("click", showChoices)
@@ -34,6 +35,8 @@ fetch("http://localhost:8000/articles")
 
         let thisImage = this
         let thisArticleType = this.dataset.articleType
+        let thisArticleColor = this.dataset.articleColor
+
         // console.log(this)
         // console.log(thisArticleType)
 
@@ -66,18 +69,36 @@ fetch("http://localhost:8000/articles")
                 image.style.order = 0
             } 
 
+            if (image.dataset.articleColor === thisArticleColor) {
+                image.style.border = "7px solid #51A3A3"
+                image.style.order = -1
+                // image.style.backgroundColor = "#DAA49A"
+            }
+
         }
 
         function selectArticle() {
 
+            console.log(this.dataset.articleColor)
+            console.log(buttonChoices.childNodes[1].dataset.articleColor)
+            // console.log(thisArticleType)
+            // console.log(thisArticleType)
+
+
             for (let i=1; i<=7; i+=2) {
                 if (thisArticleType === buttonChoices.childNodes[i].dataset.articleType) {
+                    if (this.dataset.articleColor === buttonChoices.childNodes[i].dataset.articleColor) {
+                        buttonChoices.childNodes[i].dataset.articleColor = buttonChoices.childNodes[i].dataset.defaultValue
+                        thisImage.src = `/Users/justinlengvarsky/Desktop/outfit-generator/images/${thisArticleType}/${buttonChoices.childNodes[i].dataset.articleColor}.png`
+                        thisImage.style.opacity = "0.7"
+                        thisImage.style.backgroundColor = "rgb(223, 208, 249)"
+                    } else {
+                        
                     buttonChoices.childNodes[i].dataset.articleColor = this.dataset.articleColor
                     thisImage.src = this.src
                     thisImage.style.opacity = "1"
                     thisImage.style.backgroundColor = "white"
-                    // thisImage.style.borderColor = "#6946DE"
-
+                }
                     
                     function clearAllChildNodes(parent) {
                         while (parent.firstChild) {
@@ -101,7 +122,7 @@ fetch("http://localhost:8000/articles")
         pickJacket.src = "/Users/justinlengvarsky/Desktop/outfit-generator/images/jackets/baseJacket.png"
         pickShirt.src = "/Users/justinlengvarsky/Desktop/outfit-generator/images/shirts/baseShirt.png"
         pickPants.src = "/Users/justinlengvarsky/Desktop/outfit-generator/images/pants/basePants.png"
-        pickShoes.src = "/Users/justinlengvarsky/Desktop/outfit-generator/images/Shoes/baseShoe.png"
+        pickShoes.src = "/Users/justinlengvarsky/Desktop/outfit-generator/images/shoes/baseShoes.png"
 
         pickJacket.style.opacity = "0.7"
         pickShirt.style.opacity = "0.7"
