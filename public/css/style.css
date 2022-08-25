@@ -236,6 +236,53 @@ footer {
     text-align: center;
 }
 
+#tipsMain {
+    padding: 0 10%;
+}
+
+.tipsListClass {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    margin: 6rem 0;
+}
+
+ 
+.tipsListClass h3 {
+    width: 50%;
+    display: inline-block;
+}
+
+.tipsListClass img {
+    display: inline;
+    width: 25rem;
+    height: 18rem;
+}
+
+#firstTip h3 {
+    text-align: center;
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.tipsListClass .dualImages {
+    display: inline;
+    width: 20rem;
+    height: 15rem;
+}
+
+.tipsListClass .dualImagesText {
+    width: 30%;
+    display: inline-block;
+}
+
+
+
+
+
+
 
 /* MEDIA QUERIES
 Description: Define screen-size breakpoints here.
