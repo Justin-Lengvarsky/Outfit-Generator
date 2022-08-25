@@ -12,6 +12,8 @@ const todoRoutes = require('./routes/todos')
 
 require('dotenv').config({path: './config/.env'})
 
+console.log(process.env.DB_STRING)
+
 // Passport config
 require('./config/passport')(passport)
 
