@@ -43,7 +43,7 @@ fetch("http://localhost:8000/articles")
 
         for (let i=0; i<data[thisArticleType][0].colors.length; i++) {
             var image = document.createElement("img")
-            image.src = `/Users/justinlengvarsky/Desktop/outfit-generator/images/${thisArticleType}/${data[thisArticleType][0].colors[i]}.png`
+            image.src = `/images/${thisArticleType}/${data[thisArticleType][0].colors[i]}.png`
             clothingOptions.appendChild(image)
             image.dataset.articleColor = data[thisArticleType][0].colors[i]
             image.classList.add("articleListBoxClass");
@@ -88,7 +88,7 @@ fetch("http://localhost:8000/articles")
                 if (thisArticleType === buttonChoices.childNodes[i].dataset.articleType) {
                     if (this.dataset.articleColor === buttonChoices.childNodes[i].dataset.articleColor) {
                         buttonChoices.childNodes[i].dataset.articleColor = buttonChoices.childNodes[i].dataset.defaultValue
-                        thisImage.src = `/Users/justinlengvarsky/Desktop/outfit-generator/images/${thisArticleType}/${buttonChoices.childNodes[i].dataset.articleColor}.png`
+                        thisImage.src = `/images/${thisArticleType}/${buttonChoices.childNodes[i].dataset.articleColor}.png`
                         thisImage.style.opacity = "0.7"
                         thisImage.style.backgroundColor = "rgb(223, 208, 249)"
                     } else {
@@ -118,10 +118,10 @@ fetch("http://localhost:8000/articles")
         pickPants.dataset.articleColor = "basePants"
         pickShoes.dataset.articleColor = "baseShoes"
 
-        pickJacket.src = "/Users/justinlengvarsky/Desktop/outfit-generator/images/jackets/baseJacket.png"
-        pickShirt.src = "/Users/justinlengvarsky/Desktop/outfit-generator/images/shirts/baseShirt.png"
-        pickPants.src = "/Users/justinlengvarsky/Desktop/outfit-generator/images/pants/basePants.png"
-        pickShoes.src = "/Users/justinlengvarsky/Desktop/outfit-generator/images/shoes/baseShoes.png"
+        pickJacket.src = "/images/jackets/baseJacket.png"
+        pickShirt.src = "/images/shirts/baseShirt.png"
+        pickPants.src = "/images/pants/basePants.png"
+        pickShoes.src = "/images/shoes/baseShoes.png"
 
         pickJacket.style.opacity = "0.7"
         pickShirt.style.opacity = "0.7"
