@@ -28,8 +28,6 @@
         <h1 id="six">COLOR TEST</h1>
     </section>
 
-    <h2>You hav <%= message %> things.</h2>
-
     <main>
         <section id="generatorBox" class="books">
             <img class="generatorBoxClass clothingImage" data-article-type="jackets" data-article-color="baseJacket" data-default-value="baseJacket" id="pickJacket" title="Jacket" src="/images/jackets/baseJacket.png">
@@ -39,7 +37,15 @@
         </section>
 
         <div id="optionButtons">
-            <button id="saveButton">Save</button>
+            <form action="/outfit/postOutfit" method='POST'>
+                <input id="jacketInput" type="text" name="jacketChoice">
+                <input id="shirtInput" type="text" name="shirtChoice">
+                <input id="pantsInput" type="text" name="pantsChoice">
+                <input id="shoesInput" type="text" name="shoesChoice">
+
+                <input id="saveButton" type="submit">
+                <!-- <button id="saveButton">Save</button> -->
+            </form>
             <button id="clearButton">Delete</button>
         </div>
     
