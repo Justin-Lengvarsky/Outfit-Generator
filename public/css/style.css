@@ -50,6 +50,11 @@ h1 {
     color: rgb(164, 139, 235)
 }
 
+#clothingDictionary {
+    background-color: red;
+    width: 100%;
+    height: 100px
+}
 
 
 /* NAVIGATION
