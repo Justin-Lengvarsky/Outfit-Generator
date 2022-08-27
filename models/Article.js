@@ -1,8 +1,12 @@
 const mongoose = require('mongoose')
 
 const ArticlesSchema = new mongoose.Schema({
-  userId: {
+  name: {
     type: String,
+    required: true,
+  },
+  articles: {
+    type: Object,
     required: true,
   }
 })

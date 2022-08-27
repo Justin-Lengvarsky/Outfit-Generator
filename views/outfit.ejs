@@ -29,6 +29,9 @@
     </section>
 
     <h2>You hav <%= message %> things.</h2>
+    <h2>Dictionary: <%= JSON.stringify(dictionary) %> </h2>
+    <% console.log(dictionary) %>
+
 
 
     <main>
@@ -55,6 +58,11 @@
     <footer>
         <p>Copyright 2022</p>
     </footer>
+    <script>
+        let dictionary = '<%-dictionary%>';
+        console.log(dictionary.name);
+    </script>
+
     <!-- <script src="/js/main.js"></script> -->
 </body>
 </html>

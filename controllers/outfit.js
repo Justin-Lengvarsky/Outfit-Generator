@@ -5,11 +5,13 @@ module.exports = {
         console.log(Article)
 
         try{
-            const articleNums = await Article.countDocuments({ userId: "6306bffc5b397d73a9f8ae1f"})
+            const allArticles = await Article.find({name: "clothingDictionary"})
+            console.log(allArticles[0].articles)
+            const articleNums = await Article.countDocuments({ name: "clothingDictionary"})
             console.log(articleNums)
 
             // const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
-            res.render('outfit.ejs', {message: articleNums})
+            res.render('outfit.ejs', {message: articleNums, dictionary: allArticles})
         }catch(err){
             console.log(err)
         }
