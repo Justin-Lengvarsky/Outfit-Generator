@@ -39,7 +39,6 @@ console.log(data)
         let thisArticleColor = this.dataset.articleColor
 
         // console.log(this)
-        // console.log(thisArticleType)
 
         // console.log(data[thisArticleType][0].colors)
 
