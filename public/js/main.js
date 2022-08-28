@@ -163,14 +163,21 @@ function clearOptions () {
 //     el.addEventListener('click', markIncomplete)
 // })
 
-// async function deleteTodo(){
-//     const todoId = this.parentNode.dataset.id
+// const deleteBtn = document.querySelectorAll('.del')
+
+// Array.from(deleteBtn).forEach((el)=>{
+//     el.addEventListener('click', deleteFavorite)
+// })
+
+// async function deleteFavorite(){
+//     const outfitId = this.parentNode.dataset.id
+//     console.log(outfitId)
 //     try{
-//         const response = await fetch('todos/deleteTodo', {
+//         const response = await fetch('favorites/deleteFavorite', {
 //             method: 'delete',
 //             headers: {'Content-type': 'application/json'},
 //             body: JSON.stringify({
-//                 'todoIdFromJSFile': todoId
+//                 'outfitIdFromJSFile': outfitId
 //             })
 //         })
 //         const data = await response.json()

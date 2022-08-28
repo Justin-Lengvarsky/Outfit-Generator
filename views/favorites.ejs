@@ -18,31 +18,54 @@
     </header>
     <main>
 
-        <ul>
+        <ul id="allFavorites">
             <% favorites.forEach( el => { %>
-                    <li class='todoItem' data-id='<%=el._id%>'>
-                        <img class="generatorBoxClass clothingImage" data-article-type="jackets" data-article-color="baseJacket" data-default-value="baseJacket" id="pickJacket" title="Jacket" src='<%=el.jacket%>'>
-                        <img class="generatorBoxClass clothingImage" data-article-type="shirts" data-article-color="baseShirt" data-default-value="baseShirt" id="pickShirt" title="Shirt" src='<%=el.shirt%>'>
-                        <img class="generatorBoxClass clothingImage" data-article-type="pants" data-article-color="basePants" data-default-value="basePants" id="pickPants" title="Pants" src='<%=el.pants%>'>
-                        <img class="generatorBoxClass clothingImage" data-article-type="shoes" data-article-color="baseShoes" data-default-value="baseShoes" id="pickShoes" title="Shoes" src='<%=el.shoes%>'>
+                    <li class='favoritesItem' data-id='<%=el._id%>'>
+                        <img class="favoritesBoxClass" data-article-type="jackets" data-article-color="baseJacket" data-default-value="baseJacket" id="pickJacket" title="Jacket" src='<%=el.jacket%>'>
+                        <img class="favoritesBoxClass" data-article-type="shirts" data-article-color="baseShirt" data-default-value="baseShirt" id="pickShirt" title="Shirt" src='<%=el.shirt%>'>
+                        <img class="favoritesBoxClass" data-article-type="pants" data-article-color="basePants" data-default-value="basePants" id="pickPants" title="Pants" src='<%=el.pants%>'>
+                        <img class="favoritesBoxClass" data-article-type="shoes" data-article-color="baseShoes" data-default-value="baseShoes" id="pickShoes" title="Shoes" src='<%=el.shoes%>'>
+                        <span class='del'> Delete </span>
                     </li>
             <% }) %>    
             </ul>
 
 
-
-
-
-        <section id="generatorBox" class="books">
-            <img class="generatorBoxClass clothingImage" data-article-type="jackets" data-article-color="baseJacket" data-default-value="baseJacket" id="pickJacket" title="Jacket" src="/images/jackets/baseJacket.png">
-            <img class="generatorBoxClass clothingImage" data-article-type="shirts" data-article-color="baseShirt" data-default-value="baseShirt" id="pickShirt" title="Shirt" src="/images/shirts/baseShirt.png">
-            <img class="generatorBoxClass clothingImage" data-article-type="pants" data-article-color="basePants" data-default-value="basePants" id="pickPants" title="Pants" src="/images/pants/basePants.png">
-            <img class="generatorBoxClass clothingImage" data-article-type="shoes" data-article-color="baseShoes" data-default-value="baseShoes" id="pickShoes" title="Shoes" src="/images/shoes/baseShoes.png">
-        </section>
     </main>
     <footer>
         <p>Copyright 2022</p>
     </footer>
     <!-- <script src="/js/main.js"></script> -->
+    <script>
+        const deleteBtn = document.querySelectorAll('.del')
+
+        Array.from(deleteBtn).forEach((el)=>{
+            el.addEventListener('click', deleteFavorite)
+        })
+
+        async function deleteFavorite(){
+            const outfitId = this.parentNode.dataset.id
+            console.log(outfitId)
+            try{
+                const response = await fetch('favorites/deleteFavorite', {
+                    method: 'delete',
+                    headers: {'Content-type': 'application/json'},
+                    body: JSON.stringify({
+                        'outfitIdFromJSFile': outfitId
+                    })
+                })
+                const data = await response.json()
+                console.log(data)
+                location.reload()
+            }catch(err){
+                console.log(err)
+            }
+        }
+    </script>
+
+
+
+
+    
 </body>
 </html>
