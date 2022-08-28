@@ -20,7 +20,7 @@ module.exports = {
     },
     postOutfits: async (req, res)=>{
         try{
-            await Favorite.create({jacket: req.body.jacketChoice, shirt: req.body.shirtChoice, pants: req.body.pantsChoice, shoes: req.body.shoesChoice})
+            await Favorite.create({jacket: req.body.jacketChoice, shirt: req.body.shirtChoice, pants: req.body.pantsChoice, shoes: req.body.shoesChoice, userId: req.user.id})
             console.log('Outfit has been saved!')
             res.redirect('/outfit')
         }catch(err){

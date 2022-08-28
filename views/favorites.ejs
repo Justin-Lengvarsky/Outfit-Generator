@@ -17,42 +17,28 @@
         </nav>
     </header>
     <main>
-        <ul id="bookList" class="books">
-            <li class="bookListClass">
-                <h3>This is a clothing</h3>
-                <p>This is more clothing</p>
-            </li>
-            <li class="bookListClass">
-                <h3>This is a clothing</h3>
-                <p>This is more clothing</p>
-            </li>
-                <li class="bookListClass">
-                <h3>This is a clothing</h3>
-                <p>This is more clothing</p>
-            </li>
-                <li class="bookListClass">
-                <h3>This is a clothing</h3>
-                <p>This is more clothing</p>
-            </li>
-        </ul>
-        <ul id="LowerBookList" class="books">
-            <li class="bookListClass">
-                <h3>This is a clothing</h3>
-                <p>This is more clothing</p>
-            </li>
-            <li class="bookListClass">
-                <h3>This is a clothing</h3>
-                <p>This is more clothing</p>
-            </li>
-                <li class="bookListClass">
-                <h3>This is a clothing</h3>
-                <p>This is more clothing</p>
-            </li>
-                <li class="bookListClass">
-                <h3>This is a clothing</h3>
-                <p>This is more clothing</p>
-            </li>
-        </ul>
+
+        <ul>
+            <% favorites.forEach( el => { %>
+                    <li class='todoItem' data-id='<%=el._id%>'>
+                        <img class="generatorBoxClass clothingImage" data-article-type="jackets" data-article-color="baseJacket" data-default-value="baseJacket" id="pickJacket" title="Jacket" src='<%=el.jacket%>'>
+                        <img class="generatorBoxClass clothingImage" data-article-type="shirts" data-article-color="baseShirt" data-default-value="baseShirt" id="pickShirt" title="Shirt" src='<%=el.shirt%>'>
+                        <img class="generatorBoxClass clothingImage" data-article-type="pants" data-article-color="basePants" data-default-value="basePants" id="pickPants" title="Pants" src='<%=el.pants%>'>
+                        <img class="generatorBoxClass clothingImage" data-article-type="shoes" data-article-color="baseShoes" data-default-value="baseShoes" id="pickShoes" title="Shoes" src='<%=el.shoes%>'>
+                    </li>
+            <% }) %>    
+            </ul>
+
+
+
+
+
+        <section id="generatorBox" class="books">
+            <img class="generatorBoxClass clothingImage" data-article-type="jackets" data-article-color="baseJacket" data-default-value="baseJacket" id="pickJacket" title="Jacket" src="/images/jackets/baseJacket.png">
+            <img class="generatorBoxClass clothingImage" data-article-type="shirts" data-article-color="baseShirt" data-default-value="baseShirt" id="pickShirt" title="Shirt" src="/images/shirts/baseShirt.png">
+            <img class="generatorBoxClass clothingImage" data-article-type="pants" data-article-color="basePants" data-default-value="basePants" id="pickPants" title="Pants" src="/images/pants/basePants.png">
+            <img class="generatorBoxClass clothingImage" data-article-type="shoes" data-article-color="baseShoes" data-default-value="baseShoes" id="pickShoes" title="Shoes" src="/images/shoes/baseShoes.png">
+        </section>
     </main>
     <footer>
         <p>Copyright 2022</p>

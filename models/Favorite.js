@@ -16,6 +16,10 @@ const FavoritesSchema = new mongoose.Schema({
   shoes: {
     type: String,
     required: true,
+  },
+  userId: {
+    type: String,
+    required: true
   }
 })
 
