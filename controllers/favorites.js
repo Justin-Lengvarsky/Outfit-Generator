@@ -15,6 +15,9 @@ module.exports = {
     },
     editFavorite: async (req, res)=>{
         console.log(req.body.outfitIdFromJSFile)
+        console.log(req.body)
+        console.log(req.body.shirtChoice)
+
         try{
             await Favorite.findOneAndUpdate({_id:req.body.outfitIdFromJSFile}, {
                 jacket: req.body.jacketChoice,
@@ -22,6 +25,8 @@ module.exports = {
                 pants: req.body.pantsChoice,
                 shoes: req.body.shoesChoice
             })
+                console.log('Marked Complete')
+                res.json('Marked Complete')
         }catch(err){
             console.log(err)
         }

@@ -19,18 +19,24 @@ saveButton.addEventListener("click", plz)
 
 async function plz(){
     const outfitId = space.dataset.id
-
     jacketInput.value = pickJacket.dataset.articleColor;
     shirtInput.value = pickShirt.dataset.articleColor;
     pantsInput.value = pickPants.dataset.articleColor;
     shoesInput.value = pickShoes.dataset.articleColor;
 
+    
+
     try{
-        const response = await fetch('favorites/editFavorite', {
+        const response = await fetch('favorite/editFavorite', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
                 'outfitIdFromJSFile': outfitId
+                
+                // 'jacketColor': pickJacket.dataset.articleColor,
+                // 'shirtColor': pickShirt.dataset.articleColor,
+                // 'pantsColor': pickPants.dataset.articleColor,
+                // 'shoesColor': pickShoes.dataset.articleColor
             })
         })
         const data = await response.json()
