@@ -1,3 +1,4 @@
+const Article = require('../models/Article')
 const Favorite = require('../models/Favorite')
 
 module.exports = {
@@ -5,8 +6,23 @@ module.exports = {
         console.log(req.user)
         try{
             const allFavorites = await Favorite.find({userId: req.user.id})
+            const allArticles = await Article.find({name: "clothingDictionary"})
 
-            res.render('favorites.ejs', {favorites: allFavorites})
+            res.render('favorites.ejs', {favorites: allFavorites, dictionary: allArticles})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    editFavorite: async (req, res)=>{
+        console.log(req.body.outfitIdFromJSFile)
+        try{
+            await Favorite.findOneAndUpdate({_id:req.body.outfitIdFromJSFile}, {
+                jacket: req.body.jacketChoice,
+                shirt: req.body.shirtChoice,
+                pants: req.body.pantsChoice,
+                shoes: req.body.shoesChoice
+            })
+           
         }catch(err){
             console.log(err)
         }
@@ -22,3 +38,4 @@ module.exports = {
         }
     }
 }    
+

@@ -1,27 +1,51 @@
 console.log(data)
 
-const buttonChoices = document.querySelector("#generatorBox")
+const buttonChoices = document.querySelector("#space")
 const pickJacket = document.querySelector("#pickJacket")
 const pickShirt = document.querySelector("#pickShirt")
 const pickPants = document.querySelector("#pickPants")
 const pickShoes = document.querySelector("#pickShoes")
 const clearButton = document.querySelector("#clearButton")
 const saveButton = document.querySelector("#saveButton")
-const clothingOptions = document.querySelector("#clothingOptions")
+const editClothingOptions = document.querySelector("#editClothingOptions")
 
 const jacketInput = document.querySelector("#jacketInput")
 const shirtInput = document.querySelector("#shirtInput")
 const pantsInput = document.querySelector("#pantsInput")
 const shoesInput = document.querySelector("#shoesInput")
 
+
 saveButton.addEventListener("click", plz)
 
-function plz () {
+async function plz(){
+    const todoId = this.parentNode.dataset.id
+
     jacketInput.value = pickJacket.dataset.articleColor;
     shirtInput.value = pickShirt.dataset.articleColor;
     pantsInput.value = pickPants.dataset.articleColor;
     shoesInput.value = pickShoes.dataset.articleColor;
+
+    try{
+        const response = await fetch('todos/markComplete', {
+            method: 'put',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+                'todoIdFromJSFile': todoId
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+    }catch(err){
+        console.log(err)
+    }
 }
+
+
+
+
+
+
 
 
 pickShirt.addEventListener("click", showChoices)
@@ -37,7 +61,7 @@ function showChoices () {
             parent.removeChild(parent.firstChild);
         }
     }
-    clearAllChildNodes(clothingOptions)
+    clearAllChildNodes(editClothingOptions)
 
     let thisImage = this
     let thisArticleType = this.dataset.articleType
@@ -50,7 +74,7 @@ function showChoices () {
     for (let i=0; i<data[thisArticleType][0].colors.length; i++) {
         var image = document.createElement("img")
         image.src = `/images/${thisArticleType}/${data[thisArticleType][0].colors[i]}.png`
-        clothingOptions.appendChild(image)
+        editClothingOptions.appendChild(image)
         image.dataset.articleColor = data[thisArticleType][0].colors[i]
         image.classList.add("articleListBoxClass");
 
@@ -85,12 +109,12 @@ function showChoices () {
     function selectArticle() {
 
         console.log(this.dataset.articleColor)
-        console.log(buttonChoices.childNodes[1].dataset.articleColor)
+        console.log(buttonChoices.childNodes[4].dataset.articleColor)
         // console.log(thisArticleType)
         // console.log(thisArticleType)
 
 
-        for (let i=1; i<=7; i+=2) {
+        for (let i=1; i<=4; i++) {
             if (thisArticleType === buttonChoices.childNodes[i].dataset.articleType) {
                 if (this.dataset.articleColor === buttonChoices.childNodes[i].dataset.articleColor) {
                     buttonChoices.childNodes[i].dataset.articleColor = buttonChoices.childNodes[i].dataset.defaultValue
@@ -110,7 +134,7 @@ function showChoices () {
                         parent.removeChild(parent.firstChild);
                     }
                 }
-                clearAllChildNodes(clothingOptions)
+                clearAllChildNodes(editClothingOptions)
                 break;
             }
         }
@@ -139,10 +163,8 @@ function clearOptions () {
             parent.removeChild(parent.firstChild);
         }
     }
-    clearAllChildNodes(clothingOptions)
+    clearAllChildNodes(editClothingOptions)
 }
-
-
 
 
 

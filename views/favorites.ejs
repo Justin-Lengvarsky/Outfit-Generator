@@ -18,19 +18,39 @@
     </header>
     <main>
 
+        <section id="space">
+
+        </section>
+
+        <div id="editOptionButtons">
+            <form action="/outfit/postOutfit" method='POST'>
+                <input id="jacketInput" type="text" name="jacketChoice">
+                <input id="shirtInput" type="text" name="shirtChoice">
+                <input id="pantsInput" type="text" name="pantsChoice">
+                <input id="shoesInput" type="text" name="shoesChoice">
+
+                <input id="saveButton" type="submit">
+            </form>
+            <button id="clearButton">Delete</button>
+        </div>
+
+        <div id="editClothingOptions">
+
+        </div>
+
+
         <ul id="allFavorites">
             <% favorites.forEach( el => { %>
                     <li class='favoritesItem' data-id='<%=el._id%>'>
-                        <img class="favoritesBoxClass" data-article-type="jackets" data-article-color="baseJacket" data-default-value="baseJacket" id="pickJacket" title="Jacket" src='<%=el.jacket%>'>
-                        <img class="favoritesBoxClass" data-article-type="shirts" data-article-color="baseShirt" data-default-value="baseShirt" id="pickShirt" title="Shirt" src='<%=el.shirt%>'>
-                        <img class="favoritesBoxClass" data-article-type="pants" data-article-color="basePants" data-default-value="basePants" id="pickPants" title="Pants" src='<%=el.pants%>'>
-                        <img class="favoritesBoxClass" data-article-type="shoes" data-article-color="baseShoes" data-default-value="baseShoes" id="pickShoes" title="Shoes" src='<%=el.shoes%>'>
+                        <img class="favoritesBoxClass" data-article-type="jackets" data-article-color='<%=el.jacket%>' data-default-value="baseJacket" id="pickJacket" title="Jacket" src="<%= `http://localhost:7000/images/jackets/${el.jacket}.png` %>">
+                        <img class="favoritesBoxClass" data-article-type="shirts" data-article-color='<%=el.shirt%>' data-default-value="baseShirt" id="pickShirt" title="Shirt" src="<%= `http://localhost:7000/images/shirts/${el.shirt}.png` %>"> 
+                        <img class="favoritesBoxClass" data-article-type="pants" data-article-color='<%=el.pants%>' data-default-value="basePants" id="pickPants" title="Pants" src="<%= `http://localhost:7000/images/pants/${el.pants}.png` %>">
+                        <img class="favoritesBoxClass" data-article-type="shoes" data-article-color='<%=el.shoes%>' data-default-value="baseShoes" id="pickShoes" title="Shoes" src="<%= `http://localhost:7000/images/shoes/${el.shoes}.png` %>"> 
                         <span class='del'> Delete </span>
                         <span class='edit'> Edit </span>
-
                     </li>
             <% }) %>    
-            </ul>
+        </ul>
 
 
     </main>
@@ -39,11 +59,60 @@
     </footer>
     <!-- <script src="/js/main.js"></script> -->
     <script>
+
+        let dictionary = '<%-JSON.stringify(dictionary)%>';
+        let data = JSON.parse(dictionary)[0].articles;
+
+        const editBtn = document.querySelectorAll('.edit')
+
+        Array.from(editBtn).forEach((el)=>{
+            el.addEventListener('click', editFavorite)
+        })
+
+
+        function editFavorite(){
+
+            const thisOutfit = this.parentNode;
+            const space = document.getElementById("space")
+            space.style.display = "flex"
+
+            for (let i=1; i<=4; i++) {
+                space.appendChild(thisOutfit.childNodes[i])
+            }
+
+            document.querySelector("#allFavorites").style.display = "none";
+
+
+            const clothingArticle = document.querySelectorAll('.favoritesBoxClass')
+
+            Array.from(clothingArticle).forEach((el)=>{
+                el.classList.add('generatorBoxClass');
+                el.classList.remove('favoritesBoxClass');
+        })
+
+
+        const editOptionButtons = document.getElementById("editOptionButtons")
+        editOptionButtons.style.display = "flex"
+
+        const editClothingOptions = document.querySelector("#editClothingOptions")
+        editClothingOptions.style.display = "flex"
+
+    }
+
+
+
+
+
+
+
+
+
         const deleteBtn = document.querySelectorAll('.del')
 
         Array.from(deleteBtn).forEach((el)=>{
             el.addEventListener('click', deleteFavorite)
         })
+        
 
         async function deleteFavorite(){
             const outfitId = this.parentNode.dataset.id
@@ -64,29 +133,9 @@
             }
         }
 
-        async function markComplete(){
-        const todoId = this.parentNode.dataset.id
-        try{
-            const response = await fetch('todos/markComplete', {
-                method: 'put',
-                headers: {'Content-type': 'application/json'},
-                body: JSON.stringify({
-                    'todoIdFromJSFile': todoId
-                })
-            })
-            const data = await response.json()
-            console.log(data)
-            location.reload()
-        }catch(err){
-            console.log(err)
-        }
-    }
-
-
-
-
     </script>
 
+<script src="/js/favorites.js"></script>
 
 
 

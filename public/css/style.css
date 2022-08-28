@@ -155,6 +155,17 @@ footer {
 /* GENERATOR PAGE
 ================================================== */
 
+#space {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 15rem;
+    flex-wrap: wrap;
+    line-height: 2rem;
+    margin-top: 3rem;
+}
+
+
 #generatorBox {
     display: flex;
     flex-direction: row;
@@ -230,8 +241,20 @@ footer {
     line-height: 2rem;
     width: 4rem;
     height: 2rem;
-    margin: 0.5rem auto;
+    margin: 0.5rem 1rem;
 }
+
+.edit {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 2rem;
+    width: 4rem;
+    height: 2rem;
+    margin: 0.5rem 1rem;
+}
+
 
 #optionButtons {
     display: flex;
@@ -247,8 +270,33 @@ footer {
     border-radius: 10%;
 }
 
+#editOptionButtons {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    margin: 3rem auto;
+}
+
+#editOptionButtons button {
+    margin: 0 2rem;
+    height: 2rem;
+    width: 4rem;
+    border-radius: 10%;
+}
+
 #clothingOptions {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    flex-wrap: wrap;
+    line-height: 2rem;
+    margin: 3rem auto;
+    min-height: 10rem
+}
+
+#editClothingOptions {
+    display: none;
     flex-direction: row;
     justify-content: center;
     padding: 0;
