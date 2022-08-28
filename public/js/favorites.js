@@ -18,7 +18,7 @@ const shoesInput = document.querySelector("#shoesInput")
 saveButton.addEventListener("click", plz)
 
 async function plz(){
-    const todoId = this.parentNode.dataset.id
+    const outfitId = space.dataset.id
 
     jacketInput.value = pickJacket.dataset.articleColor;
     shirtInput.value = pickShirt.dataset.articleColor;
@@ -26,11 +26,11 @@ async function plz(){
     shoesInput.value = pickShoes.dataset.articleColor;
 
     try{
-        const response = await fetch('todos/markComplete', {
+        const response = await fetch('favorites/editFavorite', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'outfitIdFromJSFile': outfitId
             })
         })
         const data = await response.json()

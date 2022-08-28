@@ -22,7 +22,6 @@ module.exports = {
                 pants: req.body.pantsChoice,
                 shoes: req.body.shoesChoice
             })
-           
         }catch(err){
             console.log(err)
         }
