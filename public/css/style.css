@@ -222,6 +222,17 @@ footer {
     text-align: center;
 }
 
+.del {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 2rem;
+    width: 4rem;
+    height: 2rem;
+    margin: 0.5rem auto;
+}
+
 #optionButtons {
     display: flex;
     flex-direction: row;
