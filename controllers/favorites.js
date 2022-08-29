@@ -20,13 +20,12 @@ module.exports = {
 
         try{
             await Favorite.findOneAndUpdate({_id:req.body.outfitIdFromJSFile}, {
-                jacket: req.body.jacketChoice,
-                shirt: req.body.shirtChoice,
-                pants: req.body.pantsChoice,
-                shoes: req.body.shoesChoice
+                jacket: "req.body.jacketChoice"
+                // shirt: req.body.shirtChoice,
+                // pants: req.body.pantsChoice,
+                // shoes: req.body.shoesChoice
             })
-                console.log('Marked Complete')
-                res.json('Marked Complete')
+       
         }catch(err){
             console.log(err)
         }
