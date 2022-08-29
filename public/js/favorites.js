@@ -1,5 +1,4 @@
 console.log(data)
-
 const buttonChoices = document.querySelector("#space")
 const pickJacket = document.querySelector("#pickJacket")
 const pickShirt = document.querySelector("#pickShirt")
@@ -19,23 +18,23 @@ saveButton.addEventListener("click", plz)
 
 async function plz(){
     const outfitId = buttonChoices.dataset.id
+
+    
     jacketInput.value = pickJacket.dataset.articleColor;
     shirtInput.value = pickShirt.dataset.articleColor;
     pantsInput.value = pickPants.dataset.articleColor;
     shoesInput.value = pickShoes.dataset.articleColor;
 
     try{
-        const response = await fetch('favorite/editFavorite', {
+        const response = await fetch('favorites/editFavorite', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                // 'outfitIdFromJSFile': outfitId
-                'outfitIdFromJSFile': "63096d1baa9bda239cbe26ae"
-                
-                // 'jacketColor': pickJacket.dataset.articleColor,
-                // 'shirtColor': pickShirt.dataset.articleColor,
-                // 'pantsColor': pickPants.dataset.articleColor,
-                // 'shoesColor': pickShoes.dataset.articleColor
+                'outfitIdFromJSFile': outfitId,                
+                'jacketChoice': pickJacket.dataset.articleColor,
+                'shirtChoice': pickShirt.dataset.articleColor,
+                'pantsChoice': pickPants.dataset.articleColor,
+                'shoesChoice': pickShoes.dataset.articleColor
             })
         })
         const data = await response.json()
