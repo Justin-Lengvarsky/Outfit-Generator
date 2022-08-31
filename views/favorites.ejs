@@ -61,81 +61,8 @@
     <!-- <script src="/js/main.js"></script> -->
     <script>
 
-        let dictionary = '<%-JSON.stringify(dictionary)%>';
-        let data = JSON.parse(dictionary)[0].articles;
-
-        const editBtn = document.querySelectorAll('.edit')
-
-        Array.from(editBtn).forEach((el)=>{
-            el.addEventListener('click', editFavorite)
-        })
-
-
-        function editFavorite(){
-
-            const thisOutfit = this.parentNode;
-            const thisId = this.parentNode.dataset.id
-            console.log(thisId)
-            const space = document.getElementById("space")
-            space.dataset.id = thisId
-            space.style.display = "flex"
-
-            for (let i=1; i<=4; i++) {
-                space.appendChild(thisOutfit.childNodes[i])
-            }
-
-            document.querySelector("#allFavorites").style.display = "none";
-
-
-            const clothingArticle = document.querySelectorAll('.favoritesBoxClass')
-
-            Array.from(clothingArticle).forEach((el)=>{
-                el.classList.add('generatorBoxClass');
-                el.classList.remove('favoritesBoxClass');
-        })
-
-
-        const editOptionButtons = document.getElementById("editOptionButtons")
-        editOptionButtons.style.display = "flex"
-
-        const editClothingOptions = document.querySelector("#editClothingOptions")
-        editClothingOptions.style.display = "flex"
-
-    }
-
-
-
-
-
-
-
-
-
-        const deleteBtn = document.querySelectorAll('.del')
-
-        Array.from(deleteBtn).forEach((el)=>{
-            el.addEventListener('click', deleteFavorite)
-        })
-        
-
-        async function deleteFavorite(){
-            const outfitId = this.parentNode.dataset.id
-            console.log(outfitId)
-            try{
-                const response = await fetch('favorites/deleteFavorite', {
-                    method: 'delete',
-                    headers: {'Content-type': 'application/json'},
-                    body: JSON.stringify({
-                        'outfitIdFromJSFile': outfitId
-                    })
-                })
-                const data = await response.json()
-                console.log(data)
-                location.reload()
-            }catch(err){
-                console.log(err)
-            }
-        }
+    let dictionary = '<%-JSON.stringify(dictionary)%>';
+    let data = JSON.parse(dictionary)[0].articles;
 
     </script>
 

@@ -1,3 +1,84 @@
+
+   const editBtn = document.querySelectorAll('.edit')
+
+   Array.from(editBtn).forEach((el)=>{
+       el.addEventListener('click', editFavorite)
+   })
+
+
+   function editFavorite(){
+
+       const thisOutfit = this.parentNode;
+       const thisId = this.parentNode.dataset.id
+       console.log(thisId)
+       const space = document.getElementById("space")
+       space.dataset.id = thisId
+       space.style.display = "flex"
+
+       for (let i=1; i<=4; i++) {
+           space.appendChild(thisOutfit.childNodes[i])
+       }
+
+       document.querySelector("#allFavorites").style.display = "none";
+
+
+       const clothingArticle = document.querySelectorAll('.favoritesBoxClass')
+
+       Array.from(clothingArticle).forEach((el)=>{
+           el.classList.add('generatorBoxClass');
+           el.classList.remove('favoritesBoxClass');
+   })
+
+
+   const editOptionButtons = document.getElementById("editOptionButtons")
+   editOptionButtons.style.display = "flex"
+
+   const editClothingOptions = document.querySelector("#editClothingOptions")
+   editClothingOptions.style.display = "flex"
+
+}
+
+   const deleteBtn = document.querySelectorAll('.del')
+
+   Array.from(deleteBtn).forEach((el)=>{
+       el.addEventListener('click', deleteFavorite)
+   })
+   
+
+   async function deleteFavorite(){
+       const outfitId = this.parentNode.dataset.id
+       console.log(outfitId)
+       try{
+           const response = await fetch('favorites/deleteFavorite', {
+               method: 'delete',
+               headers: {'Content-type': 'application/json'},
+               body: JSON.stringify({
+                   'outfitIdFromJSFile': outfitId
+               })
+           })
+           const data = await response.json()
+           console.log(data)
+           location.reload()
+       }catch(err){
+           console.log(err)
+       }
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 console.log(data)
 const buttonChoices = document.querySelector("#space")
 const pickJacket = document.querySelector("#pickJacket")
@@ -15,40 +96,6 @@ const shoesInput = document.querySelector("#shoesInput")
 
 
 saveButton.addEventListener("click", plz)
-
-async function plz(){
-    const outfitId = buttonChoices.dataset.id
-
-    
-    jacketInput.value = pickJacket.dataset.articleColor;
-    shirtInput.value = pickShirt.dataset.articleColor;
-    pantsInput.value = pickPants.dataset.articleColor;
-    shoesInput.value = pickShoes.dataset.articleColor;
-
-    try{
-        const response = await fetch('favorites/editFavorite', {
-            method: 'put',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'outfitIdFromJSFile': outfitId,                
-                'jacketChoice': pickJacket.dataset.articleColor,
-                'shirtChoice': pickShirt.dataset.articleColor,
-                'pantsChoice': pickPants.dataset.articleColor,
-                'shoesChoice': pickShoes.dataset.articleColor
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
-        console.log(err)
-    }
-}
-
-
-
-
-
 
 
 pickShirt.addEventListener("click", showChoices)
@@ -69,6 +116,11 @@ function showChoices () {
     let thisImage = this
     let thisArticleType = this.dataset.articleType
     let thisArticleColor = this.dataset.articleColor
+
+    console.log(thisImage)
+    console.log(thisArticleType)
+    console.log(thisArticleColor)
+
 
     // console.log(this)
 
@@ -141,6 +193,35 @@ function showChoices () {
                 break;
             }
         }
+    }
+}
+
+async function plz(){
+    const outfitId = buttonChoices.dataset.id
+
+    
+    jacketInput.value = pickJacket.dataset.articleColor;
+    shirtInput.value = pickShirt.dataset.articleColor;
+    pantsInput.value = pickPants.dataset.articleColor;
+    shoesInput.value = pickShoes.dataset.articleColor;
+
+    try{
+        const response = await fetch('favorites/editFavorite', {
+            method: 'put',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+                'outfitIdFromJSFile': outfitId,                
+                'jacketChoice': pickJacket.dataset.articleColor,
+                'shirtChoice': pickShirt.dataset.articleColor,
+                'pantsChoice': pickPants.dataset.articleColor,
+                'shoesChoice': pickShoes.dataset.articleColor
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+    }catch(err){
+        console.log(err)
     }
 }
 
