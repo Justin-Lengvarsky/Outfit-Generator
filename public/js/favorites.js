@@ -1,4 +1,8 @@
+    const buttonChoices = document.querySelector("#space")
 
+   
+   
+   
    const editBtn = document.querySelectorAll('.edit')
 
    Array.from(editBtn).forEach((el)=>{
@@ -36,75 +40,21 @@
    const editClothingOptions = document.querySelector("#editClothingOptions")
    editClothingOptions.style.display = "flex"
 
-}
 
-   const deleteBtn = document.querySelectorAll('.del')
 
-   Array.from(deleteBtn).forEach((el)=>{
-       el.addEventListener('click', deleteFavorite)
-   })
-   
+   const pickJacket = space.childNodes[1]
+   const pickShirt = space.childNodes[2]
+   const pickPants = space.childNodes[3]
+   const pickShoes = space.childNodes[4]
 
-   async function deleteFavorite(){
-       const outfitId = this.parentNode.dataset.id
-       console.log(outfitId)
-       try{
-           const response = await fetch('favorites/deleteFavorite', {
-               method: 'delete',
-               headers: {'Content-type': 'application/json'},
-               body: JSON.stringify({
-                   'outfitIdFromJSFile': outfitId
-               })
-           })
-           const data = await response.json()
-           console.log(data)
-           location.reload()
-       }catch(err){
-           console.log(err)
-       }
-   }
+   pickJacket.addEventListener("click", showChoices)
+   pickShirt.addEventListener("click", showChoices)
+   pickPants.addEventListener("click", showChoices)
+   pickShoes.addEventListener("click", showChoices)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-console.log(data)
-const buttonChoices = document.querySelector("#space")
-const pickJacket = document.querySelector("#pickJacket")
-const pickShirt = document.querySelector("#pickShirt")
-const pickPants = document.querySelector("#pickPants")
-const pickShoes = document.querySelector("#pickShoes")
-const clearButton = document.querySelector("#clearButton")
-const saveButton = document.querySelector("#saveButton")
-const editClothingOptions = document.querySelector("#editClothingOptions")
-
-const jacketInput = document.querySelector("#jacketInput")
-const shirtInput = document.querySelector("#shirtInput")
-const pantsInput = document.querySelector("#pantsInput")
-const shoesInput = document.querySelector("#shoesInput")
-
-
-saveButton.addEventListener("click", plz)
-
-
-pickShirt.addEventListener("click", showChoices)
-pickPants.addEventListener("click", showChoices)
-pickShoes.addEventListener("click", showChoices)
-pickJacket.addEventListener("click", showChoices)
-clearButton.addEventListener("click", clearOptions)
-
-function showChoices () {
+   function showChoices () {
 
     function clearAllChildNodes(parent) {
         while (parent.firstChild) {
@@ -196,6 +146,23 @@ function showChoices () {
     }
 }
 
+
+
+// const clearButton = document.querySelector("#clearButton")
+const saveButton = document.querySelector("#saveButton")
+// const editClothingOptions = document.querySelector("#editClothingOptions")
+
+const jacketInput = document.querySelector("#jacketInput")
+const shirtInput = document.querySelector("#shirtInput")
+const pantsInput = document.querySelector("#pantsInput")
+const shoesInput = document.querySelector("#shoesInput")
+
+
+saveButton.addEventListener("click", plz)
+// clearButton.addEventListener("click", clearOptions)
+
+
+
 async function plz(){
     const outfitId = buttonChoices.dataset.id
 
@@ -225,30 +192,78 @@ async function plz(){
     }
 }
 
-function clearOptions () {
+   
 
-    pickJacket.dataset.articleColor = "baseJacket"
-    pickShirt.dataset.articleColor = "baseShirt"
-    pickPants.dataset.articleColor = "basePants"
-    pickShoes.dataset.articleColor = "baseShoes"
-
-    pickJacket.src = "/images/jackets/baseJacket.png"
-    pickShirt.src = "/images/shirts/baseShirt.png"
-    pickPants.src = "/images/pants/basePants.png"
-    pickShoes.src = "/images/shoes/baseShoes.png"
-
-    pickJacket.style.opacity = "0.7"
-    pickShirt.style.opacity = "0.7"
-    pickPants.style.opacity = "0.7"
-    pickShoes.style.opacity = "0.7"
-
-    function clearAllChildNodes(parent) {
-        while (parent.firstChild) {
-            parent.removeChild(parent.firstChild);
-        }
-    }
-    clearAllChildNodes(editClothingOptions)
 }
+
+   const deleteBtn = document.querySelectorAll('.del')
+
+   Array.from(deleteBtn).forEach((el)=>{
+       el.addEventListener('click', deleteFavorite)
+   })
+   
+
+   async function deleteFavorite(){
+       const outfitId = this.parentNode.dataset.id
+       console.log(outfitId)
+       try{
+           const response = await fetch('favorites/deleteFavorite', {
+               method: 'delete',
+               headers: {'Content-type': 'application/json'},
+               body: JSON.stringify({
+                   'outfitIdFromJSFile': outfitId
+               })
+           })
+           const data = await response.json()
+           console.log(data)
+           location.reload()
+       }catch(err){
+           console.log(err)
+       }
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function clearOptions () {
+
+//     pickJacket.dataset.articleColor = "baseJacket"
+//     pickShirt.dataset.articleColor = "baseShirt"
+//     pickPants.dataset.articleColor = "basePants"
+//     pickShoes.dataset.articleColor = "baseShoes"
+
+//     pickJacket.src = "/images/jackets/baseJacket.png"
+//     pickShirt.src = "/images/shirts/baseShirt.png"
+//     pickPants.src = "/images/pants/basePants.png"
+//     pickShoes.src = "/images/shoes/baseShoes.png"
+
+//     pickJacket.style.opacity = "0.7"
+//     pickShirt.style.opacity = "0.7"
+//     pickPants.style.opacity = "0.7"
+//     pickShoes.style.opacity = "0.7"
+
+//     function clearAllChildNodes(parent) {
+//         while (parent.firstChild) {
+//             parent.removeChild(parent.firstChild);
+//         }
+//     }
+//     clearAllChildNodes(editClothingOptions)
+// }
 
 
 

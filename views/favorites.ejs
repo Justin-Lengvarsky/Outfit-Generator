@@ -43,10 +43,10 @@
         <ul id="allFavorites">
             <% favorites.forEach( el => { %>
                     <li class='favoritesItem' data-id='<%=el._id%>'>
-                        <img class="favoritesBoxClass" data-article-type="jackets" data-article-color='<%=el.jacket%>' data-default-value="baseJacket" id="pickJacket" title="Jacket" src="<%= `http://localhost:7000/images/jackets/${el.jacket}.png` %>">
-                        <img class="favoritesBoxClass" data-article-type="shirts" data-article-color='<%=el.shirt%>' data-default-value="baseShirt" id="pickShirt" title="Shirt" src="<%= `http://localhost:7000/images/shirts/${el.shirt}.png` %>"> 
-                        <img class="favoritesBoxClass" data-article-type="pants" data-article-color='<%=el.pants%>' data-default-value="basePants" id="pickPants" title="Pants" src="<%= `http://localhost:7000/images/pants/${el.pants}.png` %>">
-                        <img class="favoritesBoxClass" data-article-type="shoes" data-article-color='<%=el.shoes%>' data-default-value="baseShoes" id="pickShoes" title="Shoes" src="<%= `http://localhost:7000/images/shoes/${el.shoes}.png` %>"> 
+                        <img class="favoritesBoxClass" data-article-type="jackets" data-article-color='<%=el.jacket%>' data-default-value="baseJacket" class="pickJacket" title="Jacket" src="<%= `http://localhost:7000/images/jackets/${el.jacket}.png` %>">
+                        <img class="favoritesBoxClass" data-article-type="shirts" data-article-color='<%=el.shirt%>' data-default-value="baseShirt" class="pickShirt" title="Shirt" src="<%= `http://localhost:7000/images/shirts/${el.shirt}.png` %>"> 
+                        <img class="favoritesBoxClass" data-article-type="pants" data-article-color='<%=el.pants%>' data-default-value="basePants" class="pickPants" title="Pants" src="<%= `http://localhost:7000/images/pants/${el.pants}.png` %>">
+                        <img class="favoritesBoxClass" data-article-type="shoes" data-article-color='<%=el.shoes%>' data-default-value="baseShoes" class="pickShoes" title="Shoes" src="<%= `http://localhost:7000/images/shoes/${el.shoes}.png` %>"> 
                         <span class='del'> Delete </span>
                         <span class='edit'> Edit </span>
                     </li>
