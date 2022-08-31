@@ -22,15 +22,13 @@
 
         </section>
 
-        <div id="editOptionButtons">
+        <div id="editOptionInputs">
             <form>
-                <!-- <form action="/outfit/postOutfit" method='POST' -->
-                <input id="jacketInput" type="text" name="jacketChoice">
-                <input id="shirtInput" type="text" name="shirtChoice">
-                <input id="pantsInput" type="text" name="pantsChoice">
-                <input id="shoesInput" type="text" name="shoesChoice">
-
-                <input id="saveButton" type="submit">
+                <input id="jacketInput" class="input" type="text" name="jacketChoice">
+                <input id="shirtInput" class="input" type="text" name="shirtChoice">
+                <input id="pantsInput" class="input" type="text" name="pantsChoice">
+                <input id="shoesInput" class="input" type="text" name="shoesChoice">
+                <button id="saveButton" type="submit">Edit</button>
             </form>
             <button id="clearButton">Delete</button>
         </div>
@@ -39,37 +37,30 @@
 
         </div>
 
-
         <ul id="allFavorites">
             <% favorites.forEach( el => { %>
                     <li class='favoritesItem' data-id='<%=el._id%>'>
-                        <img class="favoritesBoxClass" data-article-type="jackets" data-article-color='<%=el.jacket%>' data-default-value="baseJacket" class="pickJacket" title="Jacket" src="<%= `http://localhost:7000/images/jackets/${el.jacket}.png` %>">
-                        <img class="favoritesBoxClass" data-article-type="shirts" data-article-color='<%=el.shirt%>' data-default-value="baseShirt" class="pickShirt" title="Shirt" src="<%= `http://localhost:7000/images/shirts/${el.shirt}.png` %>"> 
-                        <img class="favoritesBoxClass" data-article-type="pants" data-article-color='<%=el.pants%>' data-default-value="basePants" class="pickPants" title="Pants" src="<%= `http://localhost:7000/images/pants/${el.pants}.png` %>">
-                        <img class="favoritesBoxClass" data-article-type="shoes" data-article-color='<%=el.shoes%>' data-default-value="baseShoes" class="pickShoes" title="Shoes" src="<%= `http://localhost:7000/images/shoes/${el.shoes}.png` %>"> 
+                        <img class="favoritesBoxClass <%= el.jacket === 'baseJacket' ? 'lowOpacity' : '' %>" data-article-type="jackets" data-article-color='<%=el.jacket%>' data-default-value="baseJacket" src="<%= `http://localhost:7000/images/jackets/${el.jacket}.png` %>">
+                        <img class="favoritesBoxClass <%= el.shirt === 'baseShirt' ? 'lowOpacity' : '' %>" data-article-type="shirts" data-article-color='<%=el.shirt%>' data-default-value="baseShirt"  title="Shirt" src="<%= `http://localhost:7000/images/shirts/${el.shirt}.png` %>"> 
+                        <img class="favoritesBoxClass <%= el.pants === 'basePants' ? 'lowOpacity' : '' %>" data-article-type="pants" data-article-color='<%=el.pants%>' data-default-value="basePants"  title="Pants" src="<%= `http://localhost:7000/images/pants/${el.pants}.png` %>">
+                        <img class="favoritesBoxClass <%= el.shoes === 'baseShoes' ? 'lowOpacity' : '' %>" data-article-type="shoes" data-article-color='<%=el.shoes%>' data-default-value="baseShoes"  title="Shoes" src="<%= `http://localhost:7000/images/shoes/${el.shoes}.png` %>"> 
                         <span class='del'> Delete </span>
                         <span class='edit'> Edit </span>
                     </li>
             <% }) %>    
         </ul>
 
-
     </main>
     <footer>
         <p>Copyright 2022</p>
     </footer>
-    <!-- <script src="/js/main.js"></script> -->
+
     <script>
-
-    let dictionary = '<%-JSON.stringify(dictionary)%>';
-    let data = JSON.parse(dictionary)[0].articles;
-
+        let dictionary = '<%-JSON.stringify(dictionary)%>';
+        let data = JSON.parse(dictionary)[0].articles;
     </script>
 
-<script src="/js/favorites.js"></script>
+    <script src="/js/favorites.js"></script>
 
-
-
-    
 </body>
 </html>

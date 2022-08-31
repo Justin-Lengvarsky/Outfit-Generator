@@ -2,6 +2,10 @@
 /* BODY
 ================================================== */
 
+.lowOpacity {
+    opacity: 0.5;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -263,6 +267,10 @@ footer {
     margin: 3rem auto;
 }
 
+.input{
+    display: none;
+}
+
 #optionButtons button {
     margin: 0 2rem;
     height: 2rem;
@@ -270,14 +278,14 @@ footer {
     border-radius: 10%;
 }
 
-#editOptionButtons {
+#editOptionInputs {
     display: none;
     flex-direction: row;
     justify-content: center;
     margin: 3rem auto;
 }
 
-#editOptionButtons button {
+#editOptionInputs button {
     margin: 0 2rem;
     height: 2rem;
     width: 4rem;

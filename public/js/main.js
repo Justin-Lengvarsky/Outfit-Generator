@@ -1,5 +1,3 @@
-console.log(data)
-
 const buttonChoices = document.querySelector("#generatorBox")
 const pickJacket = document.querySelector("#pickJacket")
 const pickShirt = document.querySelector("#pickShirt")
@@ -14,20 +12,12 @@ const shirtInput = document.querySelector("#shirtInput")
 const pantsInput = document.querySelector("#pantsInput")
 const shoesInput = document.querySelector("#shoesInput")
 
-saveButton.addEventListener("click", plz)
-
-function plz () {
-    jacketInput.value = pickJacket.dataset.articleColor;
-    shirtInput.value = pickShirt.dataset.articleColor;
-    pantsInput.value = pickPants.dataset.articleColor;
-    shoesInput.value = pickShoes.dataset.articleColor;
-}
-
-
 pickShirt.addEventListener("click", showChoices)
 pickPants.addEventListener("click", showChoices)
 pickShoes.addEventListener("click", showChoices)
 pickJacket.addEventListener("click", showChoices)
+
+saveButton.addEventListener("click", saveOutfit)
 clearButton.addEventListener("click", clearOptions)
 
 function showChoices () {
@@ -42,10 +32,6 @@ function showChoices () {
     let thisImage = this
     let thisArticleType = this.dataset.articleType
     let thisArticleColor = this.dataset.articleColor
-
-    // console.log(this)
-
-    // console.log(data[thisArticleType][0].colors)
 
     for (let i=0; i<data[thisArticleType][0].colors.length; i++) {
         var image = document.createElement("img")
@@ -69,26 +55,16 @@ function showChoices () {
         else {
             image.addEventListener("click", selectArticle)
         }
-
         if (image.style.opacity != "0.1") {
             image.style.order = 0
         } 
-
         if (image.dataset.articleColor === thisArticleColor) {
             image.style.border = "7px solid #51A3A3"
-            image.style.order = -1
             // image.style.backgroundColor = "#DAA49A"
         }
-
     }
 
     function selectArticle() {
-
-        console.log(this.dataset.articleColor)
-        console.log(buttonChoices.childNodes[1].dataset.articleColor)
-        // console.log(thisArticleType)
-        // console.log(thisArticleType)
-
 
         for (let i=1; i<=7; i+=2) {
             if (thisArticleType === buttonChoices.childNodes[i].dataset.articleType) {
@@ -117,6 +93,13 @@ function showChoices () {
     }
 }
 
+function saveOutfit () {
+    jacketInput.value = pickJacket.dataset.articleColor;
+    shirtInput.value = pickShirt.dataset.articleColor;
+    pantsInput.value = pickPants.dataset.articleColor;
+    shoesInput.value = pickShoes.dataset.articleColor;
+}
+
 function clearOptions () {
 
     pickJacket.dataset.articleColor = "baseJacket"
@@ -141,84 +124,3 @@ function clearOptions () {
     }
     clearAllChildNodes(clothingOptions)
 }
-
-
-
-
-
-// const deleteBtn = document.querySelectorAll('.del')
-// const todoItem = document.querySelectorAll('span.not')
-// const todoComplete = document.querySelectorAll('span.completed')
-
-// Array.from(deleteBtn).forEach((el)=>{
-//     el.addEventListener('click', deleteTodo)
-// })
-
-// Array.from(todoItem).forEach((el)=>{
-//     el.addEventListener('click', markComplete)
-// })
-
-// Array.from(todoComplete).forEach((el)=>{
-//     el.addEventListener('click', markIncomplete)
-// })
-
-// const deleteBtn = document.querySelectorAll('.del')
-
-// Array.from(deleteBtn).forEach((el)=>{
-//     el.addEventListener('click', deleteFavorite)
-// })
-
-// async function deleteFavorite(){
-//     const outfitId = this.parentNode.dataset.id
-//     console.log(outfitId)
-//     try{
-//         const response = await fetch('favorites/deleteFavorite', {
-//             method: 'delete',
-//             headers: {'Content-type': 'application/json'},
-//             body: JSON.stringify({
-//                 'outfitIdFromJSFile': outfitId
-//             })
-//         })
-//         const data = await response.json()
-//         console.log(data)
-//         location.reload()
-//     }catch(err){
-//         console.log(err)
-//     }
-// }
-
-// async function markComplete(){
-//     const todoId = this.parentNode.dataset.id
-//     try{
-//         const response = await fetch('todos/markComplete', {
-//             method: 'put',
-//             headers: {'Content-type': 'application/json'},
-//             body: JSON.stringify({
-//                 'todoIdFromJSFile': todoId
-//             })
-//         })
-//         const data = await response.json()
-//         console.log(data)
-//         location.reload()
-//     }catch(err){
-//         console.log(err)
-//     }
-// }
-
-// async function markIncomplete(){
-//     const todoId = this.parentNode.dataset.id
-//     try{
-//         const response = await fetch('todos/markIncomplete', {
-//             method: 'put',
-//             headers: {'Content-type': 'application/json'},
-//             body: JSON.stringify({
-//                 'todoIdFromJSFile': todoId
-//             })
-//         })
-//         const data = await response.json()
-//         console.log(data)
-//         location.reload()
-//     }catch(err){
-//         console.log(err)
-//     }
-// }
