@@ -2,8 +2,118 @@
 /* BODY
 ================================================== */
 
+#loginArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+}
+
+#loginArea form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#loginArea input {
+    width: 40%;
+    height: 2rem;
+    margin: 1rem auto;
+}
+
+#loginArea form #loginSubmit {
+
+    margin: 1rem auto;
+    width: 5%;
+    height: 2rem;
+}
+
+#signUpArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+}
+
+#signUpArea form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#signUpArea input {
+    width: 40%;
+    height: 2rem;
+    margin: 1rem auto;
+}
+
+#signUpArea form #signUpSubmit {
+    margin: 1rem auto;
+    width: 5%;
+    height: 2rem;
+}
+
+
 .lowOpacity {
     opacity: 0.5;
+}
+
+#indexText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    width: 50%;
+    margin: 10rem 0 0 45rem;
+    line-height: 4rem;
+}
+
+#indexText h1{
+ color:rgb(223, 208, 249);
+ font-size: 4rem;
+}
+
+#indexText h3{
+    color:rgb(223, 208, 249);
+    font-size: 2rem;
+}
+
+
+#indexText div{
+    display: flex;
+    flex-direction: row;
+}
+
+#indexText a{
+    color:rgb(223, 208, 249);
+    font-size: 2rem;
+    margin-right: 3rem;
+}
+
+#signUpButton{
+    text-align: center;
+    color:rgb(46, 31, 91) !important;
+    background-color:rgb(223, 208, 249);
+    width: 7rem;
+    height: 4rem;
+    line-height: 4rem;
+    border-radius: 5%;
+}
+
+#homeText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 4rem;
+    margin-top: 5rem;
+}
+
+#homeText h1{
+    color:rgb(223, 208, 249);
+    font-size: 3rem;
 }
 
 * {
@@ -26,9 +136,7 @@ body {
     background: linear-gradient(135deg, #2E1F5B 0%, #6946DE 45%, #6946DE 100%);
 }
 
-h1 {
-    text-align: center;
-}
+
 
 #one {
     color: rgb(46, 31, 91)
@@ -60,6 +168,7 @@ h1 {
 header {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 100%;
     height: 5rem;
     line-height: 5rem;
@@ -71,10 +180,6 @@ header h2 {
     font-size: 3rem
 }
 
-nav {
-    margin-left: 35.5rem;
-}
-
 h2 a {
     text-decoration: none;
     color: rgb(223, 208, 249);
@@ -83,7 +188,7 @@ h2 a {
 
 nav a {
     line-height: 5rem;
-    margin: 0 2rem;
+    margin-left: 2.5rem;
     font-size: 2rem;
     text-decoration: none;
     color: rgb(223, 208, 249);

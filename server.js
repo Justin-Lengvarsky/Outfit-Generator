@@ -11,9 +11,6 @@ const mainRoutes = require('./routes/main')
 const homepageRoutes = require('./routes/homepage')
 const outfitRoutes = require('./routes/outfit')
 const favoritesRoutes = require('./routes/favorites')
-const tipsRoutes = require('./routes/tips')
-
-
 
 require('dotenv').config({path: './config/.env'})
 
@@ -47,7 +44,6 @@ app.use('/', mainRoutes)
 app.use('/homepage', homepageRoutes)
 app.use('/outfit', outfitRoutes)
 app.use('/favorites', favoritesRoutes)
-app.use('/tips', tipsRoutes)
 
 app.use('/images', express.static(__dirname +'/images'));    
 
