@@ -672,7 +672,67 @@ Description: Define screen-size breakpoints here.
     }
 
 
+    #homeText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        line-height: 4rem;
+        margin-top: 0rem;
+    }
+    
+    #homeText h1{
+        color:rgb(223, 208, 249);
+        font-size: 3rem;
+    }
 
+
+    .tipsListClass {
+        margin: 2rem 0;
+        color: #EDF0DA;
+    }
+    
+    #tipsMain {
+        padding: 0 2%;
+    }
+    
+    .tipsListClass {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 4%;
+        margin: 6rem 0;
+        text-align: center;
+    }
+     
+    .tipsListClass h3 {
+        width: 100%;
+        display: inline-block;
+    }
+    
+    .tipsListClass img {
+        display: inline;
+        width: 17rem;
+        height: 10rem;
+        margin: 2rem 0;
+    }
+    
+    #firstTip h3 {
+        text-align: center;
+        width: 80%;
+        margin: 2rem auto;
+    }
+    
+    .tipsListClass .dualImages {
+        display: inline;
+        width: 17rem;
+        height: 10rem;
+    }
+    
+    .tipsListClass .dualImagesText {
+        width: 100%;
+        display: inline-block;
+    }
 
 
 

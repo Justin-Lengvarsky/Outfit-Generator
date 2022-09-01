@@ -118,6 +118,7 @@ function saveOutfit () {
     } else {
         alert("Error: You must choose an option for Shirt, Pants and Shoes in order to save your outfit")
     }
+    
 }
 
 function clearOptions () {
@@ -158,4 +159,4 @@ $(document).ready(function() {
             $('#mainnav ul').removeAttr('style');  
         }  
     });
-    });
+});

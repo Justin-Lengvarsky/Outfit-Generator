@@ -36,7 +36,6 @@
                 <h3>Belts: Typically will always be black, brown, or tan, and made with leather (sometimes suede). Belts should always be the same color as your shoes, and if possible try to match the metal on your buckle with the metal in your watch or other accessories. 
                     Any patterns on belts should be subtle as these are not statement pieces, but rather, finishing touches that bring your whole outfit together.</h3>
                   <img id="shoesBeltMatch" src="/images/pictures/shoesBeltMatch.webp">
-
             </li>
 
             <li id="tieMatchContainer" class="tipsListClass">
@@ -55,5 +54,20 @@
     <footer>
         <p>Copyright 2022</p>
     </footer>
+    <script>
+        $(document).ready(function() {
+            // JQUERY NAV TOGGLE
+            $('#menu').bind('click',function(event){
+                $('#mainnav ul').slideToggle();
+            });
+
+            $(window).resize(function(){  
+                var w = $(window).width();  
+                if(w > 768) {  
+                    $('#mainnav ul').removeAttr('style');  
+                }  
+            });
+        });
+    </script>
 </body>
 </html>
