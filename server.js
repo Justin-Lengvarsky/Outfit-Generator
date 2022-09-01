@@ -47,7 +47,6 @@ app.use('/favorites', favoritesRoutes)
 
 app.use('/images', express.static(__dirname +'/images'));    
 
- 
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
 })    

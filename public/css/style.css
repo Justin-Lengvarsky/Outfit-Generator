@@ -2,120 +2,6 @@
 /* BODY
 ================================================== */
 
-#loginArea {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    text-align: center;
-}
-
-#loginArea form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#loginArea input {
-    width: 40%;
-    height: 2rem;
-    margin: 1rem auto;
-}
-
-#loginArea form #loginSubmit {
-
-    margin: 1rem auto;
-    width: 5%;
-    height: 2rem;
-}
-
-#signUpArea {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    text-align: center;
-}
-
-#signUpArea form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#signUpArea input {
-    width: 40%;
-    height: 2rem;
-    margin: 1rem auto;
-}
-
-#signUpArea form #signUpSubmit {
-    margin: 1rem auto;
-    width: 5%;
-    height: 2rem;
-}
-
-
-.lowOpacity {
-    opacity: 0.5;
-}
-
-#indexText {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-    width: 50%;
-    margin: 10rem 0 0 45rem;
-    line-height: 4rem;
-}
-
-#indexText h1{
- color:rgb(223, 208, 249);
- font-size: 4rem;
-}
-
-#indexText h3{
-    color:rgb(223, 208, 249);
-    font-size: 2rem;
-}
-
-
-#indexText div{
-    display: flex;
-    flex-direction: row;
-}
-
-#indexText a{
-    color:rgb(223, 208, 249);
-    font-size: 2rem;
-    margin-right: 3rem;
-}
-
-#signUpButton{
-    text-align: center;
-    color:rgb(46, 31, 91) !important;
-    background-color:rgb(223, 208, 249);
-    width: 7rem;
-    height: 4rem;
-    line-height: 4rem;
-    border-radius: 5%;
-}
-
-#homeText {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    line-height: 4rem;
-    margin-top: 5rem;
-}
-
-#homeText h1{
-    color:rgb(223, 208, 249);
-    font-size: 3rem;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -123,7 +9,7 @@
 }
 
 main {
-padding: 0 5%;
+    padding: 0 5%;
 }
 
 body {
@@ -136,33 +22,7 @@ body {
     background: linear-gradient(135deg, #2E1F5B 0%, #6946DE 45%, #6946DE 100%);
 }
 
-
-
-#one {
-    color: rgb(46, 31, 91)
-}
-
-#two {
-    color: rgb(223, 208, 249)
-}
-
-#three {
-    color: rgb(105, 70, 221)
-}
-
-#four {
-    color: rgb(117, 201, 200)
-}
-
-#five {
-    color: #8769E4
-}
-
-#six {
-    color: rgb(164, 139, 235)
-}
-
-/* NAVIGATION
+/* NAVIGATION / FOOTER
 ================================================== */
 
 header {
@@ -202,78 +62,205 @@ footer {
     color: rgb(223, 208, 249);
     margin-top: auto;
     overflow: hidden;
-
 }
 
+/* LOGIN
+================================================== */
+
+#loginArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+}
+
+#loginArea form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#loginArea input {
+    width: 40%;
+    height: 2rem;
+    margin: 1rem auto;
+}
+
+#loginArea form #loginSubmit {
+
+    margin: 1rem auto;
+    width: 5%;
+    height: 2rem;
+}
+
+/* SIGN UP
+================================================== */
+
+#signUpArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#signUpArea form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#signUpArea input {
+    width: 40%;
+    height: 2rem;
+    margin: 1rem auto;
+}
+
+#signUpArea form #signUpSubmit {
+    margin: 1rem auto;
+    width: 5%;
+    height: 2rem;
+}
+
+
+.lowOpacity {
+    opacity: 0.5;
+}
+
+/* FIRST PAGE
+================================================== */
+
+#indexText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    width: 50%;
+    margin: 10rem 0 0 45rem;
+    line-height: 4rem;
+}
+
+#indexText h1{
+ color:rgb(223, 208, 249);
+ font-size: 4rem;
+}
+
+#indexText h3{
+    color:rgb(223, 208, 249);
+    font-size: 2rem;
+}
+
+#indexText div{
+    display: flex;
+    flex-direction: row;
+}
+
+#indexText a{
+    color:rgb(223, 208, 249);
+    font-size: 2rem;
+    margin-right: 3rem;
+}
+
+#signUpButton{
+    text-align: center;
+    color:rgb(46, 31, 91) !important;
+    background-color:rgb(223, 208, 249);
+    width: 7rem;
+    height: 4rem;
+    line-height: 4rem;
+    border-radius: 5%;
+}
 
 /* HOME PAGE
 ================================================== */
 
-/* BOOK LIST PAGE
-================================================== */
-/* #bookList {
+#homeText {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    padding: 0;
-    flex-wrap: wrap;
-    line-height: 2rem;
-}
-
-.bookListClass {
-    list-style-type: none;
-    border-radius: 5%;
-    border: 5px solid  #C79D89;
-    margin: 3rem 1rem;
-    width: 20%;
-    height: 15rem;
-    order: 1;
-    background-color: white;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    cursor: pointer;
-    font-size: 1rem;
-    padding: 2%;
-    word-wrap: break-word;
     text-align: center;
+    line-height: 4rem;
+    margin-top: 5rem;
 }
 
-#LowerBookList {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 0;
-    margin-top: 10rem;
-    flex-wrap: wrap;
-    line-height: 2rem;
-} */
-
-/* TIPS PAGE
-================================================== */
-
-/* #tipsList {
-
-} */
+#homeText h1{
+    color:rgb(223, 208, 249);
+    font-size: 3rem;
+}
 
 .tipsListClass {
     margin: 2rem 0;
-    /* color: rgb(223, 208, 249); */
     color: #EDF0DA;
 }
+
+#tipsMain {
+    padding: 0 10%;
+}
+
+.tipsListClass {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    margin: 6rem 0;
+}
+ 
+.tipsListClass h3 {
+    width: 50%;
+    display: inline-block;
+}
+
+.tipsListClass img {
+    display: inline;
+    width: 25rem;
+    height: 18rem;
+}
+
+#firstTip h3 {
+    text-align: center;
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.tipsListClass .dualImages {
+    display: inline;
+    width: 20rem;
+    height: 15rem;
+}
+
+.tipsListClass .dualImagesText {
+    width: 30%;
+    display: inline-block;
+}
+
 
 /* GENERATOR PAGE
 ================================================== */
 
-#space {
-    display: none;
-    flex-direction: row;
-    justify-content: center;
-    padding: 0 15rem;
-    flex-wrap: wrap;
-    line-height: 2rem;
-    margin-top: 3rem;
+#one {
+    color: rgb(46, 31, 91)
 }
 
+#two {
+    color: rgb(223, 208, 249)
+}
+
+#three {
+    color: rgb(105, 70, 221)
+}
+
+#four {
+    color: rgb(117, 201, 200)
+}
+
+#five {
+    color: #8769E4
+}
+
+#six {
+    color: rgb(164, 139, 235)
+}
 
 #generatorBox {
     display: flex;
@@ -290,10 +277,8 @@ footer {
     object-fit: scale-down;
     border-radius: 5%;
     border: 5px solid  rgb(164, 139, 235);
-    /* margin: 3rem 1rem; */
     width: 40%;
     height: 15rem;
-    /* order: 1; */
     background-color: rgb(223, 208, 249);
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -304,6 +289,19 @@ footer {
     text-align: center;
     opacity: 0.7;
     margin: .1rem
+}
+
+/* FAVORITES 
+================================================== */
+
+#space {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 15rem;
+    flex-wrap: wrap;
+    line-height: 2rem;
+    margin-top: 3rem;
 }
 
 #allFavorites {
@@ -436,54 +434,6 @@ footer {
     word-wrap: break-word;
     text-align: center;
 }
-
-#tipsMain {
-    padding: 0 10%;
-}
-
-.tipsListClass {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5%;
-    margin: 6rem 0;
-}
-
- 
-.tipsListClass h3 {
-    width: 50%;
-    display: inline-block;
-}
-
-.tipsListClass img {
-    display: inline;
-    width: 25rem;
-    height: 18rem;
-}
-
-#firstTip h3 {
-    text-align: center;
-    width: 80%;
-    margin: 2rem auto;
-}
-
-.tipsListClass .dualImages {
-    display: inline;
-    width: 20rem;
-    height: 15rem;
-}
-
-.tipsListClass .dualImagesText {
-    width: 30%;
-    display: inline-block;
-}
-
-
-
-
-
-
 
 /* MEDIA QUERIES
 Description: Define screen-size breakpoints here.
