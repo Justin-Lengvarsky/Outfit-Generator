@@ -33,9 +33,10 @@
                 <input id="shirtInput" class="input" type="text" name="shirtChoice">
                 <input id="pantsInput" class="input" type="text" name="pantsChoice">
                 <input id="shoesInput" class="input" type="text" name="shoesChoice">
-                <button id="saveButton" type="submit">Edit</button>
+                <button id="returnButton" type="button">Return</button>
+                <button id="saveButton" type="button">Edit</button>
             </form>
-            <button id="clearButton">Delete</button>
+            <button id="deleteButton">Delete</button>
         </div>
 
         <div id="editClothingOptions">
@@ -49,8 +50,8 @@
                         <img class="favoritesBoxClass <%= el.shirt === 'baseShirt' ? 'lowOpacity' : '' %>" data-article-type="shirts" data-article-color='<%=el.shirt%>' data-default-value="baseShirt"  title="Shirt" src="<%= `http://localhost:7000/images/shirts/${el.shirt}.png` %>"> 
                         <img class="favoritesBoxClass <%= el.pants === 'basePants' ? 'lowOpacity' : '' %>" data-article-type="pants" data-article-color='<%=el.pants%>' data-default-value="basePants"  title="Pants" src="<%= `http://localhost:7000/images/pants/${el.pants}.png` %>">
                         <img class="favoritesBoxClass <%= el.shoes === 'baseShoes' ? 'lowOpacity' : '' %>" data-article-type="shoes" data-article-color='<%=el.shoes%>' data-default-value="baseShoes"  title="Shoes" src="<%= `http://localhost:7000/images/shoes/${el.shoes}.png` %>"> 
-                        <span class='del'> Delete </span>
-                        <span class='edit'> Edit </span>
+                        <button class='del'> Delete </button>
+                        <button class='edit'> Edit </button>
                     </li>
             <% }) %>    
         </ul>

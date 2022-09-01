@@ -93,11 +93,31 @@ function showChoices () {
     }
 }
 
+if (pickJacket.dataset.articleColor != "baseJacket" && !data[pickJacket.dataset.articleType][0][pickJacket.dataset.articleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
+    image.style.opacity = "0.1"
+}
+else if (pickShirt.dataset.articleColor != "baseShirt" && !data[pickShirt.dataset.articleType][0][pickShirt.dataset.articleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
+    image.style.opacity = "0.1"
+}
+else if (pickPants.dataset.articleColor != "basePants" && !data[pickPants.dataset.articleType][0][pickPants.dataset.articleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
+    image.style.opacity = "0.1"
+}
+else if (pickShoes.dataset.articleColor != "baseShoes" && !data[pickShoes.dataset.articleType][0][pickShoes.dataset.articleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
+    image.style.opacity = "0.1"
+}
 function saveOutfit () {
-    jacketInput.value = pickJacket.dataset.articleColor;
-    shirtInput.value = pickShirt.dataset.articleColor;
-    pantsInput.value = pickPants.dataset.articleColor;
-    shoesInput.value = pickShoes.dataset.articleColor;
+
+    if (pickShirt.dataset.articleColor != "baseShirt" &&
+    pickPants.dataset.articleColor != "basePants" && 
+    pickShoes.dataset.articleColor != "baseShoes" ) {
+        jacketInput.value = pickJacket.dataset.articleColor;
+        shirtInput.value = pickShirt.dataset.articleColor;
+        pantsInput.value = pickPants.dataset.articleColor;
+        shoesInput.value = pickShoes.dataset.articleColor;
+        saveButton.type = "submit"
+    } else {
+        alert("Error: You must choose an option for Shirt, Pants and Shoes in order to save your outfit")
+    }
 }
 
 function clearOptions () {

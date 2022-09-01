@@ -127,7 +127,14 @@ function editFavorite(){
         }
     }
 
+    const returnButton = document.querySelector("#returnButton");
+    returnButton.addEventListener("click", () => {
+        location.reload()
+    });
+
+
     const saveButton = document.querySelector("#saveButton")
+    const deleteButton = document.querySelector("#deleteButton")
 
     const jacketInput = document.querySelector("#jacketInput")
     const shirtInput = document.querySelector("#shirtInput")
@@ -135,36 +142,50 @@ function editFavorite(){
     const shoesInput = document.querySelector("#shoesInput")
 
     saveButton.addEventListener("click", plz)
+    deleteButton.addEventListener("click", deleteThisFavorite)
 
-    async function plz(){
+
+    function plz(){
 
         const outfitId = buttonChoices.dataset.id
 
-        jacketInput.value = pickJacket.dataset.articleColor;
-        shirtInput.value = pickShirt.dataset.articleColor;
-        pantsInput.value = pickPants.dataset.articleColor;
-        shoesInput.value = pickShoes.dataset.articleColor;
+        if (pickShirt.dataset.articleColor != "baseShirt" &&
+        pickPants.dataset.articleColor != "basePants" && 
+        pickShoes.dataset.articleColor != "baseShoes" ) {
+            jacketInput.value = pickJacket.dataset.articleColor;
+            shirtInput.value = pickShirt.dataset.articleColor;
+            pantsInput.value = pickPants.dataset.articleColor;
+            shoesInput.value = pickShoes.dataset.articleColor;
+            saveButton.type = "submit";
 
-        try{
-            const response = await fetch('favorites/editFavorite', {
-                method: 'put',
-                headers: {'Content-type': 'application/json'},
-                body: JSON.stringify({
-                    'outfitIdFromJSFile': outfitId,                
-                    'jacketChoice': pickJacket.dataset.articleColor,
-                    'shirtChoice': pickShirt.dataset.articleColor,
-                    'pantsChoice': pickPants.dataset.articleColor,
-                    'shoesChoice': pickShoes.dataset.articleColor
+            async function work(){
+            
+            try{
+                const response = await fetch('favorites/editFavorite', {
+                    method: 'put',
+                    headers: {'Content-type': 'application/json'},
+                    body: JSON.stringify({
+                        'outfitIdFromJSFile': outfitId,                
+                        'jacketChoice': pickJacket.dataset.articleColor,
+                        'shirtChoice': pickShirt.dataset.articleColor,
+                        'pantsChoice': pickPants.dataset.articleColor,
+                        'shoesChoice': pickShoes.dataset.articleColor
+                    })
                 })
-            })
-            const data = await response.json()
-            console.log(data)
-            location.reload()
-        }catch(err){
-            console.log(err)
+                const data = await response.json()
+                console.log(data)
+                location.reload()
+            }catch(err){
+                console.log(err)
+            }
+        }
+        work()
+        } else {
+            alert("Error: You must choose an option for Shirt, Pants and Shoes in order to save your outfit")
         }
     }
-}
+      
+    }
 
 async function deleteFavorite(){
     const outfitId = this.parentNode.dataset.id
@@ -175,6 +196,23 @@ async function deleteFavorite(){
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
                 'outfitIdFromJSFile': outfitId
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+    }catch(err){
+        console.log(err)
+    }
+}
+
+async function deleteThisFavorite(){
+    try{
+        const response = await fetch('favorites/deleteFavorite', {
+            method: 'delete',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+                'outfitIdFromJSFile': space.dataset.id
             })
         })
         const data = await response.json()

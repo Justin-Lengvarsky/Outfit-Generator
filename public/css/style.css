@@ -417,17 +417,20 @@ footer {
     flex-direction: row;
     justify-content: center;
     margin: 3rem auto;
+    color: white;
 }
 
 .input{
     display: none;
 }
 
-#optionButtons button {
+button {
     margin: 0 2rem;
     height: 2rem;
     width: 4rem;
     border-radius: 10%;
+    background-color: black;
+    color: white;
 }
 
 #editOptionInputs {
@@ -442,6 +445,8 @@ footer {
     height: 2rem;
     width: 4rem;
     border-radius: 10%;
+    background-color: black;
+    color: white;
 }
 
 #clothingOptions {
@@ -633,6 +638,8 @@ Description: Define screen-size breakpoints here.
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        /* width: 100%; */
+        margin: 0;
     }
     
     .favoritesItem {
@@ -643,7 +650,7 @@ Description: Define screen-size breakpoints here.
         align-items: center;
         justify-content: center;
         margin: 2rem 0;
-        width: 100%;
+        width: 18.5rem;
         height: 20rem;
     }
     
@@ -652,7 +659,7 @@ Description: Define screen-size breakpoints here.
         /* object-fit: scale-down; */
         border-radius: 5%;
         border: 5px solid  rgb(164, 139, 235);
-        width: 13rem;
+        width: 8.5rem;
         height: 10rem;
         background-color: rgb(223, 208, 249);
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
