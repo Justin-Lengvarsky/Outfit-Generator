@@ -25,7 +25,16 @@ body {
 /* NAVIGATION / FOOTER
 ================================================== */
 
-header {
+
+
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -34,6 +43,22 @@ header {
     line-height: 5rem;
     padding: 0 10%;
     color: white;
+} */
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 5% 10%;
+}
+
+#mainnav {
+    display: flex;
+    justify-content: space-between;
+
+    font-weight: bold;
+    text-transform:uppercase;
+    letter-spacing: .05em;
+    width: 100%;
 }
 
 header h2 {
@@ -46,11 +71,35 @@ h2 a {
     font-style: italic;
 }
 
-nav a {
-    line-height: 5rem;
-    margin-left: 2.5rem;
-    font-size: 2rem;
+#menu {
+    display: none;
+    padding: .8em 1.5em;
+    cursor: pointer;
+}
+
+#outfitLogoMobile {
+    display: none;
+}
+
+#mainnav ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    text-align: center;
+    line-height: 3rem;
+    margin-left: 35rem;
+}
+
+#mainnav ul li {
+    margin: 0 1.25rem;
+    list-style: none;
+    display: inline-block;
+}
+
+#mainnav ul li a {
+    font-size: 1.5rem;
     text-decoration: none;
+    display: inline-block;
     color: rgb(223, 208, 249);
 }
 
@@ -238,7 +287,7 @@ footer {
 /* GENERATOR PAGE
 ================================================== */
 
-#one {
+/* #one {
     color: rgb(46, 31, 91)
 }
 
@@ -260,7 +309,7 @@ footer {
 
 #six {
     color: rgb(164, 139, 235)
-}
+} */
 
 #generatorBox {
     display: flex;
@@ -447,5 +496,179 @@ Description: Define screen-size breakpoints here.
 
 /* MOBILE (Smaller than 768px)*/
 @media all and (max-width: 767px) {
+
+    header {
+        padding: 0;
+        margin-bottom: 3rem;
+    }
+
+    #outfitLogo {
+        display: none;    
+    }
+
+    #mainnav {
+        display: inline;
+        height: 8rem;
+    }
+
+    #mainnav #menu {
+        display: inline-block;
+        line-height: 4rem;
+        font-size: 4rem;
+        text-align: left;
+        padding: 0em .3em 0em 1.4em;
+        color: white;
+    }
+
+    #outfitLogoMobile {
+        display: inline-block;
+        height: 6rem;
+        line-height: 6rem;
+        font-size: 2.5rem;
+        text-align: center;
+        margin-left: .6rem;
+        text-decoration: none;
+    }
+
+    #outfitLogoMobile a{
+        text-decoration: none;
+        color: white;
+    }
+
+    #mainnav ul {
+        margin: 0;
+    }
+
+    #mainnav ul li {
+        display: block;
+        margin: 0;
+    }
+
+    #mainnav ul li a {
+        display: block;
+        padding: 0 .5em;
+        font-size: 1rem;
+    }
+
+    #mainnav ul li a:hover {
+        color: #000;
+        background: #aaa;
+    }
+
+    
+
+    #generatorBox {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0rem;
+        flex-wrap: wrap;
+        line-height: 2rem;
+        margin-top: 3rem;
+        width: 100%;
+    }
+
+    .generatorBoxClass {
+        list-style-type: none;
+        object-fit:fill;
+        border-radius: 5%;
+        border: 5px solid  rgb(164, 139, 235);
+        width: 8.5rem;
+        height: 10rem;
+        background-color: rgb(223, 208, 249);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 2%;
+        word-wrap: break-word;
+        text-align: center;
+        opacity: 0.7;
+        margin: .1rem;
+    }
+
+    #clothingOptions {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        flex-wrap: wrap;
+        line-height: 2rem;
+        margin: 3rem auto;
+        min-height: 10rem;
+        width: 100%;
+    }
+
+    .articleListBoxClass {
+        width: 7.5rem;
+    }
+    
+    #editClothingOptions {
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        flex-wrap: wrap;
+        line-height: 2rem;
+        margin: 3rem auto;
+        min-height: 10rem
+    }
+
+   
+
+
+
+    #space {
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        flex-wrap: wrap;
+        line-height: 2rem;
+        margin-top: 3rem;
+    }
+    
+    #allFavorites {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .favoritesItem {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem 0;
+        width: 100%;
+        height: 20rem;
+    }
+    
+    .favoritesBoxClass {
+        list-style-type: none;
+        /* object-fit: scale-down; */
+        border-radius: 5%;
+        border: 5px solid  rgb(164, 139, 235);
+        width: 13rem;
+        height: 10rem;
+        background-color: rgb(223, 208, 249);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 0;
+        word-wrap: break-word;
+        text-align: center;
+    }
+
+
+
+
+
+
+
 	
 }
