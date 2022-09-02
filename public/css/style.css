@@ -25,8 +25,6 @@ body {
 /* NAVIGATION / FOOTER
 ================================================== */
 
-
-
 .group:after {
     content: "";
     display: table;
@@ -402,7 +400,7 @@ footer {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: 2rem;
+    margin: 4rem 2rem;
     width: 40%;
     height: 20rem;
 }
@@ -537,6 +535,10 @@ Description: Define screen-size breakpoints here.
 /* MOBILE (Smaller than 768px)*/
 @media all and (max-width: 767px) {
 
+
+    /* HEADER / FOOTER
+    ================================================== */
+
     header {
         padding: 0;
         margin-bottom: 3rem;
@@ -595,7 +597,22 @@ Description: Define screen-size breakpoints here.
         background: #aaa;
     }
 
-    
+
+    #mainnav #signUpButton{
+        display: inline-block;
+        width: 5rem;
+        height: 2rem;
+        line-height: 2rem;
+        border-radius: 5%;
+    }
+
+    footer {
+        margin-top: auto;
+        overflow: hidden;
+    }
+
+    /* OUTFIT
+    ================================================== */
 
     #generatorBox {
         display: flex;
@@ -656,7 +673,8 @@ Description: Define screen-size breakpoints here.
 
    
 
-
+    /* FAVORITES
+    ================================================== */
 
     #space {
         display: none;
@@ -673,14 +691,9 @@ Description: Define screen-size breakpoints here.
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        /* width: 100%; */
         margin: 0;
     }
 
-   
-
-    
-    
     .favoritesItem {
         list-style-type: none;
         display: flex;
@@ -716,6 +729,8 @@ Description: Define screen-size breakpoints here.
         width: 4rem;
     }
 
+    /* HOMEPAGE
+    ================================================== */
 
     #homeText {
         display: flex;
@@ -735,7 +750,6 @@ Description: Define screen-size breakpoints here.
         color:rgb(223, 208, 249);
         font-size: 2.5rem;
     }
-
 
     .tipsListClass {
         margin: 2rem 0;
@@ -759,7 +773,7 @@ Description: Define screen-size breakpoints here.
         text-align: center;
         width: 80%;
         padding: 0;
-     }
+    }
      
     .tipsListClass h3 {
         width: 100%;
@@ -792,7 +806,6 @@ Description: Define screen-size breakpoints here.
         display: inline;
         width: 17rem;
         height: 10rem;
-        
     }
     
     .tipsListClass .dualImagesText {
@@ -801,7 +814,8 @@ Description: Define screen-size breakpoints here.
         display: inline-block;
     }
 
-
+    /* LOGIN PAGE
+    ================================================== */
 
     #indexText {
         justify-content: center;
@@ -840,13 +854,8 @@ Description: Define screen-size breakpoints here.
         border-radius: 5%;
     }
 
-    #mainnav #signUpButton{
-        display: inline-block;
-        width: 5rem;
-        height: 2rem;
-        line-height: 2rem;
-        border-radius: 5%;
-    }
+     /* SIGN UP
+    ================================================== */
 
     #signUpArea {
         margin-bottom: 3rem;
@@ -859,6 +868,9 @@ Description: Define screen-size breakpoints here.
     #signUpArea form #signUpSubmit {
         width: 25%;
     }
+
+     /* LOGIN
+    ================================================== */
     
     #loginArea input {
         width: 70%;
@@ -869,11 +881,5 @@ Description: Define screen-size breakpoints here.
     #loginArea form #loginSubmit {
         width: 25%;
     }
-
-    footer {
-        margin-top: auto;
-        overflow: hidden;
-    }
-
 	
 }
