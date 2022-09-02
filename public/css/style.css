@@ -54,7 +54,6 @@ header {
 #mainnav {
     display: flex;
     justify-content: space-between;
-
     font-weight: bold;
     text-transform:uppercase;
     letter-spacing: .05em;
@@ -87,11 +86,17 @@ h2 a {
     margin: 0;
     text-align: center;
     line-height: 3rem;
-    margin-left: 35rem;
+    margin-left: auto;
 }
 
 #mainnav ul li {
     margin: 0 1.25rem;
+    list-style: none;
+    display: inline-block;
+}
+
+#mainnav ul li:last-of-type {
+    margin: 0 0 0 1.25rem;
     list-style: none;
     display: inline-block;
 }
@@ -120,7 +125,6 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     text-align: center;
 }
 
@@ -215,8 +219,8 @@ footer {
     color:rgb(46, 31, 91) !important;
     background-color:rgb(223, 208, 249);
     width: 7rem;
-    height: 4rem;
-    line-height: 4rem;
+    height: 3rem;
+    line-height: 3rem;
     border-radius: 5%;
 }
 
@@ -243,26 +247,47 @@ footer {
 }
 
 #tipsMain {
-    padding: 0 10%;
+    padding: 0 17.5%;
 }
 
 .tipsListClass {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 5%;
+    /* padding: 0 5%; */
     margin: 6rem 0;
 }
+
+.leftTipsText div {
+   text-align: right;
+   width: 50%;
+   padding: 0 5% 0 0;
+   /* margin-right: 3rem; */
+}
+
+.leftTipsText img {
+    margin-left: 5%;
+ }
+
+.rightTipsText div {
+    text-align: left;
+    width: 50%;
+    padding: 0 0 0 5%;
+ }
+
+ .rightTipsText img {
+    margin-right: 5%;
+ }
+ 
  
 .tipsListClass h3 {
-    width: 50%;
-    display: inline-block;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
 .tipsListClass img {
     display: inline;
-    width: 25rem;
+    width: 22rem;
     height: 18rem;
 }
 
@@ -270,17 +295,27 @@ footer {
     text-align: center;
     width: 80%;
     margin: 2rem auto;
+    display: inline-block;
+}
+
+#firstTip {
+    margin: 2rem auto 0 auto;
 }
 
 .tipsListClass .dualImages {
-    display: inline;
-    width: 20rem;
+    margin-left: 0;
+    width: 11rem;
     height: 15rem;
 }
 
+.tipsListClass .dualImages:first-of-type {
+    margin-left: 5%;
+}
+
+
 .tipsListClass .dualImagesText {
-    width: 30%;
-    display: inline-block;
+    width: 50%;
+    padding: 0 5% 0 0;
 }
 
 
@@ -397,7 +432,7 @@ footer {
     line-height: 2rem;
     width: 4rem;
     height: 2rem;
-    margin: 0.5rem 1rem;
+    margin: 1.5rem 1rem;
 }
 
 .edit {
@@ -408,7 +443,7 @@ footer {
     line-height: 2rem;
     width: 4rem;
     height: 2rem;
-    margin: 0.5rem 1rem;
+    margin: 1.5rem 1rem;
 }
 
 
@@ -546,11 +581,11 @@ Description: Define screen-size breakpoints here.
 
     #mainnav ul li {
         display: block;
-        margin: 0;
+        margin: 0 .5rem !important;
     }
 
     #mainnav ul li a {
-        display: block;
+        display: inline-block;
         padding: 0 .5em;
         font-size: 1rem;
     }
@@ -641,6 +676,10 @@ Description: Define screen-size breakpoints here.
         /* width: 100%; */
         margin: 0;
     }
+
+   
+
+    
     
     .favoritesItem {
         list-style-type: none;
@@ -649,7 +688,7 @@ Description: Define screen-size breakpoints here.
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        margin: 2rem 0;
+        margin: 1rem 0 7rem 0;
         width: 18.5rem;
         height: 20rem;
     }
@@ -671,19 +710,30 @@ Description: Define screen-size breakpoints here.
         text-align: center;
     }
 
+    #editOptionInputs button {
+        margin: 0 .5rem;
+        height: 2rem;
+        width: 4rem;
+    }
+
 
     #homeText {
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        line-height: 4rem;
-        margin-top: 0rem;
+        line-height: 3rem;
+        width: 80%;
+        margin: 0 auto 2rem auto;
+    }
+
+    #homeText h1:first-of-type{
+        margin-bottom: 1rem;
     }
     
     #homeText h1{
         color:rgb(223, 208, 249);
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
 
@@ -704,6 +754,12 @@ Description: Define screen-size breakpoints here.
         margin: 6rem 0;
         text-align: center;
     }
+
+    .tipsListClass div {
+        text-align: center;
+        width: 80%;
+        padding: 0;
+     }
      
     .tipsListClass h3 {
         width: 100%;
@@ -716,26 +772,108 @@ Description: Define screen-size breakpoints here.
         height: 10rem;
         margin: 2rem 0;
     }
+
+    #firstTip h3 {
+        margin: 0 auto !important;
+    }
     
     #firstTip h3 {
         text-align: center;
         width: 80%;
-        margin: 2rem auto;
+        margin: 0 auto;
+    }
+
+    .tipsListClass .dualImages:first-of-type {
+        padding: 0;
+        margin: 2rem 0 0 0;
     }
     
     .tipsListClass .dualImages {
         display: inline;
         width: 17rem;
         height: 10rem;
+        
     }
     
     .tipsListClass .dualImagesText {
-        width: 100%;
+        width: 80%;
+        padding: 0;
         display: inline-block;
     }
 
 
 
+    #indexText {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin: 0 0 5rem;
+        line-height: 4rem;
+        padding: 0 10%;
+    }
+    
+    #indexText h1{
+     color:rgb(223, 208, 249);
+     font-size: 3rem;
+    }
+    
+    #indexText h3{
+        color:rgb(223, 208, 249);
+        font-size: 2rem;
+        line-height: 3rem;
+        margin: 1rem 0 2rem 0;
+    }
+    
+    #indexText div{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+    
+    #indexText a{
+        color:rgb(223, 208, 249);
+        font-size: 2rem;
+        margin: 0 1rem;
+        text-align: center;
+        height: 4rem;
+        line-height: 4rem;
+        border-radius: 5%;
+    }
+
+    #mainnav #signUpButton{
+        display: inline-block;
+        width: 5rem;
+        height: 2rem;
+        line-height: 2rem;
+        border-radius: 5%;
+    }
+
+    #signUpArea {
+        margin-bottom: 3rem;
+    }
+    
+    #signUpArea input {
+        width: 70%;
+    }
+    
+    #signUpArea form #signUpSubmit {
+        width: 25%;
+    }
+    
+    #loginArea input {
+        width: 70%;
+        height: 2rem;
+        margin: 1rem auto;
+    }
+    
+    #loginArea form #loginSubmit {
+        width: 25%;
+    }
+
+    footer {
+        margin-top: auto;
+        overflow: hidden;
+    }
 
 	
 }

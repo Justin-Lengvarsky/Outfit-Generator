@@ -15,9 +15,8 @@
             <div id="menu">&#x2261;</div>
             <h2><a id="outfitLogo" href="/homepage">Home</a></h2>
             <ul>
-                <li><a href="/outfit">Outfit</a></li>
-                <li><a href="/favorites">Favorites</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a id="signUpButton" href="/signup">Signup</a></li>
             </ul>
         </nav>
     </header>
@@ -26,13 +25,26 @@
         <h1>Redefine your Fashion.</h1>
         <h3>Learn how to match what's in your closet</h3>
         <div>
-            <a id="signUpButton" href="/signup"> Signup</a>
-            <a href="/login">Login</a>
-            <!-- <a id="guestLink" href="#">Guest</a> -->
+            <a href="/signup">Try Now</a>
         </div>
     </section>
     <footer>
         <p>Copyright 2022</p>
     </footer>
+    <script>
+        $(document).ready(function() {
+            // JQUERY NAV TOGGLE
+            $('#menu').bind('click',function(event){
+                $('#mainnav ul').slideToggle();
+            });
+
+            $(window).resize(function(){  
+                var w = $(window).width();  
+                if(w > 768) {  
+                    $('#mainnav ul').removeAttr('style');  
+                }  
+            });
+        });
+    </script>
 </body>
 </html>
