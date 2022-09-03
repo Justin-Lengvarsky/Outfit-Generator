@@ -4,7 +4,8 @@
             "colors": [
                 "white",
                 "lightBlue",
-                "grey"
+                "grey",
+                "pink"
             ],
             "white": [{
                     "jackets": [
@@ -12,12 +13,15 @@
                         "navy",
                         "grey",
                         "brown",
-                        "charcoal"
+                        "charcoal",
+                        "khaki",
+                        "burgundy"
                     ],
                     "shirts": [
                         "white",
                         "lightBlue",
-                        "grey"
+                        "grey",
+                        "pink"
                     ],
                     "pants": [
                         "black",
@@ -25,7 +29,8 @@
                         "grey",
                         "navy",
                         "brown",
-                        "charcoal"
+                        "charcoal",
+                        "burgundy"
                     ],
                     "shoes": [
                         "black",
@@ -38,12 +43,14 @@
                 "jackets": [
                     "navy",
                     "black",
-                    "charcoal"
+                    "charcoal",
+                    "khaki"
                 ],
                 "shirts": [
                     "white",
                     "lightBlue",
-                    "grey"
+                    "grey",
+                    "pink"
                 ],
                 "pants": [
                     "black",
@@ -67,7 +74,8 @@
                 "shirts": [
                     "white",
                     "lightBlue",
-                    "grey"
+                    "grey",
+                    "pink"
                 ],
                 "pants": [
                     "black"           
@@ -76,7 +84,31 @@
                     "black"
                 ]
             }
-        ]
+        ],
+        "pink": [{
+            "jackets": [
+                "navy",
+                "grey",
+                "charcoal"
+            ],
+            "shirts": [
+                "white",
+                "lightBlue",
+                "grey",
+                "pink"
+            ],
+            "pants": [
+                "navy",
+                "grey",
+                "khaki",
+                "charcoal"
+            ],
+            "shoes": [
+                "brown",
+                "black"
+            ]
+        }
+    ]
         }],
         "pants": [{
             "colors": [
@@ -85,7 +117,8 @@
                 "khaki",
                 "navy",
                 "brown",
-                "charcoal"
+                "charcoal",
+                "burgundy"
             ],
             "black": [{
                     "jackets": [
@@ -97,11 +130,12 @@
                     ],
                     "pants": [
                         "black",
-                "grey",
-                "khaki",
-                "navy",
-                "brown",
-                "charcoal"
+                        "grey",
+                        "khaki",
+                        "navy",
+                        "brown",
+                        "charcoal",
+                        "burgundy"
                     ],
                     "shoes": [
                         "black"
@@ -115,7 +149,8 @@
                 ],
                 "shirts": [
                     "white",
-                    "lightBlue"
+                    "lightBlue",
+                    "pink"
                 ],
                 "pants": [
                     "black",
@@ -123,7 +158,8 @@
                     "khaki",
                     "navy",
                     "brown",
-                    "charcoal"
+                    "charcoal",
+                    "burgundy"
                 ],
                 "shoes": [
                     "black",
@@ -134,11 +170,13 @@
         ],
             "khaki": [{
                 "jackets": [
-                    "navy"
+                    "navy",
+                    "khaki"
                 ],
                 "shirts": [
                     "white",
-                    "lightBlue"
+                    "lightBlue",
+                    "pink"
                 ],
                 "pants": [
                     "black",
@@ -146,7 +184,8 @@
                     "khaki",
                     "navy",
                     "brown",
-                    "charcoal"
+                    "charcoal",
+                    "burgundy"
                 ],
                 "shoes": [
                     "brown"
@@ -163,7 +202,8 @@
                 "khaki",
                 "navy",
                 "brown",
-                "charcoal"
+                "charcoal",
+                "burgundy"
             ],
             "shirts": [
                 "white"
@@ -180,7 +220,8 @@
             ],
             "shirts": [
                 "lightBlue",
-                "white"
+                "white",
+                "pink"
             ],
             "pants": [
                 "black",
@@ -188,7 +229,8 @@
                 "khaki",
                 "navy",
                 "brown",
-                "charcoal"
+                "charcoal",
+                "burgundy"
             ],
             "shoes": [
                 "black",
@@ -203,7 +245,8 @@
             ],
             "shirts": [
                 "white",
-                "lightBlue"
+                "lightBlue",
+                "pink"
             ],
             "pants": [
                 "black",
@@ -211,7 +254,8 @@
                 "khaki",
                 "navy",
                 "brown",
-                "charcoal"
+                "charcoal",
+                "burgundy"
             ],
             "shoes": [
                 "black",
@@ -219,6 +263,28 @@
                 "burgundy"            
             ]
         }
+    ],
+    "burgundy": [{
+        "jackets": [
+            "burgundy"
+        ],
+        "pants": [
+            "black",
+            "grey",
+            "khaki",
+            "navy",
+            "brown",
+            "charcoal",
+            "burgundy"
+        ],
+        "shirts": [
+            "white"
+        ],
+        "shoes": [
+            "black",
+            "burgundy"
+        ]
+    }
     ]
         }],
         "jackets": [{
@@ -227,7 +293,9 @@
                 "navy",
                 "grey",
                 "brown",
-                "charcoal"
+                "charcoal",
+                "khaki",
+                "burgundy"
             ],
             "black": [{
                 "jackets": [
@@ -235,7 +303,9 @@
                     "navy",
                     "grey",
                     "brown",
-                    "charcoal"
+                    "charcoal",
+                    "khaki",
+                    "burgundy"
                 ],
                 "pants": [
                     "black"
@@ -256,7 +326,9 @@
                     "navy",
                     "grey",
                     "brown",
-                    "charcoal"
+                    "charcoal",
+                    "khaki",
+                    "burgundy"
                 ],
                 "pants": [
                     "khaki",
@@ -265,7 +337,8 @@
                 ],
                 "shirts": [
                     "white",
-                    "lightBlue"
+                    "lightBlue",
+                    "pink"
                 ],
                 "shoes": [
                     "black",
@@ -281,7 +354,9 @@
                     "navy",
                     "grey",
                     "brown",
-                    "charcoal"
+                    "charcoal",
+                    "khaki",
+                    "burgundy"
                 ],
                 "pants": [
                     "brown"
@@ -301,11 +376,14 @@
                     "navy",
                     "grey",
                     "brown",
-                    "charcoal"
+                    "charcoal",
+                    "khaki",
+                    "burgundy"
                 ],
                 "shirts": [
                     "lightBlue",
-                    "white"
+                    "white",
+                    "pink"
                 ],
                 "pants": [
                     "charcoal"
@@ -317,13 +395,38 @@
                 ]
             }
         ],
+        "khaki": [{
+            "jackets": [
+                "black",
+                "navy",
+                "grey",
+                "brown",
+                "charcoal",
+                "khaki",
+                "burgundy"
+            ],
+            "pants": [
+                "khaki"
+            ],
+            "shirts": [
+                "white",
+                "lightBlue"
+            ],
+            "shoes": [
+                "brown",
+                "black"
+            ]
+        }
+        ],
             "grey": [{
                 "jackets": [
                     "black",
                     "navy",
                     "grey",
                     "brown",
-                    "charcoal"
+                    "charcoal",
+                    "khaki",
+                    "burgundy"
                 ],
                 "pants": [
                     "navy",
@@ -331,10 +434,33 @@
                 ],
                 "shirts": [
                     "white",
-                    "lightBlue"
+                    "lightBlue",
+                    "pink"
                 ],
                 "shoes": [
                     "brown",
+                    "black",
+                    "burgundy"
+                ]
+            }
+            ],
+            "burgundy": [{
+                "jackets": [
+                    "black",
+                    "navy",
+                    "grey",
+                    "brown",
+                    "charcoal",
+                    "khaki",
+                    "burgundy"
+                ],
+                "pants": [
+                    "burgundy"
+                ],
+                "shirts": [
+                    "white"
+                ],
+                "shoes": [
                     "black",
                     "burgundy"
                 ]
@@ -353,17 +479,21 @@
                     "grey",
                     "brown",
                     "navy",
-                    "charcoal"
+                    "charcoal",
+                    "burgundy"
                 ],
                 "shirts": [
                     "white",
-                    "lightBlue"
+                    "lightBlue",
+                    "pink"
                 ],
                 "jackets": [
                     "black",
                     "brown",
                     "navy",
-                    "charcoal"
+                    "charcoal",
+                    "khaki",
+                    "burgundy"
                 ],
                 "shoes": [
                     "black",
@@ -382,12 +512,14 @@
                 ],
                 "shirts": [
                     "white",
-                    "lightBlue"
+                    "lightBlue",
+                    "pink"
                 ],
                 "jackets": [
                     "navy",
                     "brown",
-                    "charcoal"
+                    "charcoal",
+                    "khaki"
                 ],
                 "shoes": [
                     "black",
@@ -400,12 +532,14 @@
                 "jackets": [
                     "navy",
                     "grey",
-                    "charcoal"
+                    "charcoal",
+                    "burgundy"
                 ],
                 "pants": [
                     "grey",
                     "navy",
-                    "charcoal"
+                    "charcoal",
+                    "burgundy"
                 ],
                 "shirts": [
                     "white",
