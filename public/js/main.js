@@ -29,9 +29,9 @@ function showChoices () {
     }
     clearAllChildNodes(clothingOptions)
 
-    let thisImage = this
-    let thisArticleType = this.dataset.articleType
-    let thisArticleColor = this.dataset.articleColor
+    let thisImage = this;
+    let thisArticleType = this.dataset.articleType;
+    let thisArticleColor = this.dataset.articleColor;
 
     for (let i=0; i<data[thisArticleType][0].colors.length; i++) {
         var image = document.createElement("img")
