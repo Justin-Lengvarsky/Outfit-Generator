@@ -153,6 +153,7 @@ $(document).ready(function() {
         $('#mainnav ul').slideToggle();
     });
 
+
     $(window).resize(function(){  
         var w = $(window).width();  
         if(w > 768) {  
