@@ -31,18 +31,6 @@ body {
     clear: both;
 }
 
-
-/* header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 5rem;
-    line-height: 5rem;
-    padding: 0 10%;
-    color: white;
-} */
-
 header {
     width: 100%;
     text-align: center;
@@ -181,13 +169,37 @@ footer {
 /* FIRST PAGE
 ================================================== */
 
+
+#indexImage .generatorBoxClass {
+    width: 45%;
+    height: 10rem;
+    object-fit: fill;
+    opacity: 1;
+}
+
+#indexHead {
+    display: flex;
+    flex-direction: row;
+    margin: 10rem 0 0 0;
+
+}
+
+#indexImage {
+    width: 30%;
+    margin: auto;
+}
+
+.articleDiv {
+display: inline-block;
+}
+
 #indexText {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
     width: 50%;
-    margin: 10rem 0 0 45rem;
+    /* margin: 10rem 0 0 45%; */
     line-height: 4rem;
 }
 
@@ -380,7 +392,7 @@ footer {
     display: none;
     flex-direction: row;
     justify-content: center;
-    padding: 0 15rem;
+    padding: 0 5%;
     flex-wrap: wrap;
     line-height: 2rem;
     margin-top: 3rem;
@@ -410,7 +422,7 @@ footer {
     object-fit: scale-down;
     border-radius: 5%;
     border: 5px solid  rgb(164, 139, 235);
-    width: 16rem;
+    width: 45%;
     height: 10rem;
     background-color: rgb(223, 208, 249);
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -528,14 +540,8 @@ Description: Define screen-size breakpoints here.
 (e.g. Desktop, Tablet, Mobile)
 ===================================== */
 
-/* Tablet (Between 768px - 992px)*/
-@media all and (min-width: 768px) and (max-width: 992px) {
-
-}
-
 /* MOBILE (Smaller than 768px)*/
 @media all and (max-width: 767px) {
-
 
     /* HEADER / FOOTER
     ================================================== */
@@ -885,4 +891,31 @@ Description: Define screen-size breakpoints here.
         width: 25%;
     }
 	
+}
+
+/* Tablet (Between 768px - 992px)*/
+@media all and (min-width: 768px) and (max-width: 992px) {
+
+    #generatorBox {
+        padding: 0 5rem;
+    }
+
+    .generatorBoxClass {
+        width: 40%;
+        height: 15rem;
+    }
+
+    .favoritesItem {
+        margin: 4rem 2rem;
+        width: 90%;
+        height: 20rem;
+    }
+
+    .favoritesBoxClass {
+        width: 45%;
+        height: 10rem;
+    }
+
+
+
 }
