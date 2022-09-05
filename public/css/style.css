@@ -175,8 +175,7 @@ footer {
 #indexHead {
     display: flex;
     flex-direction: row;
-    margin: 10rem 0 0 0;
-
+    margin: 5rem 0 0 0;
 }
 
 #indexImage {
@@ -870,9 +869,10 @@ Description: Define screen-size breakpoints here.
         justify-content: center;
         text-align: center;
         width: 100%;
-        margin: 0 0 5rem;
+        margin: 0 0 1rem;
         line-height: 4rem;
         padding: 0 10%;
+        order: -1;
     }
     
     #indexText h1{
@@ -886,6 +886,19 @@ Description: Define screen-size breakpoints here.
         line-height: 3rem;
         margin: 1rem 0 2rem 0;
     }
+
+    #indexHead {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    #indexImage {
+        width: 80%;
+        margin: 3rem auto 5rem auto;
+        flex-wrap: wrap;
+        line-height: 2rem;
+        }
     
     #indexText div{
         display: flex;

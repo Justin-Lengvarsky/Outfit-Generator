@@ -5,6 +5,35 @@ let shoesDiv = document.querySelector("#shoesDiv")
 
 
 
+    $(indexText).animate({ opacity: 0 }, 0, function () {
+        $(this).animate({ opacity: 1 }, 2000);
+    });
+
+    $(jacketDiv).animate({ opacity: 0 }, 0, function () {
+        setTimeout (function () {
+        $(jacketDiv).animate({ opacity: 1 }, 1000);
+    }, 1500)
+    });
+    $(shirtDiv).animate({ opacity: 0 }, 0, function () {
+        setTimeout (function () {
+        $(shirtDiv).animate({ opacity: 1 }, 1000);
+    }, 3000)
+    });
+    $(pantsDiv).animate({ opacity: 0 }, 0, function () {
+        setTimeout (function () {
+        $(pantsDiv).animate({ opacity: 1 }, 1000);
+    }, 4500)
+    });
+    $(shoesDiv).animate({ opacity: 0 }, 0, function () {
+        setTimeout (function () {
+        $(shoesDiv).animate({ opacity: 1 }, 1000);
+    }, 6000)
+    });
+    
+
+  
+
+
 let jackets = {
     1: "navy",
     2: "charcoal",
