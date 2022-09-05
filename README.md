@@ -3,7 +3,7 @@ Fullstack web application that allows users to log on to their own account, crea
 
 **Link to project:** https://outfit-generator.justin-lengvars.repl.co
 
-![alt tag](http://placecorgi.com/1200/650)
+![alt tag](https://res.cloudinary.com/duf8g2rbv/image/upload/v1662400451/Screen_Shot_2022-09-05_at_1.53.24_PM_f3jsze.png)
 
 ## How It's Made:
 
