@@ -1,44 +1,36 @@
-# Introduction
+# Outfit Generator
+Fullstack web application that allows users to log on to their own account, create business professional/casual outfits and save them for future reference. 
 
-A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
+**Link to project:** https://outfit-generator.justin-lengvars.repl.co
 
----
+![alt tag](http://placecorgi.com/1200/650)
 
-> Be sure to add that lovely star 😀 and fork it for your own copy
+## How It's Made:
 
----
+**Tech used:** EJS, CSS, JavaScript, jQuery, Node, MongoDB and Passport.js
 
-# Objectives
+I created the article pairing logic through a dictionary that is stored on MongoDB. It contains each article of clothing and specifies what color of every different type of clothing will match with it. When the user selects pieces of clothing, the app will refer to the dictionary to show the user which articles will match with what they have selected. 
 
-- It's a beginner level app created to understand how MVC concept and logins are added
+I used Passport.js to handle user authentication and jQuery to handle the mobile navbar and front page animation.
 
----
+## Lessons Learned:
 
-# Who is this for? 
-
-- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
-
----
+Being my biggest project to date, I learned that you shouldn't be afraid to experiment and try creative approaches. One of my challenges was figuring out how to create the logic for how to pair different articles of clothing. I ended up creating a dictionary that stored ot the logic without ven really knowing what a dictionary was! I had a lot of doubt that the direction I was going was inefficient and that there must have been a better way. Later on I realized I had made an actual data structure that works and I should never have doubted myself. It was incredibly encouraging and made me realize that my only limits are my self doubts. 
 
 # Packages/Dependencies used 
 
 bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
 
----
-
-# Install all the dependencies or node packages used for development via Terminal
+# How to Install
 
 `npm install` 
-
----
 
 # Things to add
 
 - Create a `.env` file and add the following as `key: value` 
   - PORT: 2121 (can be any port example: 3000) 
   - DB_STRING: `your database URI` 
- ---
+
  
- Have fun testing and improving it! 😎
 
 
