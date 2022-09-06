@@ -58,7 +58,7 @@ let pants = {
 let shoes = {
     1: "brown",
     2: "black",
-    3: "burgundy",
+    3: "black",
     4: "black"
 }
 

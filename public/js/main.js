@@ -34,6 +34,7 @@ function showChoices () {
     let thisImage = this;
     let thisArticleType = this.dataset.articleType;
     let thisArticleColor = this.dataset.articleColor;
+    console.log(thisArticleType)
 
     for (let i=0; i<data[thisArticleType][0].colors.length; i++) {
         var image = document.createElement("img")
@@ -54,6 +55,87 @@ function showChoices () {
         else if (pickShoes.dataset.articleColor != "baseShoes" && !data[pickShoes.dataset.articleType][0][pickShoes.dataset.articleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
             image.style.opacity = "0.1"
         }
+        else if (
+            thisArticleType == "shirts" &&
+            pickJacket.dataset.articleColor == "grey" &&
+            pickPants.dataset.articleColor == "navy" &&
+            data[thisArticleType][0].colors[i] == "pink" ||
+
+            thisArticleType == "jackets" &&
+            pickShirt.dataset.articleColor == "pink" &&
+            pickPants.dataset.articleColor == "navy" &&
+            data[thisArticleType][0].colors[i] == "navy" ||
+
+            thisArticleType == "pants" &&
+            pickJacket.dataset.articleColor == "grey" &&
+            pickShirt.dataset.articleColor == "pink" &&
+            data[thisArticleType][0].colors[i] == "navy" 
+        ) {
+            image.style.opacity = "0.1"
+        }
+        else if (
+            thisArticleType == "shirts" &&
+            pickJacket.dataset.articleColor == "navy" &&
+            pickPants.dataset.articleColor == "grey" &&
+            data[thisArticleType][0].colors[i] == "pink" ||
+
+            thisArticleType == "jackets" &&
+            pickShirt.dataset.articleColor == "pink" &&
+            pickPants.dataset.articleColor == "grey" &&
+            data[thisArticleType][0].colors[i] == "navy" ||
+
+            thisArticleType == "pants" &&
+            pickJacket.dataset.articleColor == "navy" &&
+            pickShirt.dataset.articleColor == "pink" &&
+            data[thisArticleType][0].colors[i] == "grey" 
+        ) {
+            image.style.opacity = "0.1"
+        }
+        else if (
+            thisArticleType == "shoes" &&
+            pickJacket.dataset.articleColor == "grey" &&
+            pickPants.dataset.articleColor == "navy" &&
+            data[thisArticleType][0].colors[i] == "burgundy" ||
+
+            thisArticleType == "jackets" &&
+            pickShoes.dataset.articleColor == "burgundy" &&
+            pickPants.dataset.articleColor == "navy" &&
+            data[thisArticleType][0].colors[i] == "grey" ||
+
+            thisArticleType == "pants" &&
+            pickJacket.dataset.articleColor == "grey" &&
+            pickShoes.dataset.articleColor == "burgundy" &&
+            data[thisArticleType][0].colors[i] == "navy" 
+        ) {
+            image.style.opacity = "0.1"
+        }
+        else if (
+            thisArticleType == "shoes" &&
+            pickJacket.dataset.articleColor == "navy" &&
+            pickPants.dataset.articleColor == "grey" &&
+            data[thisArticleType][0].colors[i] == "burgundy" ||
+
+            thisArticleType == "jackets" &&
+            pickShoes.dataset.articleColor == "burgundy" &&
+            pickPants.dataset.articleColor == "grey" &&
+            data[thisArticleType][0].colors[i] == "navy" ||
+
+            thisArticleType == "pants" &&
+            pickJacket.dataset.articleColor == "navy" &&
+            pickShoes.dataset.articleColor == "burgundy" &&
+            data[thisArticleType][0].colors[i] == "grey" 
+        ) {
+            image.style.opacity = "0.1"
+        }
+  
+        // else if (
+        //     thisArticleType == "shirts" &&
+        //     pickJacket.dataset.articleColor == "grey" &&
+        //     pickPants.dataset.articleColor == "navy" &&
+        //     data[thisArticleType][0].colors[i] == "pink"
+        // ) {
+        //     image.style.opacity = "0.1"
+        // }
         else {
             image.addEventListener("click", selectArticle)
         }
@@ -140,6 +222,9 @@ function clearOptions () {
     pickPants.style.opacity = "0.7"
     pickShoes.style.opacity = "0.7"
 
+    outfitTypeMessage.innerHTML = "";
+
+
     function clearAllChildNodes(parent) {
         while (parent.firstChild) {
             parent.removeChild(parent.firstChild);
@@ -173,7 +258,6 @@ function checkOutfitType () {
     } else {
         outfitTypeMessage.innerHTML = "";
     }
-    // outfitTypeMessage
 }
 
 
