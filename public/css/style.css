@@ -430,6 +430,11 @@ footer {
 
 /* FAVORITES 
 ================================================== */
+#editedOutfitTypeMessage {
+    text-align: center;
+    margin: 0 50% 2rem 50%;
+}
+
 
 #noFavorites {
 text-align: center;

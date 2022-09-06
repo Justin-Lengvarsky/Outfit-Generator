@@ -2,6 +2,8 @@ const buttonChoices = document.querySelector("#space")
 const noFavorites = document.querySelector("#noFavorites")
 const editButton = document.querySelectorAll('.edit')
 const deleteBtn = document.querySelectorAll('.del')
+const editedOutfitTypeMessage = document.querySelector('#editedOutfitTypeMessage')
+
 
 Array.from(editButton).forEach((el)=>{
     el.addEventListener('click', editFavorite)
@@ -31,6 +33,8 @@ function editFavorite(){
     const editClothingOptions = document.querySelector("#editClothingOptions")
     editClothingOptions.style.display = "flex"
 
+    console.log(this.parentNode.dataset.outfit)
+
     for (let i=1; i<=4; i++) {
         space.appendChild(thisOutfit.childNodes[i])
     }
@@ -45,6 +49,7 @@ function editFavorite(){
         el.style.opacity = "1"
     })
 
+    editedOutfitTypeMessage.innerText = this.parentNode.dataset.outfit
 
 
     const pickJacket = space.childNodes[1]

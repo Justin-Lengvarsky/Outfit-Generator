@@ -24,7 +24,8 @@ module.exports = {
                 jacket: req.body.jacketChoice,
                 shirt: req.body.shirtChoice,
                 pants: req.body.pantsChoice,
-                shoes: req.body.shoesChoice
+                shoes: req.body.shoesChoice,
+                outfitType: req.body.outfitTypeChoice
             })
        
         }catch(err){

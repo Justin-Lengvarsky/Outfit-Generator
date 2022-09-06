@@ -13,6 +13,7 @@ const jacketInput = document.querySelector("#jacketInput")
 const shirtInput = document.querySelector("#shirtInput")
 const pantsInput = document.querySelector("#pantsInput")
 const shoesInput = document.querySelector("#shoesInput")
+const outfitTypeInput = document.querySelector("#outfitTypeInput")
 
 pickShirt.addEventListener("click", showChoices)
 pickPants.addEventListener("click", showChoices)
@@ -198,6 +199,7 @@ function saveOutfit () {
         shirtInput.value = pickShirt.dataset.articleColor;
         pantsInput.value = pickPants.dataset.articleColor;
         shoesInput.value = pickShoes.dataset.articleColor;
+        outfitTypeInput.value = outfitTypeMessage.innerHTML;
         saveButton.type = "submit"
     } else {
         alert("Error: You must choose an option for Shirt, Pants and Shoes in order to save your outfit")

@@ -31,6 +31,8 @@
         </section>
 
         <section id="space">
+            <h1 id="editedOutfitTypeMessage">hi</h1>
+
 
         </section>
 
@@ -52,7 +54,7 @@
 
         <ul id="allFavorites">
             <% favorites.forEach( el => { %>
-                    <li class='favoritesItem' data-id='<%=el._id%>'>
+                    <li class='favoritesItem' data-id='<%=el._id%>' data-outfit='<%=el.outfitType%>'>
                         <img class="favoritesBoxClass <%= el.jacket === 'baseJacket' ? 'lowOpacity' : '' %>" data-article-type="jackets" data-article-color='<%=el.jacket%>' data-default-value="baseJacket" src="<%= `/images/jackets/${el.jacket}.png` %>">
                         <img class="favoritesBoxClass <%= el.shirt === 'baseShirt' ? 'lowOpacity' : '' %>" data-article-type="shirts" data-article-color='<%=el.shirt%>' data-default-value="baseShirt"  title="Shirt" src="<%= `/images/shirts/${el.shirt}.png` %>"> 
                         <img class="favoritesBoxClass <%= el.pants === 'basePants' ? 'lowOpacity' : '' %>" data-article-type="pants" data-article-color='<%=el.pants%>' data-default-value="basePants"  title="Pants" src="<%= `/images/pants/${el.pants}.png` %>">
