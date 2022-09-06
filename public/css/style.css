@@ -395,6 +395,10 @@ footer {
     color: rgb(164, 139, 235)
 } */
 
+#outfitTypeMessage {
+    text-align: center;
+}
+
 #generatorBox {
     display: flex;
     flex-direction: row;

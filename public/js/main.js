@@ -6,6 +6,8 @@ const pickShoes = document.querySelector("#pickShoes")
 const clearButton = document.querySelector("#clearButton")
 const saveButton = document.querySelector("#saveButton")
 const clothingOptions = document.querySelector("#clothingOptions")
+const outfitTypeMessage = document.querySelector("#outfitTypeMessage")
+
 
 const jacketInput = document.querySelector("#jacketInput")
 const shirtInput = document.querySelector("#shirtInput")
@@ -144,6 +146,34 @@ function clearOptions () {
         }
     }
     clearAllChildNodes(clothingOptions)
+}
+
+clothingOptions.addEventListener("click", checkOutfitType)
+
+function checkOutfitType () {
+    // if (pickShirt.dataset.articleColor != "baseShirt" &&
+    // pickPants.dataset.articleColor != "basePants" && 
+    // pickShoes.dataset.articleColor != "baseShoes" )
+    if (pickJacket.dataset.articleColor != pickPants.dataset.articleColor && pickJacket.dataset.articleColor != "baseJacket" && pickPants.dataset.articleColor != "basePants"){
+        outfitTypeMessage.innerHTML = "Business Casual"
+    } else if (pickJacket.dataset.articleColor == "brown" ||
+                pickJacket.dataset.articleColor == "burgundy" ||
+                pickJacket.dataset.articleColor == "khaki" || 
+                pickShirt.dataset.articleColor == "grey" ||
+                pickShirt.dataset.articleColor == "pink" ||
+                pickPants.dataset.articleColor == "khaki" ||
+                pickPants.dataset.articleColor == "brown" ||
+    pickPants.dataset.articleColor == "burgundy") {
+        outfitTypeMessage.innerHTML = "Business Casual"
+    } else if (pickJacket.dataset.articleColor != "baseJacket" && 
+                pickShirt.dataset.articleColor != "baseShirt" &&
+                pickPants.dataset.articleColor != "basePants" && 
+                pickShoes.dataset.articleColor != "baseShoes") {
+        outfitTypeMessage.innerHTML = "Business Professional";
+    } else {
+        outfitTypeMessage.innerHTML = "";
+    }
+    // outfitTypeMessage
 }
 
 
