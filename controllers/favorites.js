@@ -7,8 +7,9 @@ module.exports = {
         try{
             const allFavorites = await Favorite.find({userId: req.user.id})
             const allArticles = await Article.find({name: "clothingDictionary"})
+            const articleNums = await Favorite.countDocuments({ userId: req.user.id})
 
-            res.render('favorites.ejs', {favorites: allFavorites, dictionary: allArticles})
+            res.render('favorites.ejs', {favorites: allFavorites, dictionary: allArticles, articleNums: articleNums})
         }catch(err){
             console.log(err)
         }

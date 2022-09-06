@@ -1,4 +1,5 @@
 const buttonChoices = document.querySelector("#space")
+const noFavorites = document.querySelector("#noFavorites")
 const editButton = document.querySelectorAll('.edit')
 const deleteBtn = document.querySelectorAll('.del')
 
@@ -9,6 +10,11 @@ Array.from(editButton).forEach((el)=>{
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteFavorite)
 })
+
+
+if (articleNums == 0) {
+    noFavorites.style.display = "block"
+}
 
 
 function editFavorite(){

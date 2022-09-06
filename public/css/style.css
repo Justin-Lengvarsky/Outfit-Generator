@@ -427,6 +427,17 @@ footer {
 /* FAVORITES 
 ================================================== */
 
+#noFavorites {
+text-align: center;
+display: none;
+color: rgb(223, 208, 249);
+line-height: 4rem;
+}
+
+#noFavorites h1{
+    font-size: 2.5rem;
+}
+
 #space {
     display: none;
     flex-direction: row;

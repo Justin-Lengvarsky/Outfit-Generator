@@ -25,6 +25,11 @@
 
         <!-- <h1>Favorites</h1> -->
 
+        <section id="noFavorites">
+            <h1>Looks like you haven't saved any outfits...</h1>
+            <h1>Create your first outfit <a href="/outfit">here</a></h1>
+        </section>
+
         <section id="space">
 
         </section>
@@ -64,6 +69,7 @@
     </footer>
 
     <script>
+        let articleNums = '<%-articleNums%>'
         let dictionary = '<%-JSON.stringify(dictionary)%>';
         let data = JSON.parse(dictionary)[0].articles;
     </script>
