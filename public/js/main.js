@@ -7,7 +7,7 @@ const clearButton = document.querySelector("#clearButton")
 const saveButton = document.querySelector("#saveButton")
 const clothingOptions = document.querySelector("#clothingOptions")
 const outfitTypeMessage = document.querySelector("#outfitTypeMessage")
-
+const guestSaveButton = document.querySelector("#guestSaveButton")
 
 const jacketInput = document.querySelector("#jacketInput")
 const shirtInput = document.querySelector("#shirtInput")
@@ -22,6 +22,7 @@ pickJacket.addEventListener("click", showChoices)
 
 saveButton.addEventListener("click", saveOutfit)
 clearButton.addEventListener("click", clearOptions)
+guestSaveButton.addEventListener("click", guestSaveOutfit)
 
 function showChoices () {
 
@@ -190,6 +191,7 @@ else if (pickPants.dataset.articleColor != "basePants" && !data[pickPants.datase
 else if (pickShoes.dataset.articleColor != "baseShoes" && !data[pickShoes.dataset.articleType][0][pickShoes.dataset.articleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
     image.style.opacity = "0.1"
 }
+
 function saveOutfit () {
 
     if (pickShirt.dataset.articleColor != "baseShirt" &&
@@ -205,6 +207,28 @@ function saveOutfit () {
         alert("Error: You must choose an option for Shirt, Pants and Shoes in order to save your outfit")
     }
     
+}
+
+
+function guestSaveOutfit () {
+
+    if (pickShirt.dataset.articleColor != "baseShirt" &&
+    pickPants.dataset.articleColor != "basePants" && 
+    pickShoes.dataset.articleColor != "baseShoes" ) {
+        jacketInput.value = pickJacket.dataset.articleColor;
+        shirtInput.value = pickShirt.dataset.articleColor;
+        pantsInput.value = pickPants.dataset.articleColor;
+        shoesInput.value = pickShoes.dataset.articleColor;
+        outfitTypeInput.value = outfitTypeMessage.innerHTML;
+
+        var ask = window.confirm("Nice outfit! Sign up now to save this to your account.");
+        if (ask) {    
+            window.location.href = "/signup";
+        }
+    } else {
+        alert("Error: You must choose an option for Shirt, Pants and Shoes in order to save your outfit")
+    }
+
 }
 
 function clearOptions () {

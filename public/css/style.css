@@ -390,7 +390,7 @@ footer {
 /* GENERATOR PAGE
 ================================================== */
 
-/* #one {
+#one {
     color: rgb(46, 31, 91)
 }
 
@@ -403,7 +403,8 @@ footer {
 }
 
 #four {
-    color: rgb(117, 201, 200)
+    color: rgb(117, 201, 200);
+    text-align: center;
 }
 
 #five {
@@ -412,10 +413,12 @@ footer {
 
 #six {
     color: rgb(164, 139, 235)
-} */
+}
 
 #outfitTypeMessage {
     text-align: center;
+    color: rgb(117, 201, 200);
+
 }
 
 #generatorBox {
@@ -458,8 +461,8 @@ footer {
 #editedOutfitTypeMessage {
     text-align: center;
     display: none;
+    color: rgb(117, 201, 200);
 }
-
 
 #noFavorites {
 text-align: center;
@@ -545,7 +548,6 @@ line-height: 4rem;
     margin: 1.5rem 1rem;
     cursor: pointer;
 }
-
 
 #optionButtons {
     display: flex;
@@ -772,8 +774,6 @@ Description: Define screen-size breakpoints here.
         margin: 3rem auto;
         min-height: 10rem
     }
-
-   
 
     /* FAVORITES
     ================================================== */
