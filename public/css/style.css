@@ -655,11 +655,13 @@ Description: Define screen-size breakpoints here.
         text-align: center;
         margin-left: .6rem;
         text-decoration: none;
+        font-style: italic;
     }
 
     #outfitLogoMobile a{
         text-decoration: none;
-        color: white;
+        color: rgb(223, 208, 249);
+
     }
 
     #mainnav ul {
