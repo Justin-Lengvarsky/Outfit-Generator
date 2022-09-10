@@ -287,7 +287,20 @@ footer {
     justify-content: center;
     text-align: center;
     line-height: 4rem;
-    margin-top: 5rem;
+}
+
+#indexSecondText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 4rem;
+    margin-top: 12rem;
+}
+
+#indexSecondText h1{
+    color:rgb(223, 208, 249);
+    font-size: 3rem;
 }
 
 #homeText h1{
@@ -295,13 +308,14 @@ footer {
     font-size: 3rem;
 }
 
+#tipsMain {
+    padding: 0 17.5%;
+    margin-bottom: 10rem;
+}
+
 .tipsListClass {
     margin: 2rem 0;
     color: #EDF0DA;
-}
-
-#tipsMain {
-    padding: 0 17.5%;
 }
 
 .tipsListClass {
@@ -805,6 +819,7 @@ Description: Define screen-size breakpoints here.
     /* HOMEPAGE
     ================================================== */
 
+    
     #homeText {
         display: flex;
         flex-direction: column;
@@ -814,6 +829,23 @@ Description: Define screen-size breakpoints here.
         width: 80%;
         margin: 0 auto 2rem auto;
     }
+
+    #indexSecondText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        line-height: 3rem;
+        width: 80%;
+        margin: 0 auto 2rem auto;
+    }
+
+
+    #indexSecondText h1{
+        color:rgb(223, 208, 249);
+        font-size: 2.5rem;
+    }
+    
 
     #homeText h1:first-of-type{
         margin-bottom: 1rem;
