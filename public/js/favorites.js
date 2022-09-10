@@ -3,6 +3,7 @@ const noFavorites = document.querySelector("#noFavorites")
 const editButton = document.querySelectorAll('.edit')
 const deleteBtn = document.querySelectorAll('.del')
 const editedOutfitTypeMessage = document.querySelector('#editedOutfitTypeMessage')
+const clothingArticle = document.querySelectorAll('.favoritesBoxClass')
 
 
 Array.from(editButton).forEach((el)=>{
@@ -11,6 +12,10 @@ Array.from(editButton).forEach((el)=>{
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteFavorite)
+})
+
+Array.from(clothingArticle).forEach((el)=>{
+    el.addEventListener('click', editFavorite)
 })
 
 
@@ -42,9 +47,9 @@ function editFavorite(){
 
     document.querySelector("#allFavorites").style.display = "none";
 
-    const clothingArticle = document.querySelectorAll('.favoritesBoxClass')
 
     Array.from(clothingArticle).forEach((el)=>{
+        el.removeEventListener("click", editFavorite, false);
         el.classList.add('generatorBoxClass');
         el.classList.remove('favoritesBoxClass');
         el.style.opacity = "1"
