@@ -54,6 +54,7 @@ h2 a {
     text-decoration: none;
     color: rgb(223, 208, 249);
     font-style: italic;
+    letter-spacing: 0.25rem;
 }
 
 #menu {
@@ -92,6 +93,11 @@ h2 a {
     text-decoration: none;
     display: inline-block;
     color: rgb(223, 208, 249);
+    border-bottom: 1px solid rgb(223, 208, 249);
+}
+
+#mainnav ul li a:hover{
+    color: rgb(46, 31, 91);
 }
 
 footer {
@@ -276,6 +282,14 @@ footer {
     height: 3rem;
     line-height: 3rem;
     border-radius: 5%;
+    border-bottom: none !important;
+}
+
+
+#signUpButton:hover{
+    background-color: rgb(46, 31, 91);
+    color:rgb(223, 208, 249) !important;
+
 }
 
 /* HOME PAGE
@@ -351,6 +365,11 @@ footer {
 .tipsListClass h3 {
     width: 100%;
     margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.tipsListClass p {
+    font-size: 1.2rem;
 }
 
 .tipsListClass img {
@@ -364,6 +383,7 @@ footer {
     width: 80%;
     margin: 2rem auto;
     display: inline-block;
+    color: rgb(223, 208, 249);
 }
 
 #firstTip {
@@ -529,7 +549,6 @@ line-height: 4rem;
     background-color: black;
     color: white;
     text-align: center;
-    line-height: 2rem;
     width: 4rem;
     height: 2rem;
     margin: 1.5rem 1rem;
@@ -541,7 +560,6 @@ line-height: 4rem;
     background-color: black;
     color: white;
     text-align: center;
-    line-height: 2rem;
     width: 4rem;
     height: 2rem;
     margin: 1.5rem 1rem;
@@ -567,6 +585,8 @@ button {
     border-radius: 10%;
     background-color: black;
     color: white;
+    cursor: pointer;
+    line-height: 1rem;
 }
 
 #editOptionInputs {
@@ -613,7 +633,7 @@ button {
     list-style-type: none;
     object-fit: scale-down;
     border-radius: 5%;
-    border: 5px solid rgb(164, 139, 235);
+    border: 6px solid rgb(164, 139, 235);
     margin: 0.5rem;
     width: 20%;
     height: 10rem;
@@ -625,6 +645,10 @@ button {
     font-size: 1rem;
     word-wrap: break-word;
     text-align: center;
+}
+
+.articleListBoxClass:hover {
+border: 4.5px solid rgb(117, 201, 200);
 }
 
 /* MEDIA QUERIES
@@ -675,7 +699,7 @@ Description: Define screen-size breakpoints here.
     #outfitLogoMobile a{
         text-decoration: none;
         color: rgb(223, 208, 249);
-
+        letter-spacing: 0.2rem;
     }
 
     #mainnav ul {
@@ -692,13 +716,9 @@ Description: Define screen-size breakpoints here.
         display: inline-block;
         padding: 0 .5em;
         font-size: 1rem;
-    }
+        border-bottom: none;
 
-    #mainnav ul li a:hover {
-        color: #000;
-        background: #aaa;
     }
-
 
     #mainnav #signUpButton{
         display: inline-block;
