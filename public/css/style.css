@@ -269,9 +269,13 @@ footer {
 }
 
 #indexText a{
-    color:rgb(223, 208, 249);
+    color:rgb(117, 201, 200);
     font-size: 2rem;
     margin-right: 3rem;
+}
+
+#indexText a:hover{
+    color:rgb(46, 31, 91);
 }
 
 #signUpButton{
@@ -289,7 +293,6 @@ footer {
 #signUpButton:hover{
     background-color: rgb(46, 31, 91);
     color:rgb(223, 208, 249) !important;
-
 }
 
 /* HOME PAGE
@@ -998,7 +1001,6 @@ Description: Define screen-size breakpoints here.
     }
     
     #indexText a{
-        color:rgb(223, 208, 249);
         font-size: 2rem;
         margin: 0 1rem;
         text-align: center;
