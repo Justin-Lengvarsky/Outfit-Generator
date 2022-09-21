@@ -24,8 +24,10 @@ saveButton.addEventListener("click", saveOutfit)
 clearButton.addEventListener("click", clearOptions)
 guestSaveButton.addEventListener("click", guestSaveOutfit)
 
-function showChoices () {
 
+// Called when the user presses one of the four article boxes, will show available colors
+function showChoices () {
+    // Removes previously displayed articles  
     function clearAllChildNodes(parent) {
         while (parent.firstChild) {
             parent.removeChild(parent.firstChild);
@@ -37,6 +39,7 @@ function showChoices () {
     let thisArticleType = this.dataset.articleType;
     let thisArticleColor = this.dataset.articleColor;
 
+    // Loops through all existing colors in clothing dictionary and displays them on the page
     for (let i=0; i<data[thisArticleType][0].colors.length; i++) {
         var image = document.createElement("img")
         image.src = `/images/${thisArticleType}/${data[thisArticleType][0].colors[i]}.png`
@@ -44,6 +47,8 @@ function showChoices () {
         image.dataset.articleColor = data[thisArticleType][0].colors[i]
         image.classList.add("articleListBoxClass");
 
+        /* All colors for different colors conains data on what colors of other articles will match; if the user has already selected a color for a different clothing article, 
+        this will allow a color to be chosen and will grey out clothing color if it does not match with what is alrady selected */
         if (pickJacket.dataset.articleColor != "baseJacket" && !data[pickJacket.dataset.articleType][0][pickJacket.dataset.articleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
             image.style.opacity = "0.1"
         }
@@ -56,6 +61,8 @@ function showChoices () {
         else if (pickShoes.dataset.articleColor != "baseShoes" && !data[pickShoes.dataset.articleType][0][pickShoes.dataset.articleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
             image.style.opacity = "0.1"
         }
+        /* Below conditionals will blur out specific combinations that don't 
+        match but could not be filtered out through the dicitonary */
         else if (
             thisArticleType == "shirts" &&
             pickJacket.dataset.articleColor == "grey" &&
@@ -138,7 +145,7 @@ function showChoices () {
             image.style.border = "7px solid #51A3A3"
         }
     }
-
+    // Changes the currently stored article icon to the chosen color
     function selectArticle() {
         for (let i=1; i<=7; i+=2) {
             if (thisArticleType === buttonChoices.childNodes[i].dataset.articleType) {
@@ -153,7 +160,7 @@ function showChoices () {
                     thisImage.style.opacity = "1"
                     thisImage.style.backgroundColor = "white"
                 }
-                
+                // Clears displayed options
                 function clearAllChildNodes(parent) {
                     while (parent.firstChild) {
                         parent.removeChild(parent.firstChild);
@@ -166,6 +173,7 @@ function showChoices () {
     }
 }
 
+// Base article icons are greyed out to show they haven't been given a color
 if (pickJacket.dataset.articleColor != "baseJacket" && !data[pickJacket.dataset.articleType][0][pickJacket.dataset.articleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
     image.style.opacity = "0.1"
 }
@@ -180,7 +188,7 @@ else if (pickShoes.dataset.articleColor != "baseShoes" && !data[pickShoes.datase
 }
 
 function saveOutfit () {
-
+    // Users must have at least a shirt, pair of pants and shoes chosen in order to save an outfit
     if (pickShirt.dataset.articleColor != "baseShirt" &&
     pickPants.dataset.articleColor != "basePants" && 
     pickShoes.dataset.articleColor != "baseShoes" ) {
@@ -195,8 +203,9 @@ function saveOutfit () {
     }
 }
 
+// Users that didn't sign in can use the generator but cannot save their outfit unless they create an account
 function guestSaveOutfit () {
-
+    // Users must have at least a shirt, pair of pants and shoes chosen in order to save an outfit
     if (pickShirt.dataset.articleColor != "baseShirt" &&
     pickPants.dataset.articleColor != "basePants" && 
     pickShoes.dataset.articleColor != "baseShoes" ) {
@@ -216,6 +225,7 @@ function guestSaveOutfit () {
 
 }
 
+// Clear button will reset all options 
 function clearOptions () {
 
     pickJacket.dataset.articleColor = "baseJacket"
@@ -246,6 +256,7 @@ function clearOptions () {
 
 clothingOptions.addEventListener("click", checkOutfitType)
 
+// Decides whether an outfit is appropriate for business professional or business casual environments; displays text at top of icons
 function checkOutfitType () {
     if (pickJacket.dataset.articleColor != pickPants.dataset.articleColor && pickJacket.dataset.articleColor != "baseJacket" && pickPants.dataset.articleColor != "basePants"){
         outfitTypeMessage.innerHTML = "Business Casual"
@@ -268,6 +279,7 @@ function checkOutfitType () {
     }
 }
 
+// Animation for mobile navbar
 $(document).ready(function() {
     // JQUERY NAV TOGGLE
     $('#menu').bind('click',function(event){

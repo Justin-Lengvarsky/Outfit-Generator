@@ -392,6 +392,11 @@ footer {
 /* GENERATOR PAGE
 ================================================== */
 
+#guestHeader {
+    color: rgb(117, 201, 200);
+    text-align: center;
+}
+
 #outfitTypeMessage {
     text-align: center;
     color: rgb(117, 201, 200);

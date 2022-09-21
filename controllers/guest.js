@@ -12,7 +12,6 @@ module.exports = {
             const articleNums = await Article.countDocuments({ name: "clothingDictionary"})
             console.log(articleNums)
 
-            // const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
             res.render('guest.ejs', {message: articleNums, dictionary: allArticles})
         }catch(err){
             console.log(err)

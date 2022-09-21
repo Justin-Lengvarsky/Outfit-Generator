@@ -3,7 +3,7 @@ let shirtDiv = document.querySelector("#shirtDiv")
 let pantsDiv = document.querySelector("#pantsDiv")
 let shoesDiv = document.querySelector("#shoesDiv")
 
-
+// Initial animation for box icons to appear
 $(indexText).animate({ opacity: 0 }, 0, function() {
   $(this).animate({ opacity: 1 }, 2000);
 });
@@ -29,7 +29,7 @@ $(shoesDiv).animate({ opacity: 0 }, 0, function() {
   }, 6000)
 });
 
-
+// Stores the article colors for the colors that will animate on the screen
 let jackets = {
   1: "navy",
   2: "charcoal",
@@ -64,6 +64,7 @@ let shirtI = 0;
 let pantsI = 0;
 let shoesI = 0;
 
+// Sets up a loop that animates a new color from it's respective article object; repeats continuously
 function jacketLoop() {
   setTimeout(function() {
     $(jacketDiv).animate({ opacity: 0 }, 1000, function() {

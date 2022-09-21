@@ -22,8 +22,8 @@ if (articleNums == 0) {
     noFavorites.style.display = "block"
 }
 
+// If user selects an outfit or it's edit button, page will hide all other outfits and expand on the selected outfit
 function editFavorite(){
-
     const thisOutfit = this.parentNode;
     const thisId = this.parentNode.dataset.id;
     const thisOutfitType = this.parentNode.dataset.outfit;
@@ -62,8 +62,9 @@ function editFavorite(){
     pickPants.addEventListener("click", showChoices)
     pickShoes.addEventListener("click", showChoices)
 
+    // Called when the user presses one of the four article boxes, will show available colors
     function showChoices () {
-
+        // Removes previously displayed articles  
         function clearAllChildNodes(parent) {
             while (parent.firstChild) {
                 parent.removeChild(parent.firstChild);
@@ -75,6 +76,7 @@ function editFavorite(){
         let thisArticleType = this.dataset.articleType
         let thisArticleColor = this.dataset.articleColor
 
+        // Loops through all existing colors in clothing dictionary and displays them on the page
         for (let i=0; i<data[thisArticleType][0].colors.length; i++) {
             var image = document.createElement("img")
             image.src = `/images/${thisArticleType}/${data[thisArticleType][0].colors[i]}.png`
@@ -82,6 +84,8 @@ function editFavorite(){
             image.dataset.articleColor = data[thisArticleType][0].colors[i]
             image.classList.add("articleListBoxClass");
 
+            /* All colors for different colors conains data on what colors of other articles will match; if the user has already selected a color for a different clothing article, 
+            this will allow a color to be chosen and will grey out clothing color if it does not match with what is alrady selected */
             if (pickJacket.dataset.articleColor != "baseJacket" && !data[pickJacket.dataset.articleType][0][pickJacket.dataset.articleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
                 image.style.opacity = "0.1"
             }
@@ -94,6 +98,8 @@ function editFavorite(){
             else if (pickShoes.dataset.articleColor != "baseShoes" && !data[pickShoes.dataset.articleType][0][pickShoes.dataset.articleColor][0][thisArticleType].includes(data[thisArticleType][0].colors[i])) {
                 image.style.opacity = "0.1"
             }
+            /* Below conditionals will blur out specific combinations that don't 
+            match but could not be filtered out through the dicitonary */
             else if (
                 thisArticleType == "shirts" &&
                 pickJacket.dataset.articleColor == "grey" &&
@@ -180,6 +186,7 @@ function editFavorite(){
 
         editClothingOptions.addEventListener("click", checkOutfitType)
 
+        // Decides whether an outfit is appropriate for business professional or business casual environments; displays text at top of icons
         function checkOutfitType () {
             if (pickJacket.dataset.articleColor != pickPants.dataset.articleColor && pickJacket.dataset.articleColor != "baseJacket" && pickPants.dataset.articleColor != "basePants"){
                 editedOutfitTypeMessage.innerHTML = "Business Casual"
@@ -202,6 +209,7 @@ function editFavorite(){
             }
         }
 
+        // Changes the currently stored article icon to the chosen color
         function selectArticle() {
             for (let i=1; i<=4; i++) {
                 if (thisArticleType === buttonChoices.childNodes[i].dataset.articleType) {
@@ -229,6 +237,7 @@ function editFavorite(){
         }
     }
 
+    // Brings user back to seeing all saved outfits
     const returnButton = document.querySelector("#returnButton");
     returnButton.addEventListener("click", () => {
         location.reload()
@@ -245,9 +254,8 @@ function editFavorite(){
     deleteButton.addEventListener("click", deleteThisFavorite)
 
     function saveOutfit(){
-
         const outfitId = buttonChoices.dataset.id
-
+        // Users must have at least a shirt, pair of pants and shoes chosen in order to save an outfit
         if (pickShirt.dataset.articleColor != "baseShirt" &&
         pickPants.dataset.articleColor != "basePants" && 
         pickShoes.dataset.articleColor != "baseShoes" ) {
@@ -257,8 +265,8 @@ function editFavorite(){
             shoesInput.value = pickShoes.dataset.articleColor;
             saveButton.type = "submit";
 
+            // Submits put request to edit outfit in database
             async function submitSavedOutfit(){
-            
             try{
                 const response = await fetch('favorites/editFavorite', {
                     method: 'put',
@@ -286,6 +294,7 @@ function editFavorite(){
     }      
 }
 
+// Delete outfit in edit mode
 async function deleteFavorite(){
     const outfitId = this.parentNode.dataset.id
     console.log(outfitId)
@@ -305,6 +314,7 @@ async function deleteFavorite(){
     }
 }
 
+// Delete outfit in view mode
 async function deleteThisFavorite(){
     try{
         const response = await fetch('favorites/deleteFavorite', {
@@ -322,6 +332,7 @@ async function deleteThisFavorite(){
     }
 }
 
+// Animation for mobile navbar
 $(document).ready(function() {
     // JQUERY NAV TOGGLE
     $('#menu').bind('click',function(event){
