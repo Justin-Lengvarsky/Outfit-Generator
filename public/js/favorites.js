@@ -18,11 +18,9 @@ Array.from(clothingArticle).forEach((el)=>{
     el.addEventListener('click', editFavorite)
 })
 
-
 if (articleNums == 0) {
     noFavorites.style.display = "block"
 }
-
 
 function editFavorite(){
 
@@ -47,15 +45,12 @@ function editFavorite(){
 
     document.querySelector("#allFavorites").style.display = "none";
 
-
     Array.from(clothingArticle).forEach((el)=>{
         el.removeEventListener("click", editFavorite, false);
         el.classList.add('generatorBoxClass');
         el.classList.remove('favoritesBoxClass');
         el.style.opacity = "1"
     })
-
-
 
     const pickJacket = space.childNodes[1]
     const pickShirt = space.childNodes[2]
@@ -66,7 +61,6 @@ function editFavorite(){
     pickShirt.addEventListener("click", showChoices)
     pickPants.addEventListener("click", showChoices)
     pickShoes.addEventListener("click", showChoices)
-
 
     function showChoices () {
 
@@ -172,15 +166,6 @@ function editFavorite(){
             ) {
                 image.style.opacity = "0.1"
             }
-      
-            // else if (
-            //     thisArticleType == "shirts" &&
-            //     pickJacket.dataset.articleColor == "grey" &&
-            //     pickPants.dataset.articleColor == "navy" &&
-            //     data[thisArticleType][0].colors[i] == "pink"
-            // ) {
-            //     image.style.opacity = "0.1"
-            // }
             else {
                 image.addEventListener("click", selectArticle)
             }
@@ -189,7 +174,6 @@ function editFavorite(){
             } 
             if (image.dataset.articleColor === thisArticleColor) {
                 image.style.border = "7px solid #51A3A3"
-                // image.style.backgroundColor = "#DAA49A"
             }
 
         }
@@ -197,9 +181,6 @@ function editFavorite(){
         editClothingOptions.addEventListener("click", checkOutfitType)
 
         function checkOutfitType () {
-            // if (pickShirt.dataset.articleColor != "baseShirt" &&
-            // pickPants.dataset.articleColor != "basePants" && 
-            // pickShoes.dataset.articleColor != "baseShoes" )
             if (pickJacket.dataset.articleColor != pickPants.dataset.articleColor && pickJacket.dataset.articleColor != "baseJacket" && pickPants.dataset.articleColor != "basePants"){
                 editedOutfitTypeMessage.innerHTML = "Business Casual"
             } else if (pickJacket.dataset.articleColor == "brown" ||
@@ -222,7 +203,6 @@ function editFavorite(){
         }
 
         function selectArticle() {
-
             for (let i=1; i<=4; i++) {
                 if (thisArticleType === buttonChoices.childNodes[i].dataset.articleType) {
                     if (this.dataset.articleColor === buttonChoices.childNodes[i].dataset.articleColor) {
@@ -230,13 +210,12 @@ function editFavorite(){
                         thisImage.src = `/images/${thisArticleType}/${buttonChoices.childNodes[i].dataset.articleColor}.png`
                         thisImage.style.opacity = "0.7"
                         thisImage.style.backgroundColor = "rgb(223, 208, 249)"
-                    } else {
-                        
-                    buttonChoices.childNodes[i].dataset.articleColor = this.dataset.articleColor
-                    thisImage.src = this.src
-                    thisImage.style.opacity = "1"
-                    thisImage.style.backgroundColor = "white"
-                }
+                    } else {  
+                        buttonChoices.childNodes[i].dataset.articleColor = this.dataset.articleColor
+                        thisImage.src = this.src
+                        thisImage.style.opacity = "1"
+                        thisImage.style.backgroundColor = "white"
+                    }
                     
                 function clearAllChildNodes(parent) {
                     while (parent.firstChild) {
@@ -255,20 +234,17 @@ function editFavorite(){
         location.reload()
     });
 
-
     const saveButton = document.querySelector("#saveButton")
     const deleteButton = document.querySelector("#deleteButton")
-
     const jacketInput = document.querySelector("#jacketInput")
     const shirtInput = document.querySelector("#shirtInput")
     const pantsInput = document.querySelector("#pantsInput")
     const shoesInput = document.querySelector("#shoesInput")
 
-    saveButton.addEventListener("click", plz)
+    saveButton.addEventListener("click", saveOutfit)
     deleteButton.addEventListener("click", deleteThisFavorite)
 
-
-    function plz(){
+    function saveOutfit(){
 
         const outfitId = buttonChoices.dataset.id
 
@@ -281,7 +257,7 @@ function editFavorite(){
             shoesInput.value = pickShoes.dataset.articleColor;
             saveButton.type = "submit";
 
-            async function work(){
+            async function submitSavedOutfit(){
             
             try{
                 const response = await fetch('favorites/editFavorite', {
@@ -303,13 +279,12 @@ function editFavorite(){
                 console.log(err)
             }
         }
-        work()
+        submitSavedOutfit()
         } else {
             alert("Error: You must choose an option for Shirt, Pants and Shoes in order to save your outfit")
         }
-    }
-      
-    }
+    }      
+}
 
 async function deleteFavorite(){
     const outfitId = this.parentNode.dataset.id
@@ -347,7 +322,6 @@ async function deleteThisFavorite(){
     }
 }
 
-
 $(document).ready(function() {
     // JQUERY NAV TOGGLE
     $('#menu').bind('click',function(event){
@@ -360,4 +334,4 @@ $(document).ready(function() {
             $('#mainnav ul').removeAttr('style');  
         }  
     });
-    });
+});

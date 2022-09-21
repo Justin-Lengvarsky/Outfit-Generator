@@ -175,9 +175,6 @@ footer {
 /* FIRST PAGE
 ================================================== */
 
-
-
-
 #indexHead {
     display: flex;
     flex-direction: row;
@@ -190,7 +187,6 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* padding: 0 15rem; */
     flex-wrap: wrap;
     line-height: 2rem;
     margin-top: 3rem;
@@ -209,39 +205,28 @@ footer {
     opacity: 1;
 }
 
-  /* #generatorBox {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding: 0 15rem;
-        flex-wrap: wrap;
-        line-height: 2rem;
-        margin-top: 3rem;
-    } */
+#homeIndexText h2 {
+    color: rgb(223, 208, 249);
+    font-size: 2.25rem;
+}
 
-    #homeIndexText h2 {
-        color: rgb(223, 208, 249);
-        font-size: 2.25rem;
-        }
-    
-    .indexGeneratorBoxClass {
-        list-style-type: none;
-        object-fit: scale-down;
-        border-radius: 5%;
-        border: 5px solid  rgb(164, 139, 235);
-        width: 40%;
-        height: 15rem;
-        background-color: rgb(223, 208, 249);
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-        cursor: pointer;
-        font-size: 1rem;
-        padding: 2%;
-        word-wrap: break-word;
-        text-align: center;
-        opacity: 0.7;
-        margin: .1rem
-    }
+.indexGeneratorBoxClass {
+    list-style-type: none;
+    object-fit: scale-down;
+    border-radius: 5%;
+    border: 5px solid  rgb(164, 139, 235);
+    width: 40%;
+    height: 15rem;
+    background-color: rgb(223, 208, 249);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    font-size: 1rem;
+    padding: 2%;
+    word-wrap: break-word;
+    text-align: center;
+    opacity: 0.7;
+    margin: .1rem
+}
 
 #indexText {
     display: flex;
@@ -249,13 +234,12 @@ footer {
     justify-content: center;
     text-align: left;
     width: 50%;
-    /* margin: 10rem 0 0 45%; */
     line-height: 4rem;
 }
 
 #indexText h1{
- color:rgb(223, 208, 249);
- font-size: 4rem;
+    color:rgb(223, 208, 249);
+    font-size: 4rem;
 }
 
 #indexText h3{
@@ -339,7 +323,6 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* padding: 0 5%; */
     margin: 6rem 0;
 }
 
@@ -347,23 +330,21 @@ footer {
    text-align: right;
    width: 50%;
    padding: 0 5% 0 0;
-   /* margin-right: 3rem; */
 }
 
 .leftTipsText img {
     margin-left: 5%;
- }
+}
 
 .rightTipsText div {
     text-align: left;
     width: 50%;
     padding: 0 0 0 5%;
- }
+}
 
- .rightTipsText img {
+.rightTipsText img {
     margin-right: 5%;
- }
- 
+}
  
 .tipsListClass h3 {
     width: 100%;
@@ -408,39 +389,12 @@ footer {
     padding: 0 5% 0 0;
 }
 
-
 /* GENERATOR PAGE
 ================================================== */
-
-#one {
-    color: rgb(46, 31, 91)
-}
-
-#two {
-    color: rgb(223, 208, 249)
-}
-
-#three {
-    color: rgb(105, 70, 221)
-}
-
-#four {
-    color: rgb(117, 201, 200);
-    text-align: center;
-}
-
-#five {
-    color: #8769E4
-}
-
-#six {
-    color: rgb(164, 139, 235)
-}
 
 #outfitTypeMessage {
     text-align: center;
     color: rgb(117, 201, 200);
-
 }
 
 #generatorBox {
@@ -480,6 +434,7 @@ footer {
 
 /* FAVORITES 
 ================================================== */
+
 #editedOutfitTypeMessage {
     text-align: center;
     display: none;
@@ -487,10 +442,10 @@ footer {
 }
 
 #noFavorites {
-text-align: center;
-display: none;
-color: rgb(223, 208, 249);
-line-height: 4rem;
+    text-align: center;
+    display: none;
+    color: rgb(223, 208, 249);
+    line-height: 4rem;
 }
 
 #noFavorites h1{
@@ -651,7 +606,7 @@ button {
 }
 
 .articleListBoxClass:hover {
-border: 4.5px solid rgb(117, 201, 200);
+    border: 4.5px solid rgb(117, 201, 200);
 }
 
 /* MEDIA QUERIES
@@ -721,7 +676,6 @@ Description: Define screen-size breakpoints here.
         padding: 0 .5em;
         font-size: 1rem;
         border-bottom: none;
-
     }
 
     #mainnav #signUpButton{
@@ -878,13 +832,11 @@ Description: Define screen-size breakpoints here.
         margin: 0 auto 2rem auto;
     }
 
-
     #indexSecondText h1{
         color:rgb(223, 208, 249);
         font-size: 2.5rem;
     }
     
-
     #homeText h1:first-of-type{
         margin-bottom: 1rem;
     }
@@ -971,8 +923,8 @@ Description: Define screen-size breakpoints here.
     }
     
     #indexText h1{
-     color:rgb(223, 208, 249);
-     font-size: 3rem;
+        color:rgb(223, 208, 249);
+        font-size: 3rem;
     }
     
     #indexText h3{
@@ -993,7 +945,7 @@ Description: Define screen-size breakpoints here.
         margin: 3rem auto 5rem auto;
         flex-wrap: wrap;
         line-height: 2rem;
-        }
+    }
     
     #indexText div{
         display: flex;
@@ -1037,7 +989,7 @@ Description: Define screen-size breakpoints here.
     #loginArea form #loginSubmit {
         width: 25%;
     }
-	
+
 }
 
 /* Tablet (Between 768px - 992px)*/
@@ -1062,7 +1014,5 @@ Description: Define screen-size breakpoints here.
         width: 45%;
         height: 10rem;
     }
-
-
 
 }

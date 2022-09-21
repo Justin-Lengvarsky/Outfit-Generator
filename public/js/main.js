@@ -36,7 +36,6 @@ function showChoices () {
     let thisImage = this;
     let thisArticleType = this.dataset.articleType;
     let thisArticleColor = this.dataset.articleColor;
-    console.log(thisArticleType)
 
     for (let i=0; i<data[thisArticleType][0].colors.length; i++) {
         var image = document.createElement("img")
@@ -129,15 +128,6 @@ function showChoices () {
         ) {
             image.style.opacity = "0.1"
         }
-  
-        // else if (
-        //     thisArticleType == "shirts" &&
-        //     pickJacket.dataset.articleColor == "grey" &&
-        //     pickPants.dataset.articleColor == "navy" &&
-        //     data[thisArticleType][0].colors[i] == "pink"
-        // ) {
-        //     image.style.opacity = "0.1"
-        // }
         else {
             image.addEventListener("click", selectArticle)
         }
@@ -146,12 +136,10 @@ function showChoices () {
         } 
         if (image.dataset.articleColor === thisArticleColor) {
             image.style.border = "7px solid #51A3A3"
-            // image.style.backgroundColor = "#DAA49A"
         }
     }
 
     function selectArticle() {
-
         for (let i=1; i<=7; i+=2) {
             if (thisArticleType === buttonChoices.childNodes[i].dataset.articleType) {
                 if (this.dataset.articleColor === buttonChoices.childNodes[i].dataset.articleColor) {
@@ -160,12 +148,11 @@ function showChoices () {
                     thisImage.style.opacity = "0.7"
                     thisImage.style.backgroundColor = "rgb(223, 208, 249)"
                 } else {
-                    
-                buttonChoices.childNodes[i].dataset.articleColor = this.dataset.articleColor
-                thisImage.src = this.src
-                thisImage.style.opacity = "1"
-                thisImage.style.backgroundColor = "white"
-            }
+                    buttonChoices.childNodes[i].dataset.articleColor = this.dataset.articleColor
+                    thisImage.src = this.src
+                    thisImage.style.opacity = "1"
+                    thisImage.style.backgroundColor = "white"
+                }
                 
                 function clearAllChildNodes(parent) {
                     while (parent.firstChild) {
@@ -206,9 +193,7 @@ function saveOutfit () {
     } else {
         alert("Error: You must choose an option for Shirt, Pants and Shoes in order to save your outfit")
     }
-    
 }
-
 
 function guestSaveOutfit () {
 
@@ -262,9 +247,6 @@ function clearOptions () {
 clothingOptions.addEventListener("click", checkOutfitType)
 
 function checkOutfitType () {
-    // if (pickShirt.dataset.articleColor != "baseShirt" &&
-    // pickPants.dataset.articleColor != "basePants" && 
-    // pickShoes.dataset.articleColor != "baseShoes" )
     if (pickJacket.dataset.articleColor != pickPants.dataset.articleColor && pickJacket.dataset.articleColor != "baseJacket" && pickPants.dataset.articleColor != "basePants"){
         outfitTypeMessage.innerHTML = "Business Casual"
     } else if (pickJacket.dataset.articleColor == "brown" ||
@@ -286,13 +268,11 @@ function checkOutfitType () {
     }
 }
 
-
 $(document).ready(function() {
     // JQUERY NAV TOGGLE
     $('#menu').bind('click',function(event){
         $('#mainnav ul').slideToggle();
     });
-
 
     $(window).resize(function(){  
         var w = $(window).width();  
