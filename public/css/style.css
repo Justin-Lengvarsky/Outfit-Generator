@@ -8,11 +8,13 @@
     box-sizing: border-box; 
 }
 
+
 main {
     padding: 0 5%;
 }
 
 body {
+    font-family: 'Lato', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -288,24 +290,49 @@ footer {
     justify-content: center;
     text-align: center;
     line-height: 4rem;
+    color:rgb(223, 208, 249);
 }
 
 #indexSecondText {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    text-align: center;
-    line-height: 4rem;
-    margin-top: 12rem;
+    text-align: right;
+    margin-top: 7rem;
+    background-color: rgb(223, 208, 249);
+    padding: 3rem 5%;
 }
 
-#indexSecondText h1{
-    color:rgb(223, 208, 249);
-    font-size: 3rem;
+#indexSecondText div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto 0 auto;
+    color: black;    
+    text-align: right;
+
+}
+
+#indexSecondText h1 {
+    width: 80%;
+    margin: 0 auto 1rem auto;
+    display: inline-block;
+}
+
+#indexSecondText img{
+    display: inline;
+    width: 32rem;
+    height: 35rem;
+}
+
+#indexSecondText p{
+    width: 80%;
+    margin: 0 auto;
+    display: inline-block;
 }
 
 #homeText h1{
-    color:rgb(223, 208, 249);
     font-size: 3rem;
 }
 
@@ -362,16 +389,26 @@ footer {
     height: 18rem;
 }
 
-#firstTip h3 {
+#firstTip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto 0 auto;
+    color: rgb(223, 208, 249);    
     text-align: center;
+}
+
+#firstTip h1 {
+    width: 80%;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+#firstTip p {
     width: 80%;
     margin: 2rem auto;
     display: inline-block;
-    color: rgb(223, 208, 249);
-}
-
-#firstTip {
-    margin: 2rem auto 0 auto;
 }
 
 .tipsListClass .dualImages {
@@ -831,15 +868,30 @@ Description: Define screen-size breakpoints here.
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         text-align: center;
-        line-height: 3rem;
+        line-height: 2rem;
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 0;
+    }
+
+    #indexSecondText p{
         width: 80%;
-        margin: 0 auto 2rem auto;
+        margin: 2rem auto;
+        display: inline-block;
     }
 
     #indexSecondText h1{
-        color:rgb(223, 208, 249);
-        font-size: 2.5rem;
+        width: 80%;
+        display: inline-block;
+    }
+
+    #indexSecondText img{
+        display: inline;
+        width: 90%;
+        height: 25rem;
+        margin-top: 5rem;
     }
     
     #homeText h1:first-of-type{
@@ -887,11 +939,12 @@ Description: Define screen-size breakpoints here.
         margin: 2rem 0;
     }
 
-    #firstTip h3 {
-        margin: 0 auto !important;
+    #indexSecondText div  {
+        text-align: center;
+       order: 1;
     }
     
-    #firstTip h3 {
+    #indexSecondText p {
         text-align: center;
         width: 80%;
         margin: 0 auto;
@@ -918,6 +971,7 @@ Description: Define screen-size breakpoints here.
     ================================================== */
 
     #indexText {
+        color:rgb(223, 208, 249);
         justify-content: center;
         text-align: center;
         width: 100%;
@@ -928,12 +982,10 @@ Description: Define screen-size breakpoints here.
     }
     
     #indexText h1{
-        color:rgb(223, 208, 249);
         font-size: 3rem;
     }
     
     #indexText h3{
-        color:rgb(223, 208, 249);
         font-size: 2rem;
         line-height: 3rem;
         margin: 1rem 0 2rem 0;
