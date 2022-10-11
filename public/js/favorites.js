@@ -47,6 +47,7 @@ Array.from(clothingArticle).forEach((el)=>{
 if (articleNums == 0) {
     noFavorites.style.display = "block"
     favoritesTips.style.display = "none"
+    optionSelect.style.display = "none"
 }
 
 // If user selects an outfit or it's edit button, page will hide all other outfits and expand on the selected outfit
