@@ -189,6 +189,7 @@ else if (pickShoes.dataset.articleColor != "baseShoes" && !data[pickShoes.datase
 
 function saveOutfit () {
     // Users must have at least a shirt, pair of pants and shoes chosen in order to save an outfit
+    
     if (pickShirt.dataset.articleColor != "baseShirt" &&
     pickPants.dataset.articleColor != "basePants" && 
     pickShoes.dataset.articleColor != "baseShoes" ) {

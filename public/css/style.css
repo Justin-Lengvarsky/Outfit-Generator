@@ -9,6 +9,8 @@
 }
 
 
+
+
 main {
     padding: 0 5%;
 }
@@ -22,6 +24,22 @@ body {
     background: -moz-linear-gradient(-45deg, #2E1F5B 0%, #6946DE 45%, #6946DE 100%);
     background: -webkit-linear-gradient(-45deg, #2E1F5B 0%, #6946DE 45%, #6946DE 100%);
     background: linear-gradient(135deg, #2E1F5B 0%, #6946DE 45%, #6946DE 100%);
+}
+
+#favoritesTips {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem auto;
+    color: rgb(223, 208, 249);    
+    text-align: center;
+    padding: 0 10%;
+}
+
+#favoritesTips a{
+    color:rgb(117, 201, 200);
+    text-decoration: none;
 }
 
 /* NAVIGATION / FOOTER
@@ -311,7 +329,6 @@ footer {
     margin: 2rem auto 0 auto;
     color: black;    
     text-align: right;
-
 }
 
 #indexSecondText h1 {
@@ -329,6 +346,13 @@ footer {
 #indexSecondText p{
     width: 80%;
     margin: 0 auto;
+    display: inline-block;
+}
+
+#indexSecondText a{
+    width: 80%;
+    text-align: right;
+    margin: 1rem auto;
     display: inline-block;
 }
 
@@ -504,8 +528,29 @@ footer {
     margin-top: 3rem;
 }
 
-#allFavorites {
+#optionSelect {
+    display: block;
+    margin: 0 auto 2rem auto;
+    padding: 5% 10%;
+    width: 160px;
+    height: 30px;
+    border: 1px solid #999;
+    font-size: 18px;
+    color: rgb(46, 31, 91);
+    background-color: rgb(223, 208, 249);
+    border-radius: 5px;
+    box-shadow: 4px 4px #ccc;
+}
+
+#recentFavorites {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#oldFavorites {
+    display: none;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -807,8 +852,16 @@ Description: Define screen-size breakpoints here.
         margin-top: 3rem;
     }
     
-    #allFavorites {
+    #recentFavorites {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+    }
+
+    #oldFavorites {
+        display: none;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
@@ -892,6 +945,10 @@ Description: Define screen-size breakpoints here.
         width: 90%;
         height: 25rem;
         margin-top: 5rem;
+    }
+
+    #indexSecondText a{
+        text-align: center;
     }
     
     #homeText h1:first-of-type{

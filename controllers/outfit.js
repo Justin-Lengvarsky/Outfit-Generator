@@ -22,7 +22,7 @@ module.exports = {
         try{
             await Favorite.create({jacket: req.body.jacketChoice, shirt: req.body.shirtChoice, pants: req.body.pantsChoice, shoes: req.body.shoesChoice, outfitType: req.body.outfitTypeChoice, userId: req.user.id})
             console.log('Outfit has been saved!')
-            res.redirect('/outfit')
+            res.redirect('/favorites')
         }catch(err){
             console.log(err)
         }

@@ -4,6 +4,32 @@ const editButton = document.querySelectorAll('.edit')
 const deleteBtn = document.querySelectorAll('.del')
 const editedOutfitTypeMessage = document.querySelector('#editedOutfitTypeMessage')
 const clothingArticle = document.querySelectorAll('.favoritesBoxClass')
+const favoritesTips = document.querySelector('#favoritesTips')
+
+const optionSelect = document.querySelector('#optionSelect')
+const recentFavorites = document.querySelector('#recentFavorites')
+const oldFavorites = document.querySelector('#oldFavorites')
+
+optionSelect.addEventListener('change', sortFavorites)
+
+function sortFavorites(event) {
+    if (event.target.value=="recentlyAdded") {
+        $(oldFavorites).animate({ opacity: 0 }, 500, function() {
+            oldFavorites.style.display="none"
+            recentFavorites.style.display="flex"
+            recentFavorites.style.opacity= 0
+            $(recentFavorites).animate({ opacity: 1 }, 500);
+          });
+    } else {
+        $(recentFavorites).animate({ opacity: 0 }, 500, function() {
+            recentFavorites.style.display="none"
+            oldFavorites.style.display="flex"
+            oldFavorites.style.opacity= 0
+            $(oldFavorites).animate({ opacity: 1 }, 500);
+          });
+    }   
+    console.log(event.target.value)
+}
 
 
 Array.from(editButton).forEach((el)=>{
@@ -20,6 +46,7 @@ Array.from(clothingArticle).forEach((el)=>{
 
 if (articleNums == 0) {
     noFavorites.style.display = "block"
+    favoritesTips.style.display = "none"
 }
 
 // If user selects an outfit or it's edit button, page will hide all other outfits and expand on the selected outfit
@@ -32,6 +59,8 @@ function editFavorite(){
     space.style.display = "flex";
     editedOutfitTypeMessage.innerHTML = thisOutfitType
     editedOutfitTypeMessage.style.display = "block";
+    favoritesTips.style.display = "none"
+    optionSelect.style.display = "none"
 
     const editOptionInputs = document.getElementById("editOptionInputs")
     editOptionInputs.style.display = "flex"
@@ -43,7 +72,9 @@ function editFavorite(){
         space.appendChild(thisOutfit.childNodes[i])
     }
 
-    document.querySelector("#allFavorites").style.display = "none";
+    document.querySelector("#recentFavorites").style.display = "none";
+    document.querySelector("#oldFavorites").style.display = "none";
+
 
     Array.from(clothingArticle).forEach((el)=>{
         el.removeEventListener("click", editFavorite, false);
