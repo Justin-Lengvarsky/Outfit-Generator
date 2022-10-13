@@ -9,7 +9,17 @@
 }
 
 
+.favoritesSortedFirst {
+    order: 0
+}
 
+.favoritesSortedLast {
+    order: 1
+}
+
+.jacket {
+    object-fit: fill !important;
+}
 
 main {
     padding: 0 5%;
@@ -532,7 +542,7 @@ footer {
     display: block;
     margin: 0 auto 2rem auto;
     padding: 5% 10%;
-    width: 160px;
+    width: 140px;
     height: 30px;
     border: 1px solid #999;
     font-size: 18px;
@@ -549,7 +559,14 @@ footer {
     justify-content: center;
 }
 
-#oldFavorites {
+#businessProfessionalSort {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#businessCasualSort {
     display: none;
     flex-direction: row;
     flex-wrap: wrap;
@@ -723,12 +740,13 @@ Description: Define screen-size breakpoints here.
 
     #mainnav #menu {
         display: inline-block;
+        /* font-family: -apple-system; */
         line-height: 4rem;
         font-size: 4rem;
         text-align: left;
-        padding: 0em .3em .338em 1.4em;
+        padding: 0em .3em .48em 1.4em;
         vertical-align: middle;
-        color: white;
+        color: rgb(223, 208, 249);
     }
 
     #outfitLogoMobile {
@@ -860,12 +878,19 @@ Description: Define screen-size breakpoints here.
         margin: 0;
     }
 
-    #oldFavorites {
+    #businessProfessionalSort {
         display: none;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         margin: 0;
+    }
+
+    #businessCasualSort {
+        display: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .favoritesItem {

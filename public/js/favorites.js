@@ -8,24 +8,38 @@ const favoritesTips = document.querySelector('#favoritesTips')
 
 const optionSelect = document.querySelector('#optionSelect')
 const recentFavorites = document.querySelector('#recentFavorites')
-const oldFavorites = document.querySelector('#oldFavorites')
+const businessProfessionalSort = document.querySelector('#businessProfessionalSort')
+const businessCasualSort = document.querySelector('#businessCasualSort')
+const test = document.getElementsByClassName('test')
+
+
 
 optionSelect.addEventListener('change', sortFavorites)
 
 function sortFavorites(event) {
     if (event.target.value=="recentlyAdded") {
-        $(oldFavorites).animate({ opacity: 0 }, 500, function() {
-            oldFavorites.style.display="none"
+        $(test).animate({ opacity: 0 }, 500, function() {
+            businessProfessionalSort.style.display="none"
+            businessCasualSort.style.display="none"
             recentFavorites.style.display="flex"
-            recentFavorites.style.opacity= 0
+            // recentFavorites.style.opacity= 0
             $(recentFavorites).animate({ opacity: 1 }, 500);
           });
-    } else {
-        $(recentFavorites).animate({ opacity: 0 }, 500, function() {
+    }  else if (event.target.value=="businessProfessional") {
+        $(test).animate({ opacity: 0 }, 500, function() {
+            businessCasualSort.style.display="none"
             recentFavorites.style.display="none"
-            oldFavorites.style.display="flex"
-            oldFavorites.style.opacity= 0
-            $(oldFavorites).animate({ opacity: 1 }, 500);
+            businessProfessionalSort.style.display="flex"
+            // businessProfessionalSort.style.opacity= 0
+            $(businessProfessionalSort).animate({ opacity: 1 }, 500);
+          });
+    } else {
+        $(test).animate({ opacity: 0 }, 500, function() {
+            businessProfessionalSort.style.display="none"
+            recentFavorites.style.display="none"
+            businessCasualSort.style.display="flex"
+            // businessCasualSort.style.opacity= 0
+            $(businessCasualSort).animate({ opacity: 1 }, 500);
           });
     }   
     console.log(event.target.value)
