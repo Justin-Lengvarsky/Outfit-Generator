@@ -76,6 +76,9 @@ function editFavorite(){
     editedOutfitTypeMessage.style.display = "block";
     favoritesTips.style.display = "none"
     optionSelect.style.display = "none"
+    recentFavorites.style.display = "none"
+    businessProfessionalSort.style.display = "none"
+    businessCasualSort.style.display = "none"
 
     const editOptionInputs = document.getElementById("editOptionInputs")
     editOptionInputs.style.display = "flex"
@@ -86,10 +89,6 @@ function editFavorite(){
     for (let i=1; i<=4; i++) {
         space.appendChild(thisOutfit.childNodes[i])
     }
-
-    document.querySelector("#recentFavorites").style.display = "none";
-    document.querySelector("#oldFavorites").style.display = "none";
-
 
     Array.from(clothingArticle).forEach((el)=>{
         el.removeEventListener("click", editFavorite, false);
