@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav id="mainnav" class="group">
+            <div id="outfitLogoMobile"><a href="/homepage">Stylo</a></div>
+            <div id="menu">&#x2261;</div>
+            <h2><a id="outfitLogo" href="/homepage">Stylo</a></h2>
+            <ul>
+                <li><a href="/" style="border-bottom: none;">Back</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="signUpArea">
+
+    <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>    
+    <% } %>
+    <form action="/signup" method="POST">
+        <input type="text" name="userName" placeholder="User Name">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="password" name="confirmPassword" placeholder="Confirm Password">
+        <button id="signUpSubmit" type="submit">Submit</button>
+    </form>
+    </section> 
+    <footer>
+        <p>Copyright 2022</p>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            // JQUERY NAV TOGGLE
+            $('#menu').bind('click',function(event){
+                $('#mainnav ul').slideToggle();
+            });
+
+            $(window).resize(function(){  
+                var w = $(window).width();  
+                if(w > 768) {  
+                    $('#mainnav ul').removeAttr('style');  
+                }  
+            });
+        });
+    </script>
+</body>
+</html>

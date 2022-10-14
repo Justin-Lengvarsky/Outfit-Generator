@@ -1,0 +1,1157 @@
+
+/* BODY
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+
+.favoritesSortedFirst {
+    order: 0
+}
+
+.favoritesSortedLast {
+    order: 1
+}
+
+.jacket {
+    object-fit: fill !important;
+}
+
+main {
+    padding: 0 5%;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #2E1F5B;
+    background: -moz-linear-gradient(-45deg, #2E1F5B 0%, #6946DE 45%, #6946DE 100%);
+    background: -webkit-linear-gradient(-45deg, #2E1F5B 0%, #6946DE 45%, #6946DE 100%);
+    background: linear-gradient(135deg, #2E1F5B 0%, #6946DE 45%, #6946DE 100%);
+}
+
+#favoritesTips {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem auto;
+    color: rgb(223, 208, 249);    
+    text-align: center;
+    padding: 0 10%;
+}
+
+#favoritesTips a{
+    color:rgb(117, 201, 200);
+    text-decoration: none;
+}
+
+/* NAVIGATION / FOOTER
+================================================== */
+
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 5% 10%;
+}
+
+#mainnav {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    text-transform:uppercase;
+    letter-spacing: .05em;
+    width: 100%;
+}
+
+header h2 {
+    font-size: 3rem
+}
+
+h2 a {
+    text-decoration: none;
+    color: rgb(223, 208, 249);
+    font-style: italic;
+    letter-spacing: 0.25rem;
+}
+
+#menu {
+    display: none;
+    padding: .8em 1.5em;
+    cursor: pointer;
+}
+
+#outfitLogoMobile {
+    display: none;
+}
+
+#mainnav ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    text-align: center;
+    line-height: 3rem;
+    margin-left: auto;
+}
+
+#mainnav ul li {
+    margin: 0 1.25rem;
+    list-style: none;
+    display: inline-block;
+}
+
+#mainnav ul li:last-of-type {
+    margin: 0 0 0 1.25rem;
+    list-style: none;
+    display: inline-block;
+}
+
+#mainnav ul li a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: inline-block;
+    color: rgb(223, 208, 249);
+    border-bottom: 1px solid rgb(223, 208, 249);
+}
+
+#mainnav ul li a:hover{
+    color: rgb(46, 31, 91);
+}
+
+footer {
+    width: 100%;
+    height: 4rem;
+    line-height: 4rem;
+    padding: 0 10%;
+    color: rgb(223, 208, 249);
+    margin-top: auto;
+    overflow: hidden;
+}
+
+/* LOGIN
+================================================== */
+
+#loginArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#loginArea form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#loginArea input {
+    width: 40%;
+    height: 2rem;
+    margin: 1rem auto;
+}
+
+#loginArea form #loginSubmit {
+
+    margin: 1rem auto;
+    width: 5%;
+    height: 2rem;
+}
+
+/* SIGN UP
+================================================== */
+
+#signUpArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#signUpArea form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#signUpArea input {
+    width: 40%;
+    height: 2rem;
+    margin: 1rem auto;
+}
+
+#signUpArea form #signUpSubmit {
+    margin: 1rem auto;
+    width: 5%;
+    height: 2rem;
+}
+
+
+.lowOpacity {
+    opacity: 0.5;
+}
+
+/* FIRST PAGE
+================================================== */
+
+#indexHead {
+    display: flex;
+    flex-direction: row;
+    margin: 5rem 0 0 0;
+}
+
+#indexImage {
+    width: 30%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 2rem;
+    margin-top: 3rem;
+}
+
+.articleDiv {
+    display: inline-block;
+    width: 50%;
+    height: 10rem;
+}
+
+#indexImage .indexGeneratorBoxClass {
+    width: 100%;
+    height: 10rem;
+    object-fit: fill;
+    opacity: 1;
+}
+
+#homeIndexText h2 {
+    color: rgb(223, 208, 249);
+    font-size: 2.25rem;
+}
+
+.indexGeneratorBoxClass {
+    list-style-type: none;
+    object-fit: scale-down;
+    border-radius: 5%;
+    border: 5px solid  rgb(164, 139, 235);
+    width: 40%;
+    height: 15rem;
+    background-color: rgb(223, 208, 249);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    font-size: 1rem;
+    padding: 2%;
+    word-wrap: break-word;
+    text-align: center;
+    opacity: 0.7;
+    margin: .1rem
+}
+
+#indexText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    width: 50%;
+    line-height: 4rem;
+}
+
+#indexText h1{
+    color:rgb(223, 208, 249);
+    font-size: 4rem;
+}
+
+#indexText h3{
+    color:rgb(223, 208, 249);
+    font-size: 2rem;
+}
+
+#indexText div{
+    display: flex;
+    flex-direction: row;
+}
+
+#indexText a{
+    color:rgb(117, 201, 200);
+    font-size: 2rem;
+    margin-right: 3rem;
+}
+
+#indexText a:hover{
+    color:rgb(46, 31, 91);
+}
+
+#signUpButton{
+    text-align: center;
+    color:rgb(46, 31, 91) !important;
+    background-color:rgb(223, 208, 249);
+    width: 7rem;
+    height: 3rem;
+    line-height: 3rem;
+    border-radius: 5%;
+    border-bottom: none !important;
+}
+
+
+#signUpButton:hover{
+    background-color: rgb(46, 31, 91);
+    color:rgb(223, 208, 249) !important;
+}
+
+/* HOME PAGE
+================================================== */
+
+#homeText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 4rem;
+    color:rgb(223, 208, 249);
+}
+
+#indexSecondText {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: right;
+    margin-top: 7rem;
+    background-color: rgb(223, 208, 249);
+    padding: 3rem 5%;
+}
+
+#indexSecondText div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto 0 auto;
+    color: black;    
+    text-align: right;
+}
+
+#indexSecondText h1 {
+    width: 80%;
+    margin: 0 auto 1rem auto;
+    display: inline-block;
+}
+
+#indexSecondText img{
+    display: inline;
+    width: 32rem;
+    height: 35rem;
+}
+
+#indexSecondText p{
+    width: 80%;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+#indexSecondText a{
+    width: 80%;
+    text-align: right;
+    margin: 1rem auto;
+    display: inline-block;
+}
+
+#homeText h1{
+    font-size: 3rem;
+}
+
+#tipsMain {
+    padding: 0 17.5%;
+    margin-bottom: 10rem;
+}
+
+.tipsListClass {
+    margin: 2rem 0;
+    color: #EDF0DA;
+}
+
+.tipsListClass {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 6rem 0;
+}
+
+.leftTipsText div {
+   text-align: right;
+   width: 50%;
+   padding: 0 5% 0 0;
+}
+
+.leftTipsText img {
+    margin-left: 5%;
+}
+
+.rightTipsText div {
+    text-align: left;
+    width: 50%;
+    padding: 0 0 0 5%;
+}
+
+.rightTipsText img {
+    margin-right: 5%;
+}
+ 
+.tipsListClass h3 {
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.tipsListClass p {
+    font-size: 1.2rem;
+}
+
+.tipsListClass img {
+    display: inline;
+    width: 22rem;
+    height: 18rem;
+}
+
+#firstTip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto 0 auto;
+    color: rgb(223, 208, 249);    
+    text-align: center;
+}
+
+#firstTip h1 {
+    width: 80%;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+#firstTip p {
+    width: 80%;
+    margin: 2rem auto;
+    display: inline-block;
+}
+
+.tipsListClass .dualImages {
+    margin-left: 0;
+    width: 11rem;
+    height: 15rem;
+}
+
+.tipsListClass .dualImages:first-of-type {
+    margin-left: 5%;
+}
+
+.tipsListClass .dualImagesText {
+    width: 50%;
+    padding: 0 5% 0 0;
+}
+
+/* GENERATOR PAGE
+================================================== */
+
+#guestHeader {
+    color: rgb(117, 201, 200);
+    text-align: center;
+}
+
+#outfitTypeMessage {
+    text-align: center;
+    color: rgb(117, 201, 200);
+}
+
+#generatorBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 15rem;
+    flex-wrap: wrap;
+    line-height: 2rem;
+    margin-top: 3rem;
+}
+
+.generatorBoxClass {
+    list-style-type: none;
+    object-fit: scale-down;
+    border-radius: 5%;
+    border: 5px solid  rgb(164, 139, 235);
+    width: 40%;
+    height: 15rem;
+    background-color: rgb(223, 208, 249);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 2%;
+    word-wrap: break-word;
+    text-align: center;
+    opacity: 0.7;
+    margin: .1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.generatorBoxClass:hover {
+    box-shadow: 0 0 60px rgba(0,0,0,0.50);
+}
+
+/* FAVORITES 
+================================================== */
+
+#editedOutfitTypeMessage {
+    text-align: center;
+    display: none;
+    color: rgb(117, 201, 200);
+}
+
+#noFavorites {
+    text-align: center;
+    display: none;
+    color: rgb(223, 208, 249);
+    line-height: 4rem;
+}
+
+#noFavorites h1{
+    font-size: 2.5rem;
+}
+
+#space {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 15rem;
+    flex-wrap: wrap;
+    line-height: 2rem;
+    margin-top: 3rem;
+}
+
+#optionSelect {
+    display: block;
+    margin: 0 auto 2rem auto;
+    padding: 5% 10%;
+    width: 140px;
+    height: 30px;
+    border: 1px solid #999;
+    font-size: 18px;
+    color: rgb(46, 31, 91);
+    background-color: rgb(223, 208, 249);
+    border-radius: 5px;
+    box-shadow: 4px 4px #ccc;
+}
+
+#recentFavorites {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#businessProfessionalSort {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#businessCasualSort {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.favoritesItem {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 2rem;
+    width: 40%;
+    height: 20rem;
+}
+
+.favoritesBoxClass {
+    list-style-type: none;
+    object-fit: scale-down;
+    border-radius: 5%;
+    border: 5px solid  rgb(164, 139, 235);
+    width: 45%;
+    height: 10rem;
+    background-color: rgb(223, 208, 249);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.favoritesBoxClass:hover {
+    box-shadow: 0 0 60px rgba(0,0,0,0.50);
+}
+
+.del {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    text-align: center;
+    width: 4rem;
+    height: 2rem;
+    margin: 1.5rem 1rem;
+    cursor: pointer;
+}
+
+.edit {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    text-align: center;
+    width: 4rem;
+    height: 2rem;
+    margin: 1.5rem 1rem;
+    cursor: pointer;
+}
+
+#optionButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 3rem auto;
+    color: white;
+}
+
+.input{
+    display: none;
+}
+
+button {
+    margin: 0 2rem;
+    height: 2rem;
+    width: 4rem;
+    border-radius: 10%;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    line-height: 1rem;
+}
+
+#editOptionInputs {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    margin: 3rem auto;
+}
+
+#editOptionInputs button {
+    margin: 0 2rem;
+    height: 2rem;
+    width: 4rem;
+    border-radius: 10%;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+#clothingOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    flex-wrap: wrap;
+    line-height: 2rem;
+    margin: 3rem auto;
+    min-height: 10rem
+}
+
+#editClothingOptions {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    flex-wrap: wrap;
+    line-height: 2rem;
+    margin: 3rem auto;
+    min-height: 10rem
+}
+
+
+.articleListBoxClass {
+    list-style-type: none;
+    object-fit: scale-down;
+    border-radius: 5%;
+    border: 6px solid rgb(164, 139, 235);
+    margin: 0.5rem;
+    width: 20%;
+    height: 10rem;
+    order: 1;
+    background-color: #F6F2FF;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+    font-size: 1rem;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.articleListBoxClass:hover {
+    border: 4.5px solid rgb(117, 201, 200);
+}
+
+/* MEDIA QUERIES
+Description: Define screen-size breakpoints here.
+(e.g. Desktop, Tablet, Mobile)
+===================================== */
+
+/* MOBILE (Smaller than 768px)*/
+@media all and (max-width: 767px) {
+
+    /* HEADER / FOOTER
+    ================================================== */
+
+    header {
+        padding: 0;
+        margin-bottom: 3rem;
+    }
+
+    #outfitLogo {
+        display: none;    
+    }
+
+    #mainnav {
+        display: inline;
+        height: 8rem;
+    }
+
+    #mainnav #menu {
+        display: inline-block;
+        /* font-family: -apple-system; */
+        line-height: 4rem;
+        font-size: 4rem;
+        text-align: left;
+        padding: 0em .3em .48em 1.4em;
+        vertical-align: middle;
+        color: rgb(223, 208, 249);
+    }
+
+    #outfitLogoMobile {
+        display: inline-block;
+        height: 6rem;
+        line-height: 6rem;
+        font-size: 2.5rem;
+        text-align: center;
+        margin-left: .6rem;
+        text-decoration: none;
+        font-style: italic;
+    }
+
+    #outfitLogoMobile a{
+        text-decoration: none;
+        color: rgb(223, 208, 249);
+        letter-spacing: 0.2rem;
+    }
+
+    #mainnav ul {
+        margin: 0;
+        display: none;
+    }
+
+    #mainnav ul li {
+        display: block;
+        margin: 0 .5rem !important;
+    }
+
+    #mainnav ul li a {
+        display: inline-block;
+        padding: 0 .5em;
+        font-size: 1rem;
+        border-bottom: none;
+    }
+
+    #mainnav #signUpButton{
+        display: inline-block;
+        width: 5rem;
+        height: 2rem;
+        line-height: 2rem;
+        border-radius: 5%;
+    }
+
+    footer {
+        margin-top: auto;
+        overflow: hidden;
+    }
+
+    /* OUTFIT
+    ================================================== */
+
+    #generatorBox {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0rem;
+        flex-wrap: wrap;
+        line-height: 2rem;
+        margin-top: 3rem;
+        width: 100%;
+    }
+
+    .generatorBoxClass {
+        list-style-type: none;
+        object-fit: fill;
+        border-radius: 5%;
+        border: 5px solid  rgb(164, 139, 235);
+        width: 45%;
+        height: 10rem;
+        background-color: rgb(223, 208, 249);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 2%;
+        word-wrap: break-word;
+        text-align: center;
+        opacity: 0.7;
+        margin: .1rem;
+    }
+
+    #clothingOptions {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        flex-wrap: wrap;
+        line-height: 2rem;
+        margin: 3rem auto;
+        min-height: 10rem;
+        width: 100%;
+    }
+
+    .articleListBoxClass {
+        object-fit: fill;
+        width: 40%;
+    }
+    
+    #editClothingOptions {
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        flex-wrap: wrap;
+        line-height: 2rem;
+        margin: 3rem auto;
+        min-height: 10rem
+    }
+
+    /* FAVORITES
+    ================================================== */
+
+    #space {
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        flex-wrap: wrap;
+        line-height: 2rem;
+        margin-top: 3rem;
+    }
+    
+    #recentFavorites {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+    }
+
+    #businessProfessionalSort {
+        display: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+    }
+
+    #businessCasualSort {
+        display: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .favoritesItem {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0 7rem 0;
+        width: 22rem;
+        height: 20rem;
+    }
+    
+    .favoritesBoxClass {
+        list-style-type: none;
+        object-fit: fill;
+        border-radius: 5%;
+        border: 5px solid  rgb(164, 139, 235);
+        width: 45%;
+        height: 10rem;
+        background-color: rgb(223, 208, 249);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 0;
+        word-wrap: break-word;
+        text-align: center;
+    }
+
+    #editOptionInputs button {
+        margin: 0 .5rem;
+        height: 2rem;
+        width: 4rem;
+    }
+
+    /* HOMEPAGE
+    ================================================== */
+
+    
+    #homeText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        line-height: 3rem;
+        width: 80%;
+        margin: 0 auto 2rem auto;
+    }
+
+    #indexSecondText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        line-height: 2rem;
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 0;
+    }
+
+    #indexSecondText p{
+        width: 80%;
+        margin: 2rem auto;
+        display: inline-block;
+    }
+
+    #indexSecondText h1{
+        width: 80%;
+        display: inline-block;
+    }
+
+    #indexSecondText img{
+        display: inline;
+        width: 90%;
+        height: 25rem;
+        margin-top: 5rem;
+    }
+
+    #indexSecondText a{
+        text-align: center;
+    }
+    
+    #homeText h1:first-of-type{
+        margin-bottom: 1rem;
+    }
+    
+    #homeText h1{
+        color:rgb(223, 208, 249);
+        font-size: 2.5rem;
+    }
+
+    .tipsListClass {
+        margin: 2rem 0;
+        color: #EDF0DA;
+    }
+    
+    #tipsMain {
+        padding: 0 2%;
+    }
+    
+    .tipsListClass {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 4%;
+        margin: 6rem 0;
+        text-align: center;
+    }
+
+    .tipsListClass div {
+        text-align: center;
+        width: 80%;
+        padding: 0;
+    }
+     
+    .tipsListClass h3 {
+        width: 100%;
+        display: inline-block;
+    }
+    
+    .tipsListClass img {
+        display: inline;
+        width: 17rem;
+        height: 10rem;
+        margin: 2rem 0;
+    }
+
+    #indexSecondText div  {
+        text-align: center;
+       order: 1;
+    }
+    
+    #indexSecondText p {
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .tipsListClass .dualImages:first-of-type {
+        padding: 0;
+        margin: 2rem 0 0 0;
+    }
+    
+    .tipsListClass .dualImages {
+        display: inline;
+        width: 17rem;
+        height: 10rem;
+    }
+    
+    .tipsListClass .dualImagesText {
+        width: 80%;
+        padding: 0;
+        display: inline-block;
+    }
+
+    /* LOGIN PAGE
+    ================================================== */
+
+    #indexText {
+        color:rgb(223, 208, 249);
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin: 0 0 1rem;
+        line-height: 4rem;
+        padding: 0 10%;
+        order: -1;
+    }
+    
+    #indexText h1{
+        font-size: 3rem;
+    }
+    
+    #indexText h3{
+        font-size: 2rem;
+        line-height: 3rem;
+        margin: 1rem 0 2rem 0;
+    }
+
+    #indexHead {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    #indexImage {
+        width: 80%;
+        margin: 3rem auto 5rem auto;
+        flex-wrap: wrap;
+        line-height: 2rem;
+    }
+    
+    #indexText div{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+    
+    #indexText a{
+        font-size: 2rem;
+        margin: 0 1rem;
+        text-align: center;
+        height: 4rem;
+        line-height: 4rem;
+        border-radius: 5%;
+    }
+
+     /* SIGN UP
+    ================================================== */
+
+    #signUpArea {
+        margin-bottom: 3rem;
+    }
+    
+    #signUpArea input {
+        width: 70%;
+    }
+    
+    #signUpArea form #signUpSubmit {
+        width: 25%;
+    }
+
+     /* LOGIN
+    ================================================== */
+    
+    #loginArea input {
+        width: 70%;
+        height: 2rem;
+        margin: 1rem auto;
+    }
+    
+    #loginArea form #loginSubmit {
+        width: 25%;
+    }
+
+}
+
+/* Tablet (Between 768px - 992px)*/
+@media all and (min-width: 768px) and (max-width: 992px) {
+
+    #generatorBox {
+        padding: 0 5rem;
+    }
+
+    .generatorBoxClass {
+        width: 40%;
+        height: 15rem;
+    }
+
+    .favoritesItem {
+        margin: 4rem 2rem;
+        width: 90%;
+        height: 20rem;
+    }
+
+    .favoritesBoxClass {
+        width: 45%;
+        height: 10rem;
+    }
+
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Outfits</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav id="mainnav" class="group">
+            <div id="outfitLogoMobile"><a href="/homepage">Stylo</a></div>
+            <div id="menu">&#x2261;</div>
+            <h2><a id="outfitLogo" href="/homepage">Stylo</a></h2>
+            <ul>
+                <li><a href="/outfit">Outfit</a></li>
+                <li><a href="/favorites" style="border-bottom: none; color: rgb(117, 201, 200);">Favorites</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <select id="optionSelect">
+            <option value="recentlyAdded">Recent</option>
+            <option value="businessProfessional">Professional</option>
+            <option value="businessCasual">Casual</option>
+        </select>
+
+        <section id="noFavorites">
+            <h1>Looks like you haven't saved any outfits...</h1>
+            <h1>Create your first outfit <a href="/outfit">here</a></h1>
+        </section>
+
+        <h1 id="editedOutfitTypeMessage"></h1>
+        <section id="space">
+        </section>
+
+        <div id="editOptionInputs">
+            <form>
+                <input id="jacketInput" class="input" type="text" name="jacketChoice">
+                <input id="shirtInput" class="input" type="text" name="shirtChoice">
+                <input id="pantsInput" class="input" type="text" name="pantsChoice">
+                <input id="shoesInput" class="input" type="text" name="shoesChoice">
+                <input id="outfitTypeInput" class="input" type="text" name="outfitTypeChoice">
+                <button id="returnButton" type="button">Return</button>
+                <button id="saveButton" type="button">Save</button>
+                <button id="deleteButton">Delete</button>
+            </form>
+        </div>
+
+        <div id="editClothingOptions">
+
+        </div>
+
+        <ul id="recentFavorites" class="test">
+            <% favorites.reverse().forEach( el => { %>
+                    <li class='favoritesItem' data-id='<%=el._id%>' data-outfit='<%=el.outfitType%>'>
+                        <img class="favoritesBoxClass jacket <%= el.jacket === 'baseJacket' ? 'lowOpacity' : '' %>" data-article-type="jackets" data-article-color='<%=el.jacket%>' data-default-value="baseJacket" src="<%= `/images/jackets/${el.jacket}.png` %>">
+                        <img class="favoritesBoxClass <%= el.shirt === 'baseShirt' ? 'lowOpacity' : '' %>" data-article-type="shirts" data-article-color='<%=el.shirt%>' data-default-value="baseShirt"  title="Shirt" src="<%= `/images/shirts/${el.shirt}.png` %>"> 
+                        <img class="favoritesBoxClass <%= el.pants === 'basePants' ? 'lowOpacity' : '' %>" data-article-type="pants" data-article-color='<%=el.pants%>' data-default-value="basePants"  title="Pants" src="<%= `/images/pants/${el.pants}.png` %>">
+                        <img class="favoritesBoxClass <%= el.shoes === 'baseShoes' ? 'lowOpacity' : '' %>" data-article-type="shoes" data-article-color='<%=el.shoes%>' data-default-value="baseShoes"  title="Shoes" src="<%= `/images/shoes/${el.shoes}.png` %>"> 
+                        <button class='del'> Delete </button>
+                        <button class='edit'> Edit </button>
+                    </li>
+            <% }) %>    
+        </ul>
+        <ul id="businessProfessionalSort" class="test">
+            <% favorites.forEach( el => { %>
+                    <li class="favoritesItem <%=el.outfitType === 'Business Professional' ? 'favoritesSortedFirst' : 'favoritesSortedLast' %>" data-id='<%=el._id%>' data-outfit='<%=el.outfitType%>'>
+                        <img class="favoritesBoxClass jacket <%= el.jacket === 'baseJacket' ? 'lowOpacity' : '' %>" data-article-type="jackets" data-article-color='<%=el.jacket%>' data-default-value="baseJacket" src="<%= `/images/jackets/${el.jacket}.png` %>">
+                        <img class="favoritesBoxClass <%= el.shirt === 'baseShirt' ? 'lowOpacity' : '' %>" data-article-type="shirts" data-article-color='<%=el.shirt%>' data-default-value="baseShirt"  title="Shirt" src="<%= `/images/shirts/${el.shirt}.png` %>"> 
+                        <img class="favoritesBoxClass <%= el.pants === 'basePants' ? 'lowOpacity' : '' %>" data-article-type="pants" data-article-color='<%=el.pants%>' data-default-value="basePants"  title="Pants" src="<%= `/images/pants/${el.pants}.png` %>">
+                        <img class="favoritesBoxClass <%= el.shoes === 'baseShoes' ? 'lowOpacity' : '' %>" data-article-type="shoes" data-article-color='<%=el.shoes%>' data-default-value="baseShoes"  title="Shoes" src="<%= `/images/shoes/${el.shoes}.png` %>"> 
+                        <button class='del'> Delete </button>
+                        <button class='edit'> Edit </button>
+                    </li>
+            <% }) %>    
+        </ul>
+        <ul id="businessCasualSort" class="test">
+            <% favorites.forEach( el => { %>
+                    <li class="favoritesItem <%=el.outfitType === 'Business Casual' ? 'favoritesSortedFirst' : 'favoritesSortedLast' %>" data-id='<%=el._id%>' data-outfit='<%=el.outfitType%>'>
+                        <img class="favoritesBoxClass jacket <%= el.jacket === 'baseJacket' ? 'lowOpacity' : '' %>" data-article-type="jackets" data-article-color='<%=el.jacket%>' data-default-value="baseJacket" src="<%= `/images/jackets/${el.jacket}.png` %>">
+                        <img class="favoritesBoxClass <%= el.shirt === 'baseShirt' ? 'lowOpacity' : '' %>" data-article-type="shirts" data-article-color='<%=el.shirt%>' data-default-value="baseShirt"  title="Shirt" src="<%= `/images/shirts/${el.shirt}.png` %>"> 
+                        <img class="favoritesBoxClass <%= el.pants === 'basePants' ? 'lowOpacity' : '' %>" data-article-type="pants" data-article-color='<%=el.pants%>' data-default-value="basePants"  title="Pants" src="<%= `/images/pants/${el.pants}.png` %>">
+                        <img class="favoritesBoxClass <%= el.shoes === 'baseShoes' ? 'lowOpacity' : '' %>" data-article-type="shoes" data-article-color='<%=el.shoes%>' data-default-value="baseShoes"  title="Shoes" src="<%= `/images/shoes/${el.shoes}.png` %>"> 
+                        <button class='del'> Delete </button>
+                        <button class='edit'> Edit </button>
+                    </li>
+            <% }) %>    
+        </ul>
+
+        
+
+    </main>
+    <section id="favoritesTips">
+        <h3>Check out these <a href="/homepage">tips</a> for more ways to up your style</h3>
+    </section>
+    <footer>
+        <p>Copyright 2022</p>
+    </footer>
+
+    <script>
+        let articleNums = '<%-articleNums%>'
+        let dictionary = '<%-JSON.stringify(dictionary)%>';
+        let data = JSON.parse(dictionary)[0].articles;
+    </script>
+
+    <script src="/js/favorites.js"></script>
+
+</body>
+</html>
+
+
+
+
