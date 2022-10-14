@@ -1,7 +1,7 @@
 # Outfit Generator
 Fullstack web application that allows users to log on to their own account, create business professional/casual outfits and save them for future reference. 
 
-**Link to project:** https://outfit-generator.justin-lengvars.repl.co
+**Link to project:** https://stylo.up.railway.app
 
 ![alt tag](https://res.cloudinary.com/duf8g2rbv/image/upload/v1662400451/Screen_Shot_2022-09-05_at_1.53.24_PM_f3jsze.png)
 
