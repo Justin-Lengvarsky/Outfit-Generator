@@ -244,6 +244,11 @@ function clearOptions () {
     pickPants.style.opacity = "0.7"
     pickShoes.style.opacity = "0.7"
 
+    pickJacket.style.backgroundColor = "rgb(223, 208, 249)"
+    pickShirt.style.backgroundColor = "rgb(223, 208, 249)"
+    pickPants.style.backgroundColor = "rgb(223, 208, 249)"
+    pickShoes.style.backgroundColor = "rgb(223, 208, 249)"
+
     outfitTypeMessage.innerHTML = "";
 
 

@@ -10,7 +10,7 @@ const optionSelect = document.querySelector('#optionSelect')
 const recentFavorites = document.querySelector('#recentFavorites')
 const businessProfessionalSort = document.querySelector('#businessProfessionalSort')
 const businessCasualSort = document.querySelector('#businessCasualSort')
-const test = document.getElementsByClassName('test')
+const favoritesList = document.getElementsByClassName('favoritesList')
 
 
 
@@ -18,7 +18,7 @@ optionSelect.addEventListener('change', sortFavorites)
 
 function sortFavorites(event) {
     if (event.target.value=="recentlyAdded") {
-        $(test).animate({ opacity: 0 }, 500, function() {
+        $(favoritesList).animate({ opacity: 0 }, 500, function() {
             businessProfessionalSort.style.display="none"
             businessCasualSort.style.display="none"
             recentFavorites.style.display="flex"
@@ -26,7 +26,7 @@ function sortFavorites(event) {
             $(recentFavorites).animate({ opacity: 1 }, 500);
           });
     }  else if (event.target.value=="businessProfessional") {
-        $(test).animate({ opacity: 0 }, 500, function() {
+        $(favoritesList).animate({ opacity: 0 }, 500, function() {
             businessCasualSort.style.display="none"
             recentFavorites.style.display="none"
             businessProfessionalSort.style.display="flex"
@@ -34,7 +34,7 @@ function sortFavorites(event) {
             $(businessProfessionalSort).animate({ opacity: 1 }, 500);
           });
     } else {
-        $(test).animate({ opacity: 0 }, 500, function() {
+        $(favoritesList).animate({ opacity: 0 }, 500, function() {
             businessProfessionalSort.style.display="none"
             recentFavorites.style.display="none"
             businessCasualSort.style.display="flex"

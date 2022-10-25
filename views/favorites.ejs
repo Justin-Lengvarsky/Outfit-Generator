@@ -54,7 +54,7 @@
 
         </div>
 
-        <ul id="recentFavorites" class="test">
+        <ul id="recentFavorites" class="favoritesList">
             <% favorites.reverse().forEach( el => { %>
                     <li class='favoritesItem' data-id='<%=el._id%>' data-outfit='<%=el.outfitType%>'>
                         <img class="favoritesBoxClass jacket <%= el.jacket === 'baseJacket' ? 'lowOpacity' : '' %>" data-article-type="jackets" data-article-color='<%=el.jacket%>' data-default-value="baseJacket" src="<%= `/images/jackets/${el.jacket}.png` %>">
@@ -66,7 +66,7 @@
                     </li>
             <% }) %>    
         </ul>
-        <ul id="businessProfessionalSort" class="test">
+        <ul id="businessProfessionalSort" class="favoritesList">
             <% favorites.forEach( el => { %>
                     <li class="favoritesItem <%=el.outfitType === 'Business Professional' ? 'favoritesSortedFirst' : 'favoritesSortedLast' %>" data-id='<%=el._id%>' data-outfit='<%=el.outfitType%>'>
                         <img class="favoritesBoxClass jacket <%= el.jacket === 'baseJacket' ? 'lowOpacity' : '' %>" data-article-type="jackets" data-article-color='<%=el.jacket%>' data-default-value="baseJacket" src="<%= `/images/jackets/${el.jacket}.png` %>">
@@ -78,7 +78,7 @@
                     </li>
             <% }) %>    
         </ul>
-        <ul id="businessCasualSort" class="test">
+        <ul id="businessCasualSort" class="favoritesList">
             <% favorites.forEach( el => { %>
                     <li class="favoritesItem <%=el.outfitType === 'Business Casual' ? 'favoritesSortedFirst' : 'favoritesSortedLast' %>" data-id='<%=el._id%>' data-outfit='<%=el.outfitType%>'>
                         <img class="favoritesBoxClass jacket <%= el.jacket === 'baseJacket' ? 'lowOpacity' : '' %>" data-article-type="jackets" data-article-color='<%=el.jacket%>' data-default-value="baseJacket" src="<%= `/images/jackets/${el.jacket}.png` %>">
