@@ -121,6 +121,27 @@ function editFavorite(){
         let thisArticleType = this.dataset.articleType
         let thisArticleColor = this.dataset.articleColor
 
+        pickShirt.style.border = "5px solid rgb(164, 139, 235)"
+        pickPants.style.border = "5px solid rgb(164, 139, 235)"
+        pickShoes.style.border = "5px solid rgb(164, 139, 235)"
+        pickJacket.style.border = "5px solid rgb(164, 139, 235)"
+    
+        if (pickShirt.dataset.articleColor === "baseShirt") {
+            pickShirt.style.opacity = "0.7"
+        }
+        if (pickPants.dataset.articleColor === "basePants") {
+            pickPants.style.opacity = "0.7"
+        }
+        if (pickShoes.dataset.articleColor === "baseShoes") {
+            pickShoes.style.opacity = "0.7"
+        }
+        if (pickJacket.dataset.articleColor === "baseJacket") {
+            pickJacket.style.opacity = "0.7"
+        }
+
+        thisImage.style.opacity = "1"
+        thisImage.style.border = "7px solid rgb(81, 163, 163)"
+
         // Loops through all existing colors in clothing dictionary and displays them on the page
         for (let i=0; i<data[thisArticleType][0].colors.length; i++) {
             var image = document.createElement("img")
@@ -263,11 +284,13 @@ function editFavorite(){
                         thisImage.src = `/images/${thisArticleType}/${buttonChoices.childNodes[i].dataset.articleColor}.png`
                         thisImage.style.opacity = "0.7"
                         thisImage.style.backgroundColor = "rgb(223, 208, 249)"
+                        thisImage.style.border = "5px solid rgb(164, 139, 235)"
                     } else {  
                         buttonChoices.childNodes[i].dataset.articleColor = this.dataset.articleColor
                         thisImage.src = this.src
                         thisImage.style.opacity = "1"
                         thisImage.style.backgroundColor = "white"
+                        thisImage.style.border = "5px solid rgb(164, 139, 235)"
                     }
                     
                 function clearAllChildNodes(parent) {
