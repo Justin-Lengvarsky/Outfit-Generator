@@ -1,4 +1,4 @@
-# Outfit Generator
+# Stylo
 Fullstack web application that allows users to log on to their own account, create business professional/casual outfits and save them for future reference. 
 
 **Link to project:** https://stylo.cyclic.app
