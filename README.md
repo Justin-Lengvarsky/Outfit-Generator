@@ -6,7 +6,7 @@ Fullstack web application that allows users to log on to their own account, crea
 ![alt tag](https://res.cloudinary.com/duf8g2rbv/image/upload/v1662400451/Screen_Shot_2022-09-05_at_1.53.24_PM_f3jsze.png)
 
 <a target="_blank" href="https://stylo.cyclic.app">
-  <img src="https://user-images.githubusercontent.com/87950479/189926005-66e49d4c-e293-4e5c-8a0b-57c1ee1adaa3.gif" width="100%" height="260" alt="Outfit  App"/>
+  <img src="https://user-images.githubusercontent.com/87950479/189926005-66e49d4c-e293-4e5c-8a0b-57c1ee1adaa3.gif" width="100%" alt="Outfit  App"/>
 </a>
 
 ## How It's Made:
